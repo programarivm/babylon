@@ -21,8 +21,6 @@ class Trainer
 
     protected $pipeline;
 
-    protected $restoredClassifier;
-
     protected $modelManager;
 
     public function __construct(string $filepath)
@@ -31,14 +29,10 @@ class Trainer
         $this->samples = [];
         $this->labels = [];
         $this->modelManager = new ModelManager();
-        try {
-            $this->restoredClassifier = $this->modelManager->restoreFromFile(self::MODEL_FILEPATH);
-        } catch (\Exception $e) {
-            $this->pipeline = new Pipeline([
-                new TokenCountVectorizer(new WhitespaceTokenizer()),
-                new TfIdfTransformer(),
-            ], new NaiveBayes());
-        }
+        $this->pipeline = new Pipeline([
+            new TokenCountVectorizer(new WhitespaceTokenizer()),
+            new TfIdfTransformer(),
+        ], new NaiveBayes());
     }
 
     public function train(): void
