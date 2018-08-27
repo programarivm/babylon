@@ -6,9 +6,9 @@ use Phpml\ModelManager;
 
 class Babylon
 {
-    const MODEL_FILEPATH = __DIR__ . '/../models/kernel-linear-cost-1000.txt';
+    const MODEL_FILEPATH = __DIR__ . '/../models/naive-bayes.txt';
 
-    protected $classifier;
+    protected $restoredClassifier;
 
     protected $modelManager;
 
@@ -16,11 +16,11 @@ class Babylon
     {
         $this->modelManager = new ModelManager();
 
-        $this->classifier = $this->modelManager->restoreFromFile(self::MODEL_FILEPATH);
+        $this->restoredClassifier = $this->modelManager->restoreFromFile(self::MODEL_FILEPATH);
     }
 
-    public function predict($text)
+    public function predict(string $text)
     {
-        $classifier->predict($text);
+        return $this->restoredClassifier->predict([$text]);
     }
 }
