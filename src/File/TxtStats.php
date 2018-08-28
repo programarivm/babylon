@@ -20,19 +20,19 @@ class TxtStats extends AbstractFile
      *
      *      Array
      *      (
-     *          [0] => the
-     *          [1] => project
-     *          [2] => gutenberg
-     *          [3] => ebook
-     *          [4] => of
+     *          [0] => a
+     *          [1] => study
+     *          [2] => in
+     *          [3] => scarlet
+     *          [4] => by
      *          [5] => a
-     *          [6] => study
-     *          [7] => in
-     *          [8] => scarlet
-     *          [9] => by
-     *          [10] => arthur
-     *          [11] => conan
-     *          [12] => doyle
+     *          [6] => conan
+     *          [7] => doyle
+     *          [8] => original
+     *          [9] => transcriber's
+     *          [10] => note
+     *          [11] => this
+     *          [12] => etext
      *          ...
      *
      * @var array
@@ -46,22 +46,22 @@ class TxtStats extends AbstractFile
      *
      *      Array
      *      (
-     *          [the] => 2741
-     *          [and] => 1428
-     *          [of] => 1334
-     *          [to] => 1172
-     *          [a] => 1062
-     *          [i] => 889
-     *          [in] => 804
-     *          [he] => 798
-     *          [that] => 667
-     *          [his] => 653
-     *          [was] => 651
-     *          [it] => 592
-     *          [you] => 510
-     *          [had] => 476
-     *          [with] => 391
-     *          ...
+	 *			[the] => 2535
+     *			[and] => 1355
+     *			[of] => 1210
+     *			[to] => 1091
+     *			[a] => 993
+     *			[i] => 888
+     *			[he] => 792
+     *			[in] => 729
+     *			[that] => 652
+     *			[was] => 650
+     *			[his] => 648
+     *			[it] => 571
+     *			[had] => 476
+     *			[you] => 441
+     *			[with] => 336
+	 *          ...
      *      )
      *
      * @var array

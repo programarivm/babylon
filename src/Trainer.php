@@ -44,14 +44,12 @@ class Trainer
 
     private function prepare(): Trainer
     {
-        if ($file = fopen($this->filepath, 'r')) {
-            while (!feof($file)) {
-                $exploded = explode(',', fgets($file));
-                $this->samples[] = $exploded[1]; // phrase
-                $this->labels[] = $exploded[0]; // lang
-            }
-            fclose($file);
+        $file = fopen($this->filepath, 'r');
+        while (($line = fgetcsv($file)) !== false) {
+            $this->labels[] = $line[0];
+            $this->samples[] = $line[1];
         }
+        fclose($file);
 
         return $this;
     }

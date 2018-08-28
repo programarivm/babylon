@@ -16,7 +16,7 @@ class TxtStatsTest extends TestCase
      */
     public function freq_words_throws_file_extension_exception()
     {
-        (new TxtStats(self::DATA_FOLDER."/en.pdf"))->freqWords(10);
+        (new TxtStats(self::DATA_FOLDER."/eng.pdf"))->freqWords(10);
     }
 
     /**
@@ -43,22 +43,22 @@ class TxtStatsTest extends TestCase
     public function txtData()
     {
         return [
-            ['en.txt', [
-                'the' => 2741,
-                'and' => 1428,
-                'of' => 1334,
-                'to' => 1172,
-                'a' => 1062,
-                'i' => 889,
-                'in' => 804,
-                'he' => 798,
-                'that' => 667,
-                'his' => 653,
-                'was' => 651,
-                'it' => 592,
-                'you' => 510,
+            ['eng.txt', [
+                'the' => 2535,
+                'and' => 1355,
+                'of' => 1210,
+                'to' => 1091,
+                'a' => 993,
+                'i' => 888,
+                'he' => 792,
+                'in' => 729,
+                'that' => 652,
+                'was' => 650,
+                'his' => 648,
+                'it' => 571,
                 'had' => 476,
-                'with' => 391,
+                'you' => 441,
+                'with' => 336,
             ]],
         ];
     }
