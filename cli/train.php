@@ -6,4 +6,6 @@ use Babylon\Trainer as BabylonTrainer;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-(new BabylonTrainer($argv[1]))->train();
+const DATA_FILE = __DIR__ . '/../dataset/output.csv';
+
+(new BabylonTrainer(DATA_FILE))->train();
