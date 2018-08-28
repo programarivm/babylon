@@ -7,7 +7,7 @@ use Phpml\Pipeline;
 use Phpml\Classification\NaiveBayes;
 use Phpml\FeatureExtraction\TfIdfTransformer;
 use Phpml\FeatureExtraction\TokenCountVectorizer;
-use Phpml\Tokenization\WhitespaceTokenizer;
+use Phpml\Tokenization\WordTokenizer;
 
 class Trainer
 {
@@ -30,7 +30,7 @@ class Trainer
         $this->labels = [];
         $this->modelManager = new ModelManager();
         $this->pipeline = new Pipeline([
-            new TokenCountVectorizer(new WhitespaceTokenizer()),
+            new TokenCountVectorizer(new WordTokenizer()),
             new TfIdfTransformer(),
         ], new NaiveBayes());
     }
@@ -46,13 +46,9 @@ class Trainer
     {
         if ($file = fopen($this->filepath, 'r')) {
             while (!feof($file)) {
-                $line = trim(preg_replace('/[0-9]+/', '', fgets($file))); // remove numbers
-                $line = preg_replace('!\s+!', ' ', $line); // remove multiple blank spaces
-                $exploded = explode(' ', $line);
-                $lang = $exploded[0];
-                $phrase = preg_replace("/^(\w+\s)/", '', $line);
-                $this->samples[] = $phrase;
-                $this->labels[] = $lang;
+                $exploded = explode(',', fgets($file));
+                $this->samples[] = $exploded[1]; // phrase
+                $this->labels[] = $exploded[0]; // lang
             }
             fclose($file);
         }
