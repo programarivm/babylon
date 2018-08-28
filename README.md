@@ -25,7 +25,7 @@ use Babylon\Babylon;
 
 $babylon = new Babylon;
 
-$isoCode = $babylon->detect("Hi there, how are you today?");
+$isoCode = $babylon->detect('Hi there, how are you today?');
 ```
 
 ### Documentation
