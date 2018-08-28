@@ -1,3 +1,4 @@
+/cli/           export-ignore
 /resources/     export-ignore
 /tests/         export-ignore
 .editorconfig   export-ignore
