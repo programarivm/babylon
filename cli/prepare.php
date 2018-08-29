@@ -4,8 +4,9 @@ use Babylon\File\TxtStats;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-const DATA_FOLDER = __DIR__ . '/../dataset';
-const OUTPUT_FILE = 'output.csv';
+const DATA_INPUT_FOLDER 	= __DIR__ . '/../dataset/input/iso-8859';
+const DATA_OUTPUT_FOLDER 	= __DIR__ . '/../dataset';
+const OUTPUT_FILE 			= 'output.csv';
 
 /**
  * Returns a phrase with the most frequent words.
@@ -33,17 +34,17 @@ function prepare(array $files): void
 {
 	$csv = '';
 	foreach ($files as $file) {
-		$txtStats = new TxtStats(DATA_FOLDER."/input/$file");
+		$txtStats = new TxtStats(DATA_INPUT_FOLDER."/$file");
 		$freqWords = $txtStats->freqWords(100);
 		$csv .= pathinfo($file, PATHINFO_FILENAME) .',' . magicPhrase($freqWords) . PHP_EOL;
-        if ($handle = fopen(DATA_FOLDER.'/'.OUTPUT_FILE, 'w')) {
-            if (fwrite($handle, $csv) !== false) {
-                echo "OK! The most frequent words in $file were transformed into CSV format..." . PHP_EOL;
-            } else {
-                echo "Whoops! The most frequent words in $file could not be calculated..." . PHP_EOL;
-            }
-            fclose($handle);
-        }
+		if ($handle = fopen(DATA_OUTPUT_FOLDER.'/'.OUTPUT_FILE, 'w')) {
+			if (fwrite($handle, $csv) !== false) {
+				echo "OK! The most frequent words in $file were transformed into CSV format..." . PHP_EOL;
+			} else {
+				echo "Whoops! The most frequent words in $file could not be calculated..." . PHP_EOL;
+			}
+			fclose($handle);
+		}
 	}
 
 	echo 'The ' . OUTPUT_FILE . ' file has been updated.' . PHP_EOL;
@@ -62,7 +63,7 @@ if (trim($line) != 'Y' && trim($line) != 'y') {
 }
 fclose($handle);
 
-$files = array_diff(scandir(DATA_FOLDER.'/input'), ['.', '..']);
+$files = array_diff(scandir(DATA_INPUT_FOLDER), ['.', '..']);
 
 prepare($files);
 

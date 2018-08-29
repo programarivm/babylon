@@ -6,4 +6,4 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 $babylon = new Babylon;
 
-print_r($babylon->predict($argv[1]));
+print_r($babylon->detect($argv[1]));
