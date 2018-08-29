@@ -1,6 +1,6 @@
 <?php
 
-use Babylon\NaiveBayesTrainer as NaiveBayesTrainer;
+use Babylon\NaiveBayesTrainer;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
