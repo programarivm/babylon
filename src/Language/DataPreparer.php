@@ -1,6 +1,6 @@
 <?php
 
-namespace Babylon;
+namespace Babylon\Language;
 
 use Babylon\File\TxtStats;
 

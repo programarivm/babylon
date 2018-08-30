@@ -2,20 +2,23 @@
 
 namespace Babylon;
 
+use Babylon\Exception\LanguageFamilyException;
+use Babylon\Family;
+
 class Validator
 {
     public static function langFamily(string $langFamily): string
     {
         switch ($langFamily) {
-            case Babylon::FAMILY_AUSTRONESIAN:
+            case Family::AUSTRONESIAN:
                 break;
-            case Babylon::FAMILY_GERMANIC:
+            case Family::GERMANIC:
                 break;
-            case Babylon::FAMILY_ROMANCE:
+            case Family::ROMANCE:
                 break;
-            case Babylon::FAMILY_SLAVIC:
+            case Family::SLAVIC:
                 break;
-            case Babylon::FAMILY_URALIC:
+            case Family::URALIC:
                 break;
             default:
                 throw new LanguageFamilyException('Whoops! The language family is not valid.');

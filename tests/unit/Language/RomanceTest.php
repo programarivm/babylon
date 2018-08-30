@@ -1,12 +1,12 @@
 <?php
 
-namespace Babylon\Tests;
+namespace Babylon\Tests\Unit\Language;
 
-use Babylon\Babylon;
 use Babylon\Filter;
+use Babylon\Language\Language;
 use PHPUnit\Framework\TestCase;
 
-class BabylonRomanceTest extends TestCase
+class RomanceTest extends TestCase
 {
     /**
      * @dataProvider fraData
@@ -14,7 +14,7 @@ class BabylonRomanceTest extends TestCase
      */
     public function detect_fra($text)
     {
-        $this->assertEquals('fra', (new Babylon($text))->detect();
+        $this->assertEquals('fra', (new Language($text))->detect();
     }
 
     /**
@@ -23,7 +23,7 @@ class BabylonRomanceTest extends TestCase
      */
     public function detect_ita($text)
     {
-        $this->assertEquals('ita', (new Babylon($text))->detect();
+        $this->assertEquals('ita', (new Language($text))->detect();
     }
 
     /**
@@ -32,7 +32,7 @@ class BabylonRomanceTest extends TestCase
      */
     public function detect_por($text)
     {
-        $this->assertEquals('por', (new Babylon($text))->detect();
+        $this->assertEquals('por', (new Language($text))->detect();
     }
 
     /**
@@ -41,7 +41,7 @@ class BabylonRomanceTest extends TestCase
      */
     public function detect_ron($text)
     {
-        $this->assertEquals('ron', (new Babylon($text))->detect();
+        $this->assertEquals('ron', (new Language($text))->detect();
     }
 
     /**
@@ -50,7 +50,7 @@ class BabylonRomanceTest extends TestCase
      */
     public function detect_spa($text)
     {
-        $this->assertEquals('spa', (new Babylon($text))->detect();
+        $this->assertEquals('spa', (new Language($text))->detect();
     }
 
     public function fraData()

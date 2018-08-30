@@ -1,12 +1,12 @@
 <?php
 
-namespace Babylon\Tests;
+namespace Babylon\Tests\Unit\Language;
 
-use Babylon\Babylon;
 use Babylon\Filter;
+use Babylon\Language\Language;
 use PHPUnit\Framework\TestCase;
 
-class BabylonGermanicTest extends TestCase
+class GermanicTest extends TestCase
 {
     /**
      * @dataProvider danData
@@ -14,7 +14,7 @@ class BabylonGermanicTest extends TestCase
      */
     public function detect_dan($text)
     {
-        $this->assertEquals('dan', (new Babylon($text))->detect();
+        $this->assertEquals('dan', (new Language($text))->detect();
     }
 
     /**
@@ -23,7 +23,7 @@ class BabylonGermanicTest extends TestCase
      */
     public function detect_deu($text)
     {
-        $this->assertEquals('deu', (new Babylon($text))->detect();
+        $this->assertEquals('deu', (new Language($text))->detect();
     }
 
     /**
@@ -32,7 +32,7 @@ class BabylonGermanicTest extends TestCase
      */
     public function detect_eng($text)
     {
-        $this->assertEquals('eng', (new Babylon($text))->detect();
+        $this->assertEquals('eng', (new Language($text))->detect();
     }
 
     /**
@@ -41,7 +41,7 @@ class BabylonGermanicTest extends TestCase
      */
     public function detect_isl($text)
     {
-        $this->assertEquals('isl', (new Babylon($text))->detect();
+        $this->assertEquals('isl', (new Language($text))->detect();
     }
 
     /**
@@ -50,7 +50,7 @@ class BabylonGermanicTest extends TestCase
      */
     public function detect_nld($text)
     {
-        $this->assertEquals('nld', (new Babylon($text))->detect();
+        $this->assertEquals('nld', (new Language($text))->detect();
     }
 
     /**
@@ -59,7 +59,7 @@ class BabylonGermanicTest extends TestCase
      */
     public function detect_nob($text)
     {
-        $this->assertEquals('nob', (new Babylon($text))->detect();
+        $this->assertEquals('nob', (new Language($text))->detect();
     }
 
     /**
@@ -68,7 +68,7 @@ class BabylonGermanicTest extends TestCase
      */
     public function detect_swe($text)
     {
-        $this->assertEquals('swe', (new Babylon($text))->detect();
+        $this->assertEquals('swe', (new Language($text))->detect();
     }
 
     public function danData()

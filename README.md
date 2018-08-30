@@ -22,7 +22,7 @@ Just instantiate `Babylon` and detect the language of a text.
 ```php
 <?php
 
-use Babylon\Babylon;
+use Babylon\Language\Language;
 
 $babylon = new Babylon;
 

@@ -1,7 +1,8 @@
 <?php
 
-namespace Babylon;
+namespace Babylon\Language;
 
+use Babylon\AbstractTrainer;
 use Babylon\Exception\LanguageFamilyException;
 use Babylon\Validator;
 use Phpml\Pipeline;

@@ -1,20 +1,14 @@
 <?php
 
-namespace Babylon;
+namespace Babylon\Language;
 
 use Phpml\ModelManager;
 
-class Babylon
+class Language
 {
-    const FAMILY_AUSTRONESIAN   = 'austronesian';
-    const FAMILY_GERMANIC       = 'germanic';
-    const FAMILY_ROMANCE        = 'romance';
-    const FAMILY_SLAVIC         = 'slavic';
-    const FAMILY_URALIC         = 'uralic';
-
     protected $text;
 
-    protected $langFamily
+    protected $langFamily;
 
     protected $modelFilepath;
 
@@ -39,7 +33,7 @@ class Babylon
         return $isoCode;
     }
 
-    private function langFamily()
+    private function langFamily(string $text): string
     {
         // TODO:
 

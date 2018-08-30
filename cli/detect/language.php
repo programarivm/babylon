@@ -2,10 +2,10 @@
 
 namespace Babylon\Cli;
 
-use Babylon\Babylon;
+use Babylon\Language\Language;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$isoCode = (new Babylon($argv[1]))->detect();
+$isoCode = (new Language($argv[1]))->detect();
 
 echo $isoCode . PHP_EOL;
