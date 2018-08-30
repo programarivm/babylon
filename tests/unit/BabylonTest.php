@@ -99,6 +99,15 @@ class BabylonTest extends TestCase
     }
 
     /**
+     * @dataProvider nobData
+     * @test
+     */
+    public function detect_nob($phrase)
+    {
+        $this->assertEquals('nob', (new Babylon)->detect(Filter::phrase($phrase)));
+    }
+
+    /**
      * @dataProvider polData
      * @test
      */
@@ -340,6 +349,27 @@ class BabylonTest extends TestCase
             ],
             [
                 "Ik had het gevoel dat ik moest huilen toen ik het nieuws hoorde. Het valt te betwijfelen of deze methode zal werken."
+            ],
+        ];
+    }
+
+    public function nobData()
+    {
+        return [
+            [
+                "Jeg var ikke lenge der. Hun tar etter sin mor. Alle guttene er jevngamle. Pennen er på pulten. Enkelte sier at dersom du tråkker på en meitemark så begynner det å regne."
+            ],
+            [
+                "De hadde et gammeldags system som de har flikket på i årevis og det ble mer og mer vanskeligere å finne kompetansen til å videreutvikle det."
+            ],
+            [
+                "Hva som er bra er bra og hva som er best er det beste. Jeg gjemte meg i skapet. Hva skal jeg kjøpe? Det var ingen respons. Tom døde i sin velmakt."
+            ],
+            [
+                "Tre timer senere slentret kongen rundt om i slottet etter noe å ta opp tiden med. Faen som jeg kjeder meg klaget han fortvilet."
+            ],
+            [
+                "En dag spurte hun om jeg ville bli med henne hjem etter skoletid."
             ],
         ];
     }
