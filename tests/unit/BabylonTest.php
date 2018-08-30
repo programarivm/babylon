@@ -9,6 +9,15 @@ use PHPUnit\Framework\TestCase;
 class BabylonTest extends TestCase
 {
     /**
+     * @dataProvider cesData
+     * @test
+     */
+    public function detect_ces($phrase)
+    {
+        $this->assertEquals('ces', (new Babylon)->detect(Filter::phrase($phrase)));
+    }
+
+    /**
      * @dataProvider danData
      * @test
      */
@@ -123,6 +132,15 @@ class BabylonTest extends TestCase
     public function detect_swe($phrase)
     {
         $this->assertEquals('swe', (new Babylon)->detect(Filter::phrase($phrase)));
+    }
+
+    public function cesData()
+    {
+        return [
+            [
+                "A co byste řekli názvu Osada Stepních Vlků? Stala se zdravotní sestrou. Odhrnovali vrstvu smetí tak horlivě, jako by měli objevit ukrytý poklad. Někteří byli zabiti jiní zraněni další jsou pohřešovaní po bitvě."
+            ],
+        ];
     }
 
     public function danData()
