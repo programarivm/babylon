@@ -19,10 +19,9 @@ class Babylon
         $this->restoredClassifier = $this->modelManager->restoreFromFile(self::MODEL_FILEPATH);
     }
 
-    public function detect(string $text)
+    public function detect(string $text): string
     {
-        // TODO filter
-        $text = mb_strtolower($text);
+        $text = Filter::phrase($text);
         $lang = current($this->restoredClassifier->predict([$text]));
 
         return $lang;

@@ -3,6 +3,7 @@
 namespace Babylon\File;
 
 use Babylon\Exception\FileExtensionException;
+use Babylon\Filter;
 
 /**
  * Text stats.
@@ -115,14 +116,7 @@ class TxtStats extends AbstractFile
 	{
 		if ($file = fopen($this->filepath, 'r')) {
 			while (!feof($file)) {
-				$line = mb_strtolower(fgets($file));
-				$line = preg_replace('/[[:punct:]]/', '', $line);
-				$line = preg_replace('/(“|”)/', '', $line);
-				$line = preg_replace('/(\"|\")/', '', $line);
-				$line = preg_replace('/’/', "'", $line);
-				$line = preg_replace('/[0-9]+/', '', $line);
-				$line = preg_replace('!\s+!', ' ', $line);
-				$exploded = explode(' ', $line);
+				$exploded = explode(' ', Filter::phrase(fgets($file)));
 				$this->words = array_merge($this->words, $exploded);
 			}
 			fclose($file);
