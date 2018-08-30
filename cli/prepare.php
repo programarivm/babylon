@@ -35,7 +35,7 @@ function prepare(array $files): void
 	$csv = '';
 	foreach ($files as $file) {
 		$txtStats = new TxtStats(DATA_INPUT_FOLDER."/$file");
-		$freqWords = $txtStats->freqWords(100);
+		$freqWords = $txtStats->freqWords(55);
 		$csv .= pathinfo($file, PATHINFO_FILENAME) .',' . magicPhrase($freqWords) . PHP_EOL;
 		if ($handle = fopen(DATA_OUTPUT_FOLDER.'/'.OUTPUT_FILE, 'w')) {
 			if (fwrite($handle, $csv) !== false) {
