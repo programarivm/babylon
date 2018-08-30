@@ -123,10 +123,6 @@ class BabylonTest extends TestCase
                 "Drengen har mistet sit øre i en gadekamp."
             ],
             [
-                "Hvad er dit andet spørgsmål?" .
-                "Jeg bor i det nordlige Sverige."
-            ],
-            [
                 "Alle drengene løb væk." .
                 "Væk! Vi har ikke brug for mennesker af din slags."
             ],
@@ -139,10 +135,6 @@ class BabylonTest extends TestCase
                 "Vær så venlig at vise mig vejen til stationen."
             ],
             [
-                "Jeg har aldrig været i Afrika." .
-                "Hun har en swimmingpool."
-            ],
-            [
                 "På grund af mine korte ben er jeg nødt til at lægge alle de benklæder jeg køber op." .
                 "Græd ikke. Gråd løser ikke noget."
             ],
@@ -152,14 +144,6 @@ class BabylonTest extends TestCase
     public function deuData()
     {
         return [
-            [
-                "Tom machte sich an den Versuch die Tür aufzubrechen." .
-                "Die Reparatur ihres Wagens entwickelte sich für Maria zunehmend zu einem finanziellen Fiasko."
-            ],
-            [
-                "Ich liebe sie aber ich weiß nicht wie ich’s ihr sagen soll." .
-                "Ich habe nie Sätze auf Tatoeba hinzugefügt."
-            ],
             [
                 "Ich werde es später gründlich nachschlagen und dir mailen." .
                 "Ein gutes Sonderangebot hat gewöhnlich einen guten Profit für den Verkäufer zur Folge."
@@ -203,14 +187,6 @@ class BabylonTest extends TestCase
                 "I already told them that."
             ],
             [
-                "Monetary policy in United States has been characterized by tight credit over the months." .
-                "I've already discussed it with Tom."
-            ],
-            [
-                "Don't quote me on this but I think there will be a severe storm tomorrow morning." .
-                "We both live in Boston."
-            ],
-            [
                 "Close the window before you leave." .
                 "Before we wrap up we'll take some questions from the audience."
             ],
@@ -229,20 +205,12 @@ class BabylonTest extends TestCase
                 "Älähän nyt itke. Minuakin alkaa itkettää kun näen sinun itkevän."
             ],
             [
-                "Hän näki jotain minkä muut olivat jättäneet huomiotta." .
-                "Tämä metalli löydettiin äskettäin."
-            ],
-            [
                 "Kaiken maailman sörsseleitä täällä yritetäänkin ihmiselle syöttää! Tämä on aivan kauheaa mössöä." .
                 "Minun pitää kysyä sinulta monta kysymystä."
             ],
             [
                 "Turvallisuussyistä varmista että luet ohjekirjan ennen tämän tuotteen käyttämistä." .
                 "Jos kyseessä on oikea kanadalainen niin hän ei varmasti sanoisi mitään tuollaista."
-            ],
-            [
-                "Olemme juuri saaneet tiedustelun Kansasista koskien veljeäsi." .
-                "Olen sanonut sinulle miljoona kertaa että lopeta liioitteleminen."
             ],
             [
                 "Tässä on sinulle aakkosellinen luettelo kaikista niistä suomen kielen sanoista jotka eivät esiinny." .
@@ -255,16 +223,8 @@ class BabylonTest extends TestCase
     {
         return [
             [
-                "Tu ferais mieux de consulter un dictionnaire quand tu ne connais pas le sens d'un mot." .
-                "Je veux simplement."
-            ],
-            [
                 "Que vous sachiez tous que vous pouvez compter sur moi." .
                 "Une fête de bienvenue a été organisée."
-            ],
-            [
-                "Tu veux savoir pourquoi je fais la tête ? Parce que tu n'es jamais là." .
-                "La nouvelle édition des programmes."
             ],
             [
                 "J'avais oublié à quel point il pouvait être insupportable." .
@@ -288,14 +248,6 @@ class BabylonTest extends TestCase
     public function hunData()
     {
         return [
-            [
-                "Nehogy elázzunk az esőn kénytelenek voltunk belépni a kocsmába." .
-                "Minden tanuló ismeri az iskola indulóját."
-            ],
-            [
-                "Ebben az erdőben az emberek és a mókusok még mindig harmóniában élnek együtt." .
-                "Tomnak kedvesebbnek kellett volna lennie Marihoz."
-            ],
             [
                 "Ez egy praktikus lexikon hogy utánanézzünk bizonyos dolgoknak." .
                 "Úgy látszik most mindenki a tengerpartra szeretne utazni fürödni feküdni és napozni a strandon."
@@ -349,10 +301,6 @@ class BabylonTest extends TestCase
                 "Lui cercò di trovare una motivazione per le sue azioni insensate."
             ],
             [
-                "Alcuni membri sono d'accordo con noi alcuni no altri non hanno espresso la propria opinione." .
-                "Registri i suoi pensieri su base giornaliera e un giorno sarà in grado di capire qualcosa su di lei."
-            ],
-            [
                 "Non bisogna mai dare la prevalenza ad un testo piuttosto che ad un altro." .
                 "Chaucer e Boccaccio sono due scrittori. Il primo è inglese  il secondo è italiano."
             ],
@@ -363,10 +311,6 @@ class BabylonTest extends TestCase
             [
                 "Di certo non sarebbe male rendere più stretti e severi i controlli non ti pare?" .
                 "La Commissione chiede allo Stato italiano di fornire alcuni chiarimenti su una legge."
-            ],
-            [
-                "Tu dici che hai paura di essere disprezzato dalle altre persone ma ci sono alcune persone a cui non piaci vero" .
-                "Potremmo andare tutti in gelateria e pigliarci un bel gelato."
             ],
         ];
     }
@@ -383,20 +327,12 @@ class BabylonTest extends TestCase
                 "Gisteren zijn mijn vrouw en ik naar het theater geweest."
             ],
             [
-                "De gebruikte methoden om stress te verwerken zijn verschillend van man tot vrouw." .
-                "mannen zoeken hun toevlucht hoofdzakelijk in alcohol terwijl vrouwen hun stress verwerken door te chatten."
-            ],
-            [
                 "Een persoon kan een ander persoon nooit helemaal begrijpen." .
                 "De politie zal straks aankomen op de plaats van de misdaad."
             ],
             [
                 "Niets houdt een man zo kwiek als een jonge echtgenote en oude vijanden." .
                 "Wie een hond wil slaan vindt altijd een stok."
-            ],
-            [
-                "Per werknemer wordt maximaal vierduizend euro beschikbaar gesteld." .
-                "Het is onvermijdelijk dat ik ooit een keer naar Frankrijk ga ik weet alleen niet wanneer."
             ],
             [
                 "Ik had het gevoel dat ik moest huilen toen ik het nieuws hoorde." .
@@ -425,14 +361,6 @@ class BabylonTest extends TestCase
                 "Acho que os ovos que acabo de comer estavam podres."
             ],
             [
-                "A música é a língua universal da humanidade — a poesia seu passatempo e prazer universais." .
-                "Ela bordou suas iniciais num lenço branco."
-            ],
-            [
-                "Ora se temos duas réguas de trinta centímetros isso significa que elas são do mesmo tamanho!" .
-                "Paremos para pensar o quanto dependemos da energia atômica."
-            ],
-            [
                 "Se você me ensinar como dançar eu te mostrarei minhas cicatrizes escondidas." .
                 "João nunca mais teve um cachorro depois de ser mordido pelo que cuidava."
             ],
@@ -442,14 +370,6 @@ class BabylonTest extends TestCase
     public function spaData()
     {
         return [
-            [
-                "Al bajar de la estación y caminar tres minutos hacia el sur ya se respira un aire exótico." .
-                "No digas palabrotas o te voy a lavar la boca con jabón. El trabajo requiere de mucha paciencia."
-            ],
-            [
-                "Según Heródoto el faraón Psamético I quería conocer el idioma original de la humanidad." .
-                "Tom cogió el autobús erróneo."
-            ],
             [
                 "Sólo quiero hacerte saber que yo no te defraudaré." .
                 "Este muro está pintado de verde."
@@ -477,16 +397,12 @@ class BabylonTest extends TestCase
     {
         return [
             [
-                "Jag tror inte att det kommer att regna i eftermiddag." .
-                "Hur länge var ni uppe i går? Till ungefär halv tre."
-            ],
-            [
                 "De gjorde det hett för henne. En kvinna vars man har dött är en änka." .
                 "Du dricker för mycket kaffe. Hur kunde Tom veta det?"
             ],
             [
                 "Det är min cd-skiva. Vi kommer aldrig att ge upp kampen om lika rättigheter." .
-                "Han är vis på några sätt."
+                "Jag tror inte att det kommer att regna i eftermiddag."
             ],
             [
                 "Hur lång ledighet kommer du att ha i jul?" .
@@ -495,10 +411,6 @@ class BabylonTest extends TestCase
             [
                 "Denna punkt förtjänar särskild emfas. Han gjorde det i avsaknad av bättre vetande." .
                 "Denna grusväg ska inom kort asfalteras."
-            ],
-            [
-                "Jag är glad att Tom ska hjälpa oss." .
-                "Du kan klicka på pennan för att ändra meningar i efterhand."
             ],
             [
                 "Markku bestämde att han inte skulle stå till tjänst nästa gång och inte någon annan gång heller." .
