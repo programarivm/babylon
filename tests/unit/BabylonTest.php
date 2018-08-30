@@ -3,6 +3,7 @@
 namespace Babylon\Tests;
 
 use Babylon\Babylon;
+use Babylon\Filter;
 use PHPUnit\Framework\TestCase;
 
 class BabylonTest extends TestCase
@@ -13,7 +14,7 @@ class BabylonTest extends TestCase
      */
     public function detect_dan($phrase)
     {
-        $this->assertEquals('dan', (new Babylon)->detect($phrase));
+        $this->assertEquals('dan', (new Babylon)->detect(Filter::phrase($phrase)));
     }
 
     /**
@@ -22,7 +23,7 @@ class BabylonTest extends TestCase
      */
     public function detect_deu($phrase)
     {
-        $this->assertEquals('deu', (new Babylon)->detect($phrase));
+        $this->assertEquals('deu', (new Babylon)->detect(Filter::phrase($phrase)));
     }
 
     /**
@@ -31,7 +32,7 @@ class BabylonTest extends TestCase
      */
     public function detect_eng($phrase)
     {
-        $this->assertEquals('eng', (new Babylon)->detect($phrase));
+        $this->assertEquals('eng', (new Babylon)->detect(Filter::phrase($phrase)));
     }
 
     /**
@@ -40,7 +41,7 @@ class BabylonTest extends TestCase
      */
     public function detect_fin($phrase)
     {
-        $this->assertEquals('fin', (new Babylon)->detect($phrase));
+        $this->assertEquals('fin', (new Babylon)->detect(Filter::phrase($phrase)));
     }
 
     /**
@@ -49,7 +50,7 @@ class BabylonTest extends TestCase
      */
     public function detect_fra($phrase)
     {
-        $this->assertEquals('fra', (new Babylon)->detect($phrase));
+        $this->assertEquals('fra', (new Babylon)->detect(Filter::phrase($phrase)));
     }
 
     /**
@@ -58,7 +59,7 @@ class BabylonTest extends TestCase
      */
     public function detect_hun($phrase)
     {
-        $this->assertEquals('hun', (new Babylon)->detect($phrase));
+        $this->assertEquals('hun', (new Babylon)->detect(Filter::phrase($phrase)));
     }
 
     /**
@@ -67,7 +68,7 @@ class BabylonTest extends TestCase
      */
     public function detect_isl($phrase)
     {
-        $this->assertEquals('isl', (new Babylon)->detect($phrase));
+        $this->assertEquals('isl', (new Babylon)->detect(Filter::phrase($phrase)));
     }
 
     /**
@@ -76,7 +77,7 @@ class BabylonTest extends TestCase
      */
     public function detect_ita($phrase)
     {
-        $this->assertEquals('ita', (new Babylon)->detect($phrase));
+        $this->assertEquals('ita', (new Babylon)->detect(Filter::phrase($phrase)));
     }
 
     /**
@@ -85,7 +86,7 @@ class BabylonTest extends TestCase
      */
     public function detect_nld($phrase)
     {
-        $this->assertEquals('nld', (new Babylon)->detect($phrase));
+        $this->assertEquals('nld', (new Babylon)->detect(Filter::phrase($phrase)));
     }
 
     /**
@@ -94,7 +95,7 @@ class BabylonTest extends TestCase
      */
     public function detect_por($phrase)
     {
-        $this->assertEquals('por', (new Babylon)->detect($phrase));
+        $this->assertEquals('por', (new Babylon)->detect(Filter::phrase($phrase)));
     }
 
     /**
@@ -103,7 +104,7 @@ class BabylonTest extends TestCase
      */
     public function detect_ron($phrase)
     {
-        $this->assertEquals('ron', (new Babylon)->detect($phrase));
+        $this->assertEquals('ron', (new Babylon)->detect(Filter::phrase($phrase)));
     }
 
     /**
@@ -112,7 +113,7 @@ class BabylonTest extends TestCase
      */
     public function detect_spa($phrase)
     {
-        $this->assertEquals('spa', (new Babylon)->detect($phrase));
+        $this->assertEquals('spa', (new Babylon)->detect(Filter::phrase(Filter::phrase($phrase))));
     }
 
     /**
@@ -121,7 +122,7 @@ class BabylonTest extends TestCase
      */
     public function detect_swe($phrase)
     {
-        $this->assertEquals('swe', (new Babylon)->detect($phrase));
+        $this->assertEquals('swe', (new Babylon)->detect(Filter::phrase($phrase)));
     }
 
     public function danData()
@@ -406,24 +407,19 @@ class BabylonTest extends TestCase
     {
         return [
             [
-                "Sólo quiero hacerte saber que yo no te defraudaré." .
-                "Este muro está pintado de verde."
+                "En el supermercado de la esquina se vende la fruta a un precio muy bueno. La decisión será incluso más difícil cuanto más la demores."
             ],
             [
-                "De vez en cuando él va a la biblioteca para obtener nueva información sobre libros." .
-                "Si va usted en avión no podrá llevar mucho equipaje."
+                "De vez en cuando él va a la biblioteca para obtener nueva información sobre libros. Si va usted en avión no podrá llevar mucho equipaje."
             ],
             [
-                "Él tenía curiosidad de que sabor tendría así que le dio una pequeña mordida." .
-                "Nada indica que se hará algo al respecto."
+                "Él tenía curiosidad de que sabor tendría así que le dio una pequeña mordida. Nada indica que se hará algo al respecto."
             ],
             [
-                "Mientras caminaba tintineaba repiqueteaba y cascabeleaba mucho." .
-                "Lo primero que tienes que hacer en un examen es escribir tu nombre."
+                "Según Heródoto el faraón quería conocer el idioma original de la humanidad. Lo primero que tienes que hacer en un examen es escribir tu nombre."
             ],
             [
-                "La suave luz de la tarde otoñal acaricia tiernamente mi rostro." .
-                "Yo conozco a una chica francesa que habla muy bien el japonés."
+                "La suave luz de la tarde otoñal acaricia tiernamente mi rostro. Yo conozco a una chica francesa que habla muy bien el japonés."
             ],
         ];
     }
