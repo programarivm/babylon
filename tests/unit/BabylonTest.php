@@ -98,6 +98,15 @@ class BabylonTest extends TestCase
     }
 
     /**
+     * @dataProvider ronData
+     * @test
+     */
+    public function detect_ron($phrase)
+    {
+        $this->assertEquals('ron', (new Babylon)->detect($phrase));
+    }
+
+    /**
      * @dataProvider spaData
      * @test
      */
@@ -363,6 +372,32 @@ class BabylonTest extends TestCase
             [
                 "Se você me ensinar como dançar eu te mostrarei minhas cicatrizes escondidas." .
                 "João nunca mais teve um cachorro depois de ser mordido pelo que cuidava."
+            ],
+        ];
+    }
+
+    public function ronData()
+    {
+        return [
+            [
+                "Casa era înconjurată de lanuri. Ne-am petrecut timpul într-o cafenea. Ăsta e perfect." .
+                "Mătuşa lui are grijă de câinele lui în timpul zilei. Ești trist? Făceţi-vă temele acum."
+            ],
+            [
+                "Mătuşa lui are grijă de câinele lui în timpul zilei. Ești trist?" .
+                "Ăsta e perfect. Făceţi-vă temele acum."
+            ],
+            [
+                "Fiecare persoană contează. Eşti bine? Nu pot vedea nimic." .
+                "Fumătorii vor dezvolta mult mai probabil cancer la plămâni decât nefumătorii."
+            ],
+            [
+                "El profită cât mai mult de ocaziile ivite. Noi întrebăm profesorul în fiecare zi." .
+                "Probabil că ea este nevinovată."
+            ],
+            [
+                "Pentru ora următoare vreau de la voi să transcrieți versurile oricărui" .
+                "cântăreț atât timp cât este în limba engleză."
             ],
         ];
     }
