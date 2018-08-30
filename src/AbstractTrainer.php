@@ -6,8 +6,6 @@ use Phpml\ModelManager;
 
 class AbstractTrainer
 {
-    const TRAINING_FILE = __DIR__ . '/../dataset/output.csv';
-
     protected $samples;
 
     protected $labels;
@@ -15,6 +13,8 @@ class AbstractTrainer
     protected $pipeline;
 
     protected $modelManager;
+
+    protected $trainFilepath;
 
     protected $modelFilepath;
 
@@ -34,7 +34,7 @@ class AbstractTrainer
 
     private function prepare(): AbstractTrainer
     {
-        $file = fopen(self::TRAINING_FILE, 'r');
+        $file = fopen($this->trainFilepath, 'r');
         while (($line = fgetcsv($file)) !== false) {
             $this->labels[] = $line[0];
             $this->samples[] = $line[1];

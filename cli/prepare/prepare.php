@@ -1,5 +1,7 @@
 <?php
 
+namespace Babylon\Cli\Prepare;
+
 use Babylon\File\TxtStats;
 
 const OUTPUT_FILE = 'output.csv';

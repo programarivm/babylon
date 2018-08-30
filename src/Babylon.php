@@ -6,7 +6,13 @@ use Phpml\ModelManager;
 
 class Babylon
 {
-    const MODEL_FILEPATH = __DIR__ . '/../models/naive-bayes.txt';
+    const FAMILY_AUSTRONESIAN   = 'austronesian';
+    const FAMILY_GERMANIC       = 'germanic';
+    const FAMILY_ROMANCE        = 'romance';
+    const FAMILY_SLAVIC         = 'slavic';
+    const FAMILY_URALIC         = 'uralic';
+
+    const MODEL_FILEPATH        = __DIR__ . '/../models/naive-bayes.txt';
 
     protected $restoredClassifier;
 
