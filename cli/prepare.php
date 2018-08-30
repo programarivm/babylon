@@ -4,7 +4,7 @@ use Babylon\File\TxtStats;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-const DATA_INPUT_FOLDER 	= __DIR__ . '/../dataset/input/iso-8859';
+const DATA_INPUT_FOLDER 	= __DIR__ . '/../dataset/input/iso-8859/latin';
 const DATA_OUTPUT_FOLDER 	= __DIR__ . '/../dataset';
 const OUTPUT_FILE 			= 'output.csv';
 
