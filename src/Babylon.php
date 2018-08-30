@@ -6,7 +6,13 @@ use Phpml\ModelManager;
 
 class Babylon
 {
-    const MODEL_FILEPATH = __DIR__ . '/../models/svc.txt';
+    const FAMILY_AUSTRONESIAN   = 'austronesian';
+    const FAMILY_GERMANIC       = 'germanic';
+    const FAMILY_ROMANCE        = 'romance';
+    const FAMILY_SLAVIC         = 'slavic';
+    const FAMILY_URALIC         = 'uralic';
+
+    const MODEL_FILEPATH        = __DIR__ . '/../models/naive-bayes.txt';
 
     protected $restoredClassifier;
 
@@ -19,10 +25,9 @@ class Babylon
         $this->restoredClassifier = $this->modelManager->restoreFromFile(self::MODEL_FILEPATH);
     }
 
-    public function detect(string $text)
+    public function detect(string $text): string
     {
-        // TODO filter
-        $text = mb_strtolower($text);
+        $text = Filter::phrase($text);
         $lang = current($this->restoredClassifier->predict([$text]));
 
         return $lang;
