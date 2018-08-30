@@ -6,6 +6,6 @@ use Babylon\Babylon;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$babylon = new Babylon;
+$isoCode = (new Babylon($argv[1]))->detect();
 
-echo $babylon->detect($argv[1]) . PHP_EOL;
+echo $isoCode . PHP_EOL;

@@ -12,18 +12,18 @@ class BabylonSlavicTest extends TestCase
      * @dataProvider cesData
      * @test
      */
-    public function detect_ces($phrase)
+    public function detect_ces($text)
     {
-        $this->assertEquals('ces', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('ces', (new Babylon($text))->detect();
     }
 
     /**
      * @dataProvider polData
      * @test
      */
-    public function detect_pol($phrase)
+    public function detect_pol($text)
     {
-        $this->assertEquals('pol', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('pol', (new Babylon($text))->detect();
     }
 
     public function cesData()

@@ -12,45 +12,45 @@ class BabylonRomanceTest extends TestCase
      * @dataProvider fraData
      * @test
      */
-    public function detect_fra($phrase)
+    public function detect_fra($text)
     {
-        $this->assertEquals('fra', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('fra', (new Babylon($text))->detect();
     }
 
     /**
      * @dataProvider itaData
      * @test
      */
-    public function detect_ita($phrase)
+    public function detect_ita($text)
     {
-        $this->assertEquals('ita', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('ita', (new Babylon($text))->detect();
     }
 
     /**
      * @dataProvider porData
      * @test
      */
-    public function detect_por($phrase)
+    public function detect_por($text)
     {
-        $this->assertEquals('por', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('por', (new Babylon($text))->detect();
     }
 
     /**
      * @dataProvider ronData
      * @test
      */
-    public function detect_ron($phrase)
+    public function detect_ron($text)
     {
-        $this->assertEquals('ron', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('ron', (new Babylon($text))->detect();
     }
 
     /**
      * @dataProvider spaData
      * @test
      */
-    public function detect_spa($phrase)
+    public function detect_spa($text)
     {
-        $this->assertEquals('spa', (new Babylon)->detect(Filter::phrase(Filter::phrase($phrase))));
+        $this->assertEquals('spa', (new Babylon($text))->detect();
     }
 
     public function fraData()

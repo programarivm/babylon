@@ -12,11 +12,11 @@ class BabylonAustronesianTest extends TestCase
      * @dataProvider tglData
      * @test
      */
-    public function detect_tgl($phrase)
+    public function detect_tgl($text)
     {
-        $this->assertEquals('tgl', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('tgl', (new Babylon($text))->detect();
     }
-    
+
     public function tglData()
     {
         return [

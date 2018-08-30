@@ -12,18 +12,18 @@ class BabylonUralicTest extends TestCase
      * @dataProvider finData
      * @test
      */
-    public function detect_fin($phrase)
+    public function detect_fin($text)
     {
-        $this->assertEquals('fin', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('fin', (new Babylon($text))->detect();
     }
 
     /**
      * @dataProvider hunData
      * @test
      */
-    public function detect_hun($phrase)
+    public function detect_hun($text)
     {
-        $this->assertEquals('hun', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('hun', (new Babylon($text))->detect();
     }
 
     public function finData()

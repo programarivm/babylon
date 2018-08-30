@@ -12,24 +12,37 @@ class Babylon
     const FAMILY_SLAVIC         = 'slavic';
     const FAMILY_URALIC         = 'uralic';
 
-    const MODEL_FILEPATH        = __DIR__ . '/../models/naive-bayes.txt';
+    protected $text;
+
+    protected $langFamily
+
+    protected $modelFilepath;
 
     protected $restoredClassifier;
 
     protected $modelManager;
 
-    public function __construct()
+    public function __construct(string $text)
     {
+        $this->text = Filter::phrase($text);
+        $this->langFamily = $this->langFamily($this->text);
+        $this->modelFilepath = __DIR__ . "/../models/iso-8859/$langFamily/naive-bayes.txt";
         $this->modelManager = new ModelManager();
 
-        $this->restoredClassifier = $this->modelManager->restoreFromFile(self::MODEL_FILEPATH);
+        $this->restoredClassifier = $this->modelManager->restoreFromFile($this->modelFilepath);
     }
 
-    public function detect(string $text): string
+    public function detect(): string
     {
-        $text = Filter::phrase($text);
-        $lang = current($this->restoredClassifier->predict([$text]));
+        $isoCode = $this->restoredClassifier->predict([$this->text]);
 
-        return $lang;
+        return $isoCode;
+    }
+
+    private function langFamily()
+    {
+        // TODO:
+
+        return true;
     }
 }
