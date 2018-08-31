@@ -118,7 +118,7 @@ class GermanicTest extends TestCase
                 en að endingu vil eg benda þér á, hvað mörgum hættir við að misbeita
                 því. Það er t.d. ekki sjaldgæft í samkvæmum að heyra menn slá sig til
                 riddara með hinum og þessum afrekssögum um sjálfa sig. Þetta hendir
-                jafnvel hina gáfuðustu menn. En slíkar sögur missa marks."
+                jafnvel hina gáfuðustu menn."
             ],
         ];
     }
@@ -131,7 +131,7 @@ class GermanicTest extends TestCase
                 invloed op Julianus heeft uitgeoefend, dat deze het Christendom den rug
                 toekeerde en de oude religie in eere trachtte te herstellen, blijkt ook
                 uit de verhalen die dienaangaande bij de Christenen in omloop waren. Wij
-                geven hier aan een tijdgenoot, den kerkvader Gregorius van Nazianze."
+                geven hier aan een tijdgenoot."
             ],
         ];
     }
@@ -156,9 +156,7 @@ class GermanicTest extends TestCase
                 "Han steg upp. Då först märkte han att han hade ett täcke över sig som ej
                 funnits där kvällen förut. Han tittade i Terjes säng: där fanns intet
                 täcke kvar. “Husfadern“ hade kastat det över främlingen då han gick.
-                David begrep att denne Terje var en beprövad man, som ögonblickligen
-                kunde avgöra med vem han hade att göra. Och dock förekom denna hastiga
-                bekantskap honom som ett rent under."
+                David begrep att denne Terje var en beprövad man."
             ],
         ];
     }
