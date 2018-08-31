@@ -1,6 +1,6 @@
 <?php
 
-namespace Babylon\Tests\Unit\Language;
+namespace Babylon\Tests\Unit\Family;
 
 use Babylon\Family\Family;
 use PHPUnit\Framework\TestCase;
@@ -74,19 +74,10 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "Du beskyldte ham for at have stjålet cyklen. Drengen har mistet sit øre i en gadekamp."
-            ],
-            [
-                "Alle drengene løb væk. Væk! Vi har ikke brug for mennesker af din slags."
-            ],
-            [
-                "Jeg har brug for en nedstryger for at kunne færdiggøre dette arbejde. Dine brødre er særdeles gode i skolen."
-            ],
-            [
-                "I mit ur er fjederen gået i stykker. Vær så venlig at vise mig vejen til stationen."
-            ],
-            [
-                "På grund af mine korte ben er jeg nødt til at lægge alle de benklæder jeg køber op. Græd ikke. Gråd løser ikke noget."
+                "Hun var et af Jomfru Buxboms allerinteressanteste og paa en vis Maade
+                allerfineste Bekjendtskaber; hun sagde vi om Herskabet, kunde
+                fortælle om Baller, hvor der kom Prinser og Prinsesser, og vidste paa
+                en Prik, om Damerne for Tiden brugte rundt eller firkantet Slæb."
             ],
         ];
     }
@@ -95,19 +86,10 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "Ich werde es später gründlich nachschlagen und dir mailen. Ein gutes Sonderangebot hat gewöhnlich einen guten Profit für den Verkäufer zur Folge."
-            ],
-            [
-                "Sie nahm es mit der Wahrheit nicht so genau. Wenn es um Ernährung und Gesundheit geht gibt es keine Kompromisse."
-            ],
-            [
-                "Tom ist ein Romantiker der zu seinem Vergnügen Käse so herstellt wie es die Großmutter tat. Sie kümmerte sich gern um die Kinder."
-            ],
-            [
-                "Er ist ein Mann den man nicht unterschätzen sollte. Es braucht mindestens ein ganzes Dorf damit ein Kind groß wird."
-            ],
-            [
-                "Gott ist Geist und die ihn anbeten die müssen ihn im Geist und in der Wahrheit anbeten. Warum häufst du in deiner Wohnung jedweden Abfall an?"
+                "Da schritt der Zachenhesselhans zum Hackstock, um den Fichtenstamm zur
+                Stütze für die östliche Giebelwand zu glätten. Wie der Schlag der Axt
+                erklang und aus dem Walde zurückrief, lief ein Lächeln über des Alten
+                Gesicht:"
             ],
         ];
     }
@@ -116,19 +98,11 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "Mary thought she might not be permitted to do that at night. Even if you're going through hard times."
-            ],
-            [
-                "He has the most international caps but there are better players in the squad. Impossible things happen."
-            ],
-            [
-                "Have you seen Tom this morning? I tried Buddhist meditation but I fell asleep through the session."
-            ],
-            [
-                "Sami was born and raised on the quiet streets of a small town. I already told them that."
-            ],
-            [
-                "Close the window before you leave. Before we wrap up we'll take some questions from the audience."
+                "As he spoke, his nimble fingers were flying here, there, and everywhere,
+                feeling, pressing, unbuttoning, examining, while his eyes wore the same
+                far-away expression which I have already remarked upon. So swiftly was
+                the examination made, that one would hardly have guessed the minuteness
+                with which it was conducted."
             ],
         ];
     }
@@ -137,13 +111,10 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "Tókíó sem er stærsta borgin í Japan er vakandi allan sólarhringinn. Á þriðjudaginn var virkilega kalt. Það er undir stólnum."
-            ],
-            [
-                "Hún safnaði hundrað dollurum. Tom var ekki með. Takk fyrir að hafa komið. Farðu á markaðinn! Helvítis hvað ertu að gera? Þau giftast í næsta mánuði."
-            ],
-            [
-                "Allt sem þú sagðir í tölvupóstinum er rétt að verðinu undanskildu. Þar sem hún er skrifuð á einfaldri ensku er bókin auðlesin. Bíllinn minn fer ekki í gang."
+                "Kurteisi er eitt af því, sem konur meta mikils. Konan krefst þess, að
+                henni sé veitt eftirtekt, að tekið sé tillit til hennar og henni sýnd
+                kurteisi. En of mikið af öllu má þó gera, og of mikil kurteisi er
+                hlægileg. Og karlmaður má aldrei gera sig hlægilegan í konuaugum."
             ],
         ];
     }
@@ -152,19 +123,10 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "Iedere man met een haarstukje heeft angst voor winderige dagen. Ik zou graag weten hoe je aan mijn telefoonnummer geraakt bent."
-            ],
-            [
-                "Met de ogen zien we kijken we observeren we en lezen we. Gisteren zijn mijn vrouw en ik naar het theater geweest."
-            ],
-            [
-                "Een persoon kan een ander persoon nooit helemaal begrijpen. De politie zal straks aankomen op de plaats van de misdaad."
-            ],
-            [
-                "Niets houdt een man zo kwiek als een jonge echtgenote en oude vijanden. Wie een hond wil slaan vindt altijd een stok."
-            ],
-            [
-                "Ik had het gevoel dat ik moest huilen toen ik het nieuws hoorde. Het valt te betwijfelen of deze methode zal werken."
+                "In de tweede helft der tweede eeuw n. Chr. heeft het ongeloof nog wel
+                eenige voorstanders onder de wijsgeeren, maar het moet hoe langer hoe
+                meer zwichten voor de onweerstaanbare macht der pythagoreïsche en
+                platonische philosophie."
             ],
         ];
     }
@@ -173,19 +135,11 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "Jeg var ikke lenge der. Hun tar etter sin mor. Alle guttene er jevngamle. Pennen er på pulten. Enkelte sier at dersom du tråkker på en meitemark så begynner det å regne."
-            ],
-            [
-                "De hadde et gammeldags system som de har flikket på i årevis og det ble mer og mer vanskeligere å finne kompetansen til å videreutvikle det."
-            ],
-            [
-                "Hva som er bra er bra og hva som er best er det beste. Jeg gjemte meg i skapet. Hva skal jeg kjøpe? Det var ingen respons. Tom døde i sin velmakt."
-            ],
-            [
-                "Tre timer senere slentret kongen rundt om i slottet etter noe å ta opp tiden med. Faen som jeg kjeder meg klaget han fortvilet."
-            ],
-            [
-                "En dag spurte hun om jeg ville bli med henne hjem etter skoletid."
+                "Oline syntes vel ikke at Stunden var til at spøke i, aa hun selv var
+                blit saa snytt og endog ved Gammel-Sivert sin Kiste hadde hun opbydd al
+                sin seige Kraft og graatt Taarer. Eleseus visste jo selv bedst hvad han
+                hadde skrevet: saa og saa meget til Oline, en Støttestav i hendes
+                Alderdom -- hvor var Staven blit av? Lagt over et Knæ og brutt."
             ],
         ];
     }
@@ -194,19 +148,10 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "De gjorde det hett för henne. En kvinna vars man har dött är en änka. Du dricker för mycket kaffe. Hur kunde Tom veta det?"
-            ],
-            [
-                "Det är min cd-skiva. Vi kommer aldrig att ge upp kampen om lika rättigheter. Jag tror inte att det kommer att regna i eftermiddag."
-            ],
-            [
-                "Hur lång ledighet kommer du att ha i jul? Mary kom inte hem igår kväll. Var god fyll i enkäten och skicka in den till oss."
-            ],
-            [
-                "Denna punkt förtjänar särskild emfas. Han gjorde det i avsaknad av bättre vetande. Denna grusväg ska inom kort asfalteras."
-            ],
-            [
-                "Markku bestämde att han inte skulle stå till tjänst nästa gång och inte någon annan gång heller. Te är en populär dryck över hela världen."
+                "Till svar snurrade mannen nästan runt, stannade sedan och stirrade
+                enfaldigt på David. Hans ansikte blev med ens mycket rött. Vem säger så?
+                frågade han nära på ödmjukt, med ett steg åt sidan som om han varit
+                rädd."
             ],
         ];
     }

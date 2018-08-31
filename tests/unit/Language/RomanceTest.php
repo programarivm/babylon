@@ -14,7 +14,7 @@ class RomanceTest extends TestCase
      */
     public function detect_fra($text)
     {
-        $this->assertEquals('fra', (new Language($text))->detect();
+        $this->assertEquals('fra', (new Language($text))->detect());
     }
 
     /**
@@ -23,7 +23,7 @@ class RomanceTest extends TestCase
      */
     public function detect_ita($text)
     {
-        $this->assertEquals('ita', (new Language($text))->detect();
+        $this->assertEquals('ita', (new Language($text))->detect());
     }
 
     /**
@@ -32,7 +32,7 @@ class RomanceTest extends TestCase
      */
     public function detect_por($text)
     {
-        $this->assertEquals('por', (new Language($text))->detect();
+        $this->assertEquals('por', (new Language($text))->detect());
     }
 
     /**
@@ -41,7 +41,7 @@ class RomanceTest extends TestCase
      */
     public function detect_ron($text)
     {
-        $this->assertEquals('ron', (new Language($text))->detect();
+        $this->assertEquals('ron', (new Language($text))->detect());
     }
 
     /**
@@ -50,26 +50,18 @@ class RomanceTest extends TestCase
      */
     public function detect_spa($text)
     {
-        $this->assertEquals('spa', (new Language($text))->detect();
+        $this->assertEquals('spa', (new Language($text))->detect());
     }
 
     public function fraData()
     {
         return [
             [
-                "Que vous sachiez tous que vous pouvez compter sur moi. Une fête de bienvenue a été organisée."
-            ],
-            [
-                "J'avais oublié à quel point il pouvait être insupportable. Je penserai chaque jour à vous pendant que je serai au loin."
-            ],
-            [
-                "Je suis allé à Boston en voyage d'affaires pendant cinq jours. C'est ce que tu crains le plus n'est-ce pas?"
-            ],
-            [
-                "Ce qui m'a le plus surpris c'est que j'étais le seul à me faire virer. Une compresse glacée soulage mon mal de tête."
-            ],
-            [
-                "Je te raconterai ce que j'ai fait aujourd'hui. J'ai écrit mon nom sur la feuille."
+                "Entre autres, une feuille de papier, pliée avec soin, portait
+                l'entête de la chancellerie danoise, avec la signature de
+                M. Christiensen, consul à Hambourg et l'ami du professeur. Cela
+                devait nous donner toute facilité d'obtenir à Copenhague des
+                recommandations pour le gouverneur de l'Islande."
             ],
         ];
     }
@@ -78,19 +70,10 @@ class RomanceTest extends TestCase
     {
         return [
             [
-                "Lei ha decorato il suo quaderno con involucri di gomma in modo che la copertina fosse tutta lucida. È impossibile dimostrare che è possibile."
-            ],
-            [
-                "La mia macchina fotografica è diversa dalla vostra. Lui cercò di trovare una motivazione per le sue azioni insensate."
-            ],
-            [
-                "Non bisogna mai dare la prevalenza ad un testo piuttosto che ad un altro. Chaucer e Boccaccio sono due scrittori. Il primo è inglese  il secondo è italiano."
-            ],
-            [
-                "Tom proverà a convincere Mary ad accettare la vostra offerta. Lo spettacolo era così noioso che io e Ann ci siamo addormentati."
-            ],
-            [
-                "Di certo non sarebbe male rendere più stretti e severi i controlli non ti pare? La Commissione chiede allo Stato italiano di fornire alcuni chiarimenti su una legge."
+                "— Via, mi fate perdere il filo con le vostre malignità. Che cosa
+                dicevo? Ah dicevo che gli sforzi fatti per addomesticarlo erano
+                falliti, che non era stato possibile di renderlo soggetto alle
+                debolezze della sua età! A ventitrè anni, egli era."
             ],
         ];
     }
@@ -99,19 +82,9 @@ class RomanceTest extends TestCase
     {
         return [
             [
-                "Passamos o dia todo tentando provar quem estava certo. É um músico experiente escreveu mais de quinhentas canções."
-            ],
-            [
-                "A música é a língua universal da humanidade — a poesia seu passatempo e prazer universais. Tom foi pego colando na prova e expulso da escola."
-            ],
-            [
-                "Um otimista é alguém que sabe precisamente o quanto o mundo pode ser triste enquanto. Eu só estou fazendo isso pelo seu próprio bem."
-            ],
-            [
-                "Eu adoraria ir com vocês mas não tenho dinheiro algum. Acho que os ovos que acabo de comer estavam podres."
-            ],
-            [
-                "Se você me ensinar como dançar eu te mostrarei minhas cicatrizes escondidas. João nunca mais teve um cachorro depois de ser mordido pelo que cuidava."
+                "Torvos luaceiros cardavam sobre as coisas, aspectos pardos e monacaes,
+                d'esse tom vago, inquietador, inexplicavel, que permitte á imaginação
+                de agigantar o que apenas entrevê."
             ],
         ];
     }
@@ -120,19 +93,10 @@ class RomanceTest extends TestCase
     {
         return [
             [
-                "Casa era înconjurată de lanuri. Ne-am petrecut timpul într-o cafenea. Ăsta e perfect. Mătuşa lui are grijă de câinele lui în timpul zilei. Ești trist? Făceţi-vă temele acum."
-            ],
-            [
-                "Mătuşa lui are grijă de câinele lui în timpul zilei. Ești trist? Ăsta e perfect. Făceţi-vă temele acum."
-            ],
-            [
-                "Fiecare persoană contează. Eşti bine? Nu pot vedea nimic. Fumătorii vor dezvolta mult mai probabil cancer la plămâni decât nefumătorii."
-            ],
-            [
-                "El profită cât mai mult de ocaziile ivite. Noi întrebăm profesorul în fiecare zi. Probabil că ea este nevinovată."
-            ],
-            [
-                "Pentru ora următoare vreau de la voi să transcrieți versurile oricărui cântăreț atât timp cât este în limba engleză."
+                "Pe pareti cu colb, pe podul cu lungi panze de painjen
+                Roiesc plosnitele rosii, de ti-i drag sa te-uiti la ele!
+                Greu li-i de mindir de paie, si apoi din biata-mi piele
+                Nici ca au ce sa mai suga. - Intr-un roi mai de un stanjen"
             ],
         ];
     }
@@ -141,19 +105,9 @@ class RomanceTest extends TestCase
     {
         return [
             [
-                "En el supermercado de la esquina se vende la fruta a un precio muy bueno. La decisión será incluso más difícil cuanto más la demores."
-            ],
-            [
-                "De vez en cuando él va a la biblioteca para obtener nueva información sobre libros. Si va usted en avión no podrá llevar mucho equipaje."
-            ],
-            [
-                "Él tenía curiosidad de que sabor tendría así que le dio una pequeña mordida. Nada indica que se hará algo al respecto."
-            ],
-            [
-                "Según Heródoto el faraón quería conocer el idioma original de la humanidad. Lo primero que tienes que hacer en un examen es escribir tu nombre."
-            ],
-            [
-                "La suave luz de la tarde otoñal acaricia tiernamente mi rostro. Yo conozco a una chica francesa que habla muy bien el japonés."
+                "Mientras se hablaba de lo mucho bueno que había en la catedral y el
+                lugareño se pasmaba y su señora repetía aquellas admiraciones, Obdulia
+                se miraba como podía, en las altas cornucopias."
             ],
         ];
     }
