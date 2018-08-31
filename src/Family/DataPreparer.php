@@ -35,7 +35,7 @@ class DataPreparer
         return $this->mssg.'Operation completed.'.PHP_EOL;
     }
 
-    public function prepareCsvLine($file)
+    private function prepareCsvLine($file)
     {
         $csvLine = pathinfo($file, PATHINFO_FILENAME).',';
         if ($iFile = fopen(self::INPUT_FOLDER.'/'.$file, 'r')) {
@@ -44,9 +44,14 @@ class DataPreparer
                 isset($exploded[1]) ? $csvLine .= $exploded[1].' ' : false;
             }
             fclose($iFile);
-            return trim($csvLine);
+            return $this->removeDuplicates(trim($csvLine));
         }
 
         return false;
+    }
+
+    private function removeDuplicates(string $text)
+    {
+        return implode(' ',array_unique(explode(' ', $text)));
     }
 }
