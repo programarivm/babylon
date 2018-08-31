@@ -15,9 +15,9 @@ class NaiveBayesTrainer extends AbstractTrainer
     {
         parent::__construct();
 
-        $this->trainFilepath = __DIR__ . "/../dataset/output/iso-8859-latin-family.csv";
+        $this->trainFilepath = __DIR__ . "/../../dataset/output/iso-8859-latin-family.csv";
 
-        $this->modelFilepath = __DIR__ . "/../models/iso-8859-latin-family.txt";
+        $this->modelFilepath = __DIR__ . "/../../models/iso-8859-latin-family.txt";
 
         $this->pipeline = new Pipeline([
             new TokenCountVectorizer(new WordTokenizer()),

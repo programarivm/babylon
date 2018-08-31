@@ -13,3 +13,5 @@ require_once __DIR__ . '/../vendor/autoload.php';
 (new LanguageTrainer(Family::ROMANCE))->train();
 (new LanguageTrainer(Family::SLAVIC))->train();
 (new LanguageTrainer(Family::URALIC))->train();
+
+(new FamilyTrainer())->train();
