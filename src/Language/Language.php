@@ -2,13 +2,13 @@
 
 namespace Babylon\Language;
 
+use Babylon\Family\Family;
+use Babylon\Filter;
 use Phpml\ModelManager;
 
 class Language
 {
     protected $text;
-
-    protected $langFamily;
 
     protected $modelFilepath;
 
@@ -19,8 +19,8 @@ class Language
     public function __construct(string $text)
     {
         $this->text = Filter::phrase($text);
-        $this->langFamily = $this->langFamily($this->text);
-        $this->modelFilepath = __DIR__ . "/../models/iso-8859/$langFamily/naive-bayes.txt";
+        $langFamily = $this->langFamily($this->text);
+        $this->modelFilepath = __DIR__ . "/../../models/iso-8859/$langFamily.txt";
         $this->modelManager = new ModelManager();
 
         $this->restoredClassifier = $this->modelManager->restoreFromFile($this->modelFilepath);
@@ -28,15 +28,13 @@ class Language
 
     public function detect(): string
     {
-        $isoCode = $this->restoredClassifier->predict([$this->text]);
+        $isoCode = current($this->restoredClassifier->predict([$this->text]));
 
         return $isoCode;
     }
 
     private function langFamily(string $text): string
     {
-        // TODO:
-
-        return true;
+        return (new Family($text))->detect();
     }
 }
