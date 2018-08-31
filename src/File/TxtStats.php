@@ -14,7 +14,7 @@ use Babylon\Filter;
  */
 class TxtStats extends AbstractFile
 {
-	const N_FREQ_WORDS = 70;
+	const N_FREQ_WORDS = 80;
 
 	/**
      * Words in the file (lowercased).
