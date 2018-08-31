@@ -17,28 +17,23 @@ class TxtStatsTest extends TestCase
     {
         $txtStats = new TxtStats(self::DATA_FOLDER."/$filename");
 
-        $this->assertEquals($freqWords, array_slice($txtStats->freqWords(), 0, 15));
+        $this->assertEquals($freqWords, array_slice($txtStats->freqWords(), 0, 10));
     }
 
     public function txtData()
     {
         return [
             ['eng.txt', [
-                'the' => 2535,
-                'and' => 1355,
-                'of' => 1210,
-                'to' => 1091,
-                'a' => 993,
-                'i' => 888,
-                'he' => 792,
-                'in' => 729,
-                'that' => 652,
-                'was' => 650,
-                'his' => 648,
-                'it' => 571,
-                'had' => 476,
-                'you' => 441,
-                'with' => 336,
+                'the' => 2538,
+                'and' => 1363,
+                'of' => 1211,
+                'to' => 1101,
+                'a' => 1007,
+                'i' => 930,
+                'he' => 802,
+                'in' => 732,
+                'that' => 673,
+                'was' => 651,
             ]],
         ];
     }
