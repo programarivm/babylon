@@ -87,10 +87,11 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "Da schritt der Zachenhesselhans zum Hackstock, um den Fichtenstamm zur
-                Stütze für die östliche Giebelwand zu glätten. Wie der Schlag der Axt
-                erklang und aus dem Walde zurückrief, lief ein Lächeln über des Alten
-                Gesicht:"
+                "Und wenn alles nach Euren Spitzen schrie, was nicht mehr sein kann
+                und niemals mehr sein wird, weil die Maschinen da sind, so werden die
+                Zwischenhändler doch fett dabei und Ihr? Die Finger klöppelt Ihr Euch
+                ab, und die Augen schaut Ihr Euch aus dabei, und den Hunger werdet Ihr
+                nicht los vor dem Klöppelsacke!"
             ],
         ];
     }
@@ -112,10 +113,12 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "Kurteisi er eitt af því, sem konur meta mikils. Konan krefst þess, að
-                henni sé veitt eftirtekt, að tekið sé tillit til hennar og henni sýnd
-                kurteisi. En of mikið af öllu má þó gera, og of mikil kurteisi er
-                hlægileg. Og karlmaður má aldrei gera sig hlægilegan í konuaugum."
+                "Þú hefir nú heyrt, hversu mentun og víðsýni eru gott vopn í höndum
+                karlmanna, þegar þeir ætla að vinna hinn ramgerva kastala: konuhjartað,
+                en að endingu vil eg benda þér á, hvað mörgum hættir við að misbeita
+                því. Það er t.d. ekki sjaldgæft í samkvæmum að heyra menn slá sig til
+                riddara með hinum og þessum afrekssögum um sjálfa sig. Þetta hendir
+                jafnvel hina gáfuðustu menn. En slíkar sögur missa marks."
             ],
         ];
     }
@@ -124,10 +127,11 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "In de tweede helft der tweede eeuw n. Chr. heeft het ongeloof nog wel
-                eenige voorstanders onder de wijsgeeren, maar het moet hoe langer hoe
-                meer zwichten voor de onweerstaanbare macht der pythagoreïsche en
-                platonische philosophie."
+                "Dat Maximus inzonderheid door magische kunsten zulk een ontzaglijken
+                invloed op Julianus heeft uitgeoefend, dat deze het Christendom den rug
+                toekeerde en de oude religie in eere trachtte te herstellen, blijkt ook
+                uit de verhalen die dienaangaande bij de Christenen in omloop waren. Wij
+                geven hier aan een tijdgenoot, den kerkvader Gregorius van Nazianze."
             ],
         ];
     }
@@ -149,10 +153,12 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "Till svar snurrade mannen nästan runt, stannade sedan och stirrade
-                enfaldigt på David. Hans ansikte blev med ens mycket rött. Vem säger så?
-                frågade han nära på ödmjukt, med ett steg åt sidan som om han varit
-                rädd."
+                "Han steg upp. Då först märkte han att han hade ett täcke över sig som ej
+                funnits där kvällen förut. Han tittade i Terjes säng: där fanns intet
+                täcke kvar. “Husfadern“ hade kastat det över främlingen då han gick.
+                David begrep att denne Terje var en beprövad man, som ögonblickligen
+                kunde avgöra med vem han hade att göra. Och dock förekom denna hastiga
+                bekantskap honom som ett rent under."
             ],
         ];
     }
