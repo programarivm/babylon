@@ -34,12 +34,16 @@ class AbstractTrainer
 
     private function prepare(): AbstractTrainer
     {
-        $file = fopen($this->trainFilepath, 'r');
-        while (($line = fgetcsv($file)) !== false) {
-            $this->labels[] = $line[0];
-            $this->samples[] = $line[1];
+        if ($file = fopen($this->trainFilepath, 'r')) {
+            while (!feof($file)) {
+                $line = fgetcsv($file);
+                if (!empty($line[0]) && !empty($line[1])) {
+                    $this->labels[] = $line[0];
+                    $this->samples[] = $line[1];
+                }
+            }
+            fclose($file);
         }
-        fclose($file);
 
         return $this;
     }

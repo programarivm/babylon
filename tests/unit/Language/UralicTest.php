@@ -1,29 +1,29 @@
 <?php
 
-namespace Babylon\Tests;
+namespace Babylon\Tests\Unit\Language;
 
-use Babylon\Babylon;
 use Babylon\Filter;
+use Babylon\Language\Language;
 use PHPUnit\Framework\TestCase;
 
-class BabylonUralicTest extends TestCase
+class UralicTest extends TestCase
 {
     /**
      * @dataProvider finData
      * @test
      */
-    public function detect_fin($phrase)
+    public function detect_fin($text)
     {
-        $this->assertEquals('fin', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('fin', (new Language($text))->detect();
     }
 
     /**
      * @dataProvider hunData
      * @test
      */
-    public function detect_hun($phrase)
+    public function detect_hun($text)
     {
-        $this->assertEquals('hun', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('hun', (new Language($text))->detect();
     }
 
     public function finData()

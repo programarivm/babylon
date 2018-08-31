@@ -2,8 +2,9 @@
 
 namespace Babylon\Cli;
 
-use Babylon\Babylon;
-use Babylon\DataPreparer;
+use Babylon\Language\DataPreparer as LanguageDataPreparer;
+use Babylon\Family\DataPreparer as FamilyDataPreparer;
+use Babylon\Family\Family;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -18,8 +19,10 @@ if (trim($line) != 'Y' && trim($line) != 'y') {
 }
 fclose($handle);
 
-(new DataPreparer(Babylon::FAMILY_AUSTRONESIAN))->prepare();
-(new DataPreparer(Babylon::FAMILY_GERMANIC))->prepare();
-(new DataPreparer(Babylon::FAMILY_ROMANCE))->prepare();
-(new DataPreparer(Babylon::FAMILY_SLAVIC))->prepare();
-(new DataPreparer(Babylon::FAMILY_URALIC))->prepare();
+echo (new LanguageDataPreparer(Family::AUSTRONESIAN))->prepare();
+echo (new LanguageDataPreparer(Family::GERMANIC))->prepare();
+echo (new LanguageDataPreparer(Family::ROMANCE))->prepare();
+echo (new LanguageDataPreparer(Family::SLAVIC))->prepare();
+echo (new LanguageDataPreparer(Family::URALIC))->prepare();
+
+echo (new FamilyDataPreparer)->prepare();

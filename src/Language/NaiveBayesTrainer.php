@@ -1,7 +1,8 @@
 <?php
 
-namespace Babylon;
+namespace Babylon\Language;
 
+use Babylon\AbstractTrainer;
 use Babylon\Exception\LanguageFamilyException;
 use Babylon\Validator;
 use Phpml\Pipeline;
@@ -18,9 +19,9 @@ class NaiveBayesTrainer extends AbstractTrainer
 
         parent::__construct();
 
-        $this->trainFilepath = __DIR__ . "/../dataset/output/iso-8859/latin/$langFamily.csv";
+        $this->trainFilepath = __DIR__ . "/../../dataset/output/iso-8859/latin/$langFamily.csv";
 
-        $this->modelFilepath = __DIR__ . "/../models/iso-8859/$langFamily/naive-bayes.txt";
+        $this->modelFilepath = __DIR__ . "/../../models/iso-8859/$langFamily.txt";
 
         $this->pipeline = new Pipeline([
             new TokenCountVectorizer(new WordTokenizer()),

@@ -1,22 +1,22 @@
 <?php
 
-namespace Babylon\Tests;
+namespace Babylon\Tests\Unit\Language;
 
-use Babylon\Babylon;
 use Babylon\Filter;
+use Babylon\Language\Language;
 use PHPUnit\Framework\TestCase;
 
-class BabylonAustronesianTest extends TestCase
+class AustronesianTest extends TestCase
 {
     /**
      * @dataProvider tglData
      * @test
      */
-    public function detect_tgl($phrase)
+    public function detect_tgl($text)
     {
-        $this->assertEquals('tgl', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('tgl', (new Language($text))->detect();
     }
-    
+
     public function tglData()
     {
         return [

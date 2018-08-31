@@ -14,6 +14,8 @@ use Babylon\Filter;
  */
 class TxtStats extends AbstractFile
 {
+	const N_FREQ_WORDS = 80;
+
 	/**
      * Words in the file (lowercased).
      *
@@ -91,22 +93,16 @@ class TxtStats extends AbstractFile
 	/**
      * The n most frequent words in the text.
      *
-     * @param int $n
      * @return array
      * @throws \InvalidArgumentException
      */
-	public function freqWords(int $n): array
+	public function freqWords(): array
 	{
-		if ($n <= 0) {
-			throw new \InvalidArgumentException(
-				"The number of words $n must be a positive number."
-			);
-		}
 		$this->readWords();
 		$this->freq = array_count_values($this->words);
 		arsort($this->freq);
 
-		return array_slice($this->freq, 0, $n);
+		return array_slice($this->freq, 0, self::N_FREQ_WORDS);
 	}
 
 	/**

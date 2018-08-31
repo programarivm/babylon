@@ -1,74 +1,73 @@
 <?php
 
-namespace Babylon\Tests;
+namespace Babylon\Tests\Unit\Language;
 
-use Babylon\Babylon;
-use Babylon\Filter;
+use Babylon\Family\Family;
 use PHPUnit\Framework\TestCase;
 
-class BabylonGermanicTest extends TestCase
+class GermanicTest extends TestCase
 {
     /**
      * @dataProvider danData
      * @test
      */
-    public function detect_dan($phrase)
+    public function detect_dan($text)
     {
-        $this->assertEquals('dan', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('germanic', (new Family($text))->detect());
     }
 
     /**
      * @dataProvider deuData
      * @test
      */
-    public function detect_deu($phrase)
+    public function detect_deu($text)
     {
-        $this->assertEquals('deu', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('germanic', (new Family($text))->detect());
     }
 
     /**
      * @dataProvider engData
      * @test
      */
-    public function detect_eng($phrase)
+    public function detect_eng($text)
     {
-        $this->assertEquals('eng', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('germanic', (new Family($text))->detect());
     }
 
     /**
      * @dataProvider islData
      * @test
      */
-    public function detect_isl($phrase)
+    public function detect_isl($text)
     {
-        $this->assertEquals('isl', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('germanic', (new Family($text))->detect());
     }
 
     /**
      * @dataProvider nldData
      * @test
      */
-    public function detect_nld($phrase)
+    public function detect_nld($text)
     {
-        $this->assertEquals('nld', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('germanic', (new Family($text))->detect());
     }
 
     /**
      * @dataProvider nobData
      * @test
      */
-    public function detect_nob($phrase)
+    public function detect_nob($text)
     {
-        $this->assertEquals('nob', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('germanic', (new Family($text))->detect());
     }
 
     /**
      * @dataProvider sweData
      * @test
      */
-    public function detect_swe($phrase)
+    public function detect_swe($text)
     {
-        $this->assertEquals('swe', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('germanic', (new Family($text))->detect());
     }
 
     public function danData()

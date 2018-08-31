@@ -2,13 +2,16 @@
 
 namespace Babylon\Cli;
 
-use Babylon\Babylon;
-use Babylon\NaiveBayesTrainer;
+use Babylon\Family\Family;
+use Babylon\Family\NaiveBayesTrainer as FamilyTrainer;
+use Babylon\Language\NaiveBayesTrainer as LanguageTrainer;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-(new NaiveBayesTrainer(Babylon::FAMILY_AUSTRONESIAN))->train();
-(new NaiveBayesTrainer(Babylon::FAMILY_GERMANIC))->train();
-(new NaiveBayesTrainer(Babylon::FAMILY_ROMANCE))->train();
-(new NaiveBayesTrainer(Babylon::FAMILY_SLAVIC))->train();
-(new NaiveBayesTrainer(Babylon::FAMILY_URALIC))->train();
+(new LanguageTrainer(Family::AUSTRONESIAN))->train();
+(new LanguageTrainer(Family::GERMANIC))->train();
+(new LanguageTrainer(Family::ROMANCE))->train();
+(new LanguageTrainer(Family::SLAVIC))->train();
+(new LanguageTrainer(Family::URALIC))->train();
+
+(new FamilyTrainer())->train();

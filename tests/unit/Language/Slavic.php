@@ -1,29 +1,29 @@
 <?php
 
-namespace Babylon\Tests;
+namespace Babylon\Tests\Unit\Language;
 
-use Babylon\Babylon;
 use Babylon\Filter;
+use Babylon\Language\Language;
 use PHPUnit\Framework\TestCase;
 
-class BabylonSlavicTest extends TestCase
+class SlavicTest extends TestCase
 {
     /**
      * @dataProvider cesData
      * @test
      */
-    public function detect_ces($phrase)
+    public function detect_ces($text)
     {
-        $this->assertEquals('ces', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('ces', (new Language($text))->detect();
     }
 
     /**
      * @dataProvider polData
      * @test
      */
-    public function detect_pol($phrase)
+    public function detect_pol($text)
     {
-        $this->assertEquals('pol', (new Babylon)->detect(Filter::phrase($phrase)));
+        $this->assertEquals('pol', (new Language($text))->detect();
     }
 
     public function cesData()
