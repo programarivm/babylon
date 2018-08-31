@@ -19,10 +19,10 @@ if (trim($line) != 'Y' && trim($line) != 'y') {
 }
 fclose($handle);
 
-echo (new LanguageDataPreparer(Family::AUSTRONESIAN))->prepare();
+/*echo (new LanguageDataPreparer(Family::AUSTRONESIAN))->prepare();
 echo (new LanguageDataPreparer(Family::GERMANIC))->prepare();
 echo (new LanguageDataPreparer(Family::ROMANCE))->prepare();
 echo (new LanguageDataPreparer(Family::SLAVIC))->prepare();
-echo (new LanguageDataPreparer(Family::URALIC))->prepare();
+echo (new LanguageDataPreparer(Family::URALIC))->prepare();*/
 
 echo (new FamilyDataPreparer)->prepare();
