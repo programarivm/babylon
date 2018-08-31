@@ -12,32 +12,12 @@ class TxtStatsTest extends TestCase
     /**
      * @dataProvider txtData
      * @test
-     * @expectedException \Babylon\Exception\FileExtensionException
-     */
-    public function freq_words_throws_file_extension_exception()
-    {
-        (new TxtStats(self::DATA_FOLDER."/eng.pdf"))->freqWords(10);
-    }
-
-    /**
-     * @dataProvider txtData
-     * @test
-     * @expectedException \InvalidArgumentException
-     */
-    public function freq_words_throws_invalid_argument_exception($filename, $freqWords)
-    {
-        (new TxtStats(self::DATA_FOLDER."/$filename"))->freqWords(-1);
-    }
-
-    /**
-     * @dataProvider txtData
-     * @test
      */
     public function freq_words($filename, $freqWords)
     {
         $txtStats = new TxtStats(self::DATA_FOLDER."/$filename");
 
-        $this->assertEquals($freqWords, $txtStats->freqWords(15));
+        $this->assertEquals($freqWords, array_slice($txtStats->freqWords(), 0, 15));
     }
 
     public function txtData()

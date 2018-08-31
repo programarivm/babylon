@@ -36,7 +36,7 @@ class DataPreparer
     	$csv = '';
     	foreach ($files as $file) {
     		$txtStats = new TxtStats("{$this->inputFolder}/$file");
-    		$freqWords = $txtStats->freqWords(50);
+    		$freqWords = $txtStats->freqWords();
     		$csv .= pathinfo($file, PATHINFO_FILENAME) .','.$this->magicPhrase($freqWords).PHP_EOL;
     		if ($handle = fopen("{$this->outputFolder}/{$this->langFamily}.csv", 'w')) {
     			if (fwrite($handle, $csv) !== false) {

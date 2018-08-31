@@ -2,6 +2,8 @@
 
 namespace Babylon\Family;
 
+use Babylon\File\TxtStats;
+
 class DataPreparer
 {
     const INPUT_FOLDER      = __DIR__ . '/../../dataset/output/iso-8859/latin';
@@ -12,9 +14,7 @@ class DataPreparer
 
     public function prepare(): string
     {
-        // $csv = $this->shuffle($this->csv());
-
-        $csv = $this->csv();
+        $csv = $this->shuffle($this->csv());
         $this->writeOutputFile($csv);
 
         return $this->mssg.'Operation completed.'.PHP_EOL;
@@ -30,7 +30,7 @@ class DataPreparer
                 while (!feof($file)) {
                     $exploded = explode(',', fgets($file));
                     if (isset($exploded[0]) && isset($exploded[1])) {
-                        $line .= $exploded[1].' ';
+                        $line .= preg_replace('~[[:cntrl:]]~', '', $exploded[1]);
                     }
                 }
                 fclose($file);
@@ -58,7 +58,7 @@ class DataPreparer
 
     private function removeDuplicateWords(string $text)
     {
-        return trim(implode(' ', array_unique(explode(' ', $text))));
+        return implode(' ', array_unique(explode(' ', $text)));
     }
 
     private function shuffle(string $csv)
@@ -68,7 +68,7 @@ class DataPreparer
         while ($line !== false) {
             $exploded = explode(',', $line);
             if (isset($exploded[0]) && isset($exploded[1])) {
-                $shuffled .= $exploded[0].','. $this->shuffleMbStr($exploded[1]);
+                $shuffled .= $exploded[0] . ',' . $this->shuffleMbStr($exploded[1]) . PHP_EOL;
             }
             $line = strtok(PHP_EOL);
         }
@@ -80,7 +80,8 @@ class DataPreparer
     {
         $words = explode(' ', $text);
         shuffle($words);
+        $words = array_slice($words, 0, TxtStats::N_FREQ_WORDS);
 
-        return trim(implode(' ', $words));
+        return implode(' ', $words);
     }
 }
