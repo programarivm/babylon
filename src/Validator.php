@@ -3,7 +3,7 @@
 namespace Babylon;
 
 use Babylon\Exception\LanguageFamilyException;
-use Babylon\Family;
+use Babylon\Family\Family;
 
 class Validator
 {

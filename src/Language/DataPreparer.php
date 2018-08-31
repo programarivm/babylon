@@ -3,6 +3,7 @@
 namespace Babylon\Language;
 
 use Babylon\File\TxtStats;
+use Babylon\Validator;
 
 class DataPreparer
 {
@@ -12,13 +13,15 @@ class DataPreparer
 
     protected $outputFolder;
 
+    protected $mssg = '';
+
     public function __construct(string $langFamily)
     {
         Validator::langFamily($langFamily);
 
         $this->langFamily = $langFamily;
-        $this->inputFolder = __DIR__ . "/../dataset/input/iso-8859/latin/$langFamily";
-        $this->outputFolder = __DIR__ . "/../dataset/output/iso-8859/latin";
+        $this->inputFolder = __DIR__ . "/../../dataset/input/iso-8859/latin/$langFamily";
+        $this->outputFolder = __DIR__ . "/../../dataset/output/iso-8859/latin";
     }
 
     /**
@@ -27,25 +30,26 @@ class DataPreparer
      * @param array $files
      * @return array
      */
-    public function prepare(): void
+    public function prepare(): string
     {
         $files = array_diff(scandir($this->inputFolder), ['.', '..']);
     	$csv = '';
     	foreach ($files as $file) {
     		$txtStats = new TxtStats("{$this->inputFolder}/$file");
     		$freqWords = $txtStats->freqWords(50);
-    		$csv .= pathinfo($file, PATHINFO_FILENAME) .',' . $this->magicPhrase($freqWords) . PHP_EOL;
+    		$csv .= pathinfo($file, PATHINFO_FILENAME) .','.$this->magicPhrase($freqWords).PHP_EOL;
     		if ($handle = fopen("{$this->outputFolder}/{$this->langFamily}.csv", 'w')) {
     			if (fwrite($handle, $csv) !== false) {
-    				echo "OK! The most frequent words in $file were transformed into CSV format..." . PHP_EOL;
+    				$this->mssg .= "OK! The most frequent words in $file were transformed into CSV format...".PHP_EOL;
     			} else {
-    				echo "Whoops! The most frequent words in $file could not be calculated..." . PHP_EOL;
+    				$this->mssg .= "Whoops! The most frequent words in $file could not be calculated...".PHP_EOL;
     			}
     			fclose($handle);
     		}
     	}
+        $this->mssg .= 'The '.$this->langFamily.' language family has been updated.'.PHP_EOL;
 
-    	echo 'The '. $this->langFamily . ' language family has been updated.' . PHP_EOL;
+        return $this->mssg;
     }
 
     /**
