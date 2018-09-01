@@ -1,9 +1,9 @@
 <?php
 
-namespace Babylon\Tests\Unit\Language;
+namespace Babylon\Tests\Unit;
 
-use Babylon\Filter;
-use Babylon\Language\Language;
+use Babylon\FamilyDetector;
+use Babylon\LanguageDetector;
 use PHPUnit\Framework\TestCase;
 
 class GermanicTest extends TestCase
@@ -12,63 +12,126 @@ class GermanicTest extends TestCase
      * @dataProvider danData
      * @test
      */
-    public function detect_dan($text)
+    public function family_detect_dan($text)
     {
-        $this->assertEquals('dan', (new Language($text))->detect());
+        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
     }
 
     /**
      * @dataProvider deuData
      * @test
      */
-    public function detect_deu($text)
+    public function family_detect_deu($text)
     {
-        $this->assertEquals('deu', (new Language($text))->detect());
+        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
     }
 
     /**
      * @dataProvider engData
      * @test
      */
-    public function detect_eng($text)
+    public function family_detect_eng($text)
     {
-        $this->assertEquals('eng', (new Language($text))->detect());
+        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
     }
 
     /**
      * @dataProvider islData
      * @test
      */
-    public function detect_isl($text)
+    public function family_detect_isl($text)
     {
-        $this->assertEquals('isl', (new Language($text))->detect());
+        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
     }
 
     /**
      * @dataProvider nldData
      * @test
      */
-    public function detect_nld($text)
+    public function family_detect_nld($text)
     {
-        $this->assertEquals('nld', (new Language($text))->detect());
+        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
     }
 
     /**
      * @dataProvider nobData
      * @test
      */
-    public function detect_nob($text)
+    public function family_detect_nob($text)
     {
-        $this->assertEquals('nob', (new Language($text))->detect());
+        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
     }
 
     /**
      * @dataProvider sweData
      * @test
      */
-    public function detect_swe($text)
+    public function family_detect_swe($text)
     {
-        $this->assertEquals('swe', (new Language($text))->detect());
+        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider danData
+     * @test
+     */
+    public function language_detect_dan($text)
+    {
+        $this->assertEquals('dan', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider deuData
+     * @test
+     */
+    public function language_detect_deu($text)
+    {
+        $this->assertEquals('deu', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider engData
+     * @test
+     */
+    public function language_detect_eng($text)
+    {
+        $this->assertEquals('eng', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider islData
+     * @test
+     */
+    public function language_detect_isl($text)
+    {
+        $this->assertEquals('isl', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider nldData
+     * @test
+     */
+    public function language_detect_nld($text)
+    {
+        $this->assertEquals('nld', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider nobData
+     * @test
+     */
+    public function language_detect_nob($text)
+    {
+        $this->assertEquals('nob', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider sweData
+     * @test
+     */
+    public function language_detect_swe($text)
+    {
+        $this->assertEquals('swe', (new LanguageDetector($text))->detect());
     }
 
     public function danData()
@@ -89,9 +152,7 @@ class GermanicTest extends TestCase
             [
                 "Und wenn alles nach Euren Spitzen schrie, was nicht mehr sein kann
                 und niemals mehr sein wird, weil die Maschinen da sind, so werden die
-                Zwischenhändler doch fett dabei und Ihr? Die Finger klöppelt Ihr Euch
-                ab, und die Augen schaut Ihr Euch aus dabei, und den Hunger werdet Ihr
-                nicht los vor dem Klöppelsacke!"
+                Zwischenhändler doch fett dabei und Ihr?"
             ],
         ];
     }
@@ -102,9 +163,7 @@ class GermanicTest extends TestCase
             [
                 "As he spoke, his nimble fingers were flying here, there, and everywhere,
                 feeling, pressing, unbuttoning, examining, while his eyes wore the same
-                far-away expression which I have already remarked upon. So swiftly was
-                the examination made, that one would hardly have guessed the minuteness
-                with which it was conducted."
+                far-away expression which I have already remarked upon."
             ],
         ];
     }
@@ -116,9 +175,7 @@ class GermanicTest extends TestCase
                 "Þú hefir nú heyrt, hversu mentun og víðsýni eru gott vopn í höndum
                 karlmanna, þegar þeir ætla að vinna hinn ramgerva kastala: konuhjartað,
                 en að endingu vil eg benda þér á, hvað mörgum hættir við að misbeita
-                því. Það er t.d. ekki sjaldgæft í samkvæmum að heyra menn slá sig til
-                riddara með hinum og þessum afrekssögum um sjálfa sig. Þetta hendir
-                jafnvel hina gáfuðustu menn."
+                því."
             ],
         ];
     }
@@ -130,8 +187,7 @@ class GermanicTest extends TestCase
                 "Dat Maximus inzonderheid door magische kunsten zulk een ontzaglijken
                 invloed op Julianus heeft uitgeoefend, dat deze het Christendom den rug
                 toekeerde en de oude religie in eere trachtte te herstellen, blijkt ook
-                uit de verhalen die dienaangaande bij de Christenen in omloop waren. Wij
-                geven hier aan een tijdgenoot."
+                uit de verhalen die dienaangaande bij de Christenen in omloop waren."
             ],
         ];
     }
@@ -143,8 +199,7 @@ class GermanicTest extends TestCase
                 "Oline syntes vel ikke at Stunden var til at spøke i, aa hun selv var
                 blit saa snytt og endog ved Gammel-Sivert sin Kiste hadde hun opbydd al
                 sin seige Kraft og graatt Taarer. Eleseus visste jo selv bedst hvad han
-                hadde skrevet: saa og saa meget til Oline, en Støttestav i hendes
-                Alderdom -- hvor var Staven blit av? Lagt over et Knæ og brutt."
+                hadde skrevet."
             ],
         ];
     }

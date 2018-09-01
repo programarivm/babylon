@@ -1,56 +1,101 @@
 <?php
 
-namespace Babylon\Tests\Unit\Language;
+namespace Babylon\Tests\Unit;
 
-use Babylon\Filter;
-use Babylon\Language\Language;
+use Babylon\FamilyDetector;
+use Babylon\LanguageDetector;
 use PHPUnit\Framework\TestCase;
 
-class RomanceTest extends TestCase
+class RomanceFamilyTest extends TestCase
 {
     /**
      * @dataProvider fraData
      * @test
      */
-    public function detect_fra($text)
+    public function family_detect_fra($text)
     {
-        $this->assertEquals('fra', (new Language($text))->detect());
+        $this->assertEquals('romance', (new FamilyDetector($text))->detect());
     }
 
     /**
      * @dataProvider itaData
      * @test
      */
-    public function detect_ita($text)
+    public function family_detect_ita($text)
     {
-        $this->assertEquals('ita', (new Language($text))->detect());
+        $this->assertEquals('romance', (new FamilyDetector($text))->detect());
     }
 
     /**
      * @dataProvider porData
      * @test
      */
-    public function detect_por($text)
+    public function family_detect_por($text)
     {
-        $this->assertEquals('por', (new Language($text))->detect());
+        $this->assertEquals('romance', (new FamilyDetector($text))->detect());
     }
 
     /**
      * @dataProvider ronData
      * @test
      */
-    public function detect_ron($text)
+    public function family_detect_ron($text)
     {
-        $this->assertEquals('ron', (new Language($text))->detect());
+        $this->assertEquals('romance', (new FamilyDetector($text))->detect());
     }
 
     /**
      * @dataProvider spaData
      * @test
      */
-    public function detect_spa($text)
+    public function family_detect_spa($text)
     {
-        $this->assertEquals('spa', (new Language($text))->detect());
+        $this->assertEquals('romance', (new FamilyDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider fraData
+     * @test
+     */
+    public function language_detect_fra($text)
+    {
+        $this->assertEquals('fra', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider itaData
+     * @test
+     */
+    public function language_detect_ita($text)
+    {
+        $this->assertEquals('ita', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider porData
+     * @test
+     */
+    public function language_detect_por($text)
+    {
+        $this->assertEquals('por', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider ronData
+     * @test
+     */
+    public function language_detect_ron($text)
+    {
+        $this->assertEquals('ron', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider spaData
+     * @test
+     */
+    public function language_detect_spa($text)
+    {
+        $this->assertEquals('spa', (new LanguageDetector($text))->detect());
     }
 
     public function fraData()

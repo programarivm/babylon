@@ -112,7 +112,7 @@ class TxtStats extends AbstractFile
 	{
 		if ($file = fopen($this->filepath, 'r')) {
 			while (!feof($file)) {
-				$exploded = explode(' ', Filter::phrase(fgets($file)));
+				$exploded = explode(' ', Filter::text(fgets($file)));
 				$this->words = array_merge($this->words, $exploded);
 			}
 			fclose($file);
