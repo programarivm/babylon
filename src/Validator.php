@@ -11,6 +11,8 @@ class Validator
         switch ($langFamily) {
             case Family::AUSTRONESIAN:
                 break;
+            case Family::GAELIC:
+                break;
             case Family::GERMANIC:
                 break;
             case Family::ROMANCE:
