@@ -3,37 +3,43 @@
 namespace Babylon\Family;
 
 use Babylon\Filter;
-use Phpml\ModelManager;
 
 class Family
 {
-    const AUSTRONESIAN   = 'austronesian';
-    const GERMANIC       = 'germanic';
-    const ROMANCE        = 'romance';
-    const SLAVIC         = 'slavic';
-    const URALIC         = 'uralic';
+	const AUSTRONESIAN   = 'austronesian';
+	const GERMANIC       = 'germanic';
+	const ROMANCE        = 'romance';
+	const SLAVIC         = 'slavic';
+	const URALIC         = 'uralic';
 
-    protected $text;
+	protected $text;
 
-    protected $modelFilepath;
+	protected $dataFilepath;
 
-    protected $restoredClassifier;
+	protected $stats;
 
-    protected $modelManager;
+	public function __construct(string $text)
+	{
+		$this->text = Filter::phrase($text);
+		$this->dataFilepath = __DIR__ . "/../../dataset/output/iso-8859-latin-family.csv";
+		$this->stats = [];
+	}
 
-    public function __construct(string $text)
-    {
-        $this->text = Filter::phrase($text);
-        $this->modelFilepath = __DIR__ . "/../../models/iso-8859-latin-family.txt";
-        $this->modelManager = new ModelManager();
+	public function detect(): string
+	{
+		if ($file = fopen($this->dataFilepath, 'r')) {
+			while (!feof($file)) {
+				$line = fgetcsv($file);
+				if (!empty($line[0]) && !empty($line[1])) {
+					$familyWords = explode(' ', $line[1]);
+					$textWords = explode(' ', $this->text);
+					$this->stats[$line[0]] = count(array_intersect($familyWords, $textWords));
+				}
+			}
+			fclose($file);
+		}
+		arsort($this->stats);
 
-        $this->restoredClassifier = $this->modelManager->restoreFromFile($this->modelFilepath);
-    }
-
-    public function detect(): string
-    {
-        $langFamily = current($this->restoredClassifier->predict([$this->text]));
-
-        return $langFamily;
-    }
+		return key(array_slice($this->stats, 0, 1));
+	}
 }
