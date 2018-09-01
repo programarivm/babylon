@@ -4,12 +4,6 @@ namespace Babylon;
 
 class FamilyDetector extends Detector
 {
-	const AUSTRONESIAN   = 'austronesian';
-	const GERMANIC       = 'germanic';
-	const ROMANCE        = 'romance';
-	const SLAVIC         = 'slavic';
-	const URALIC         = 'uralic';
-
 	protected $text;
 
 	protected $dataFilepath;
@@ -18,7 +12,7 @@ class FamilyDetector extends Detector
 
 	public function __construct(string $text)
 	{
-		$this->text = Filter::phrase($text);
+		$this->text = Filter::text($text);
 		$this->dataFilepath = __DIR__ . "/../dataset/output/iso-8859-latin-family.csv";
 		$this->stats = [];
 	}

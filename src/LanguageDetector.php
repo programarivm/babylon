@@ -12,7 +12,7 @@ class LanguageDetector extends Detector
 
     public function __construct(string $text)
     {
-        $this->text = Filter::phrase($text);
+        $this->text = Filter::text($text);
         $langFamily = (new FamilyDetector($text))->detect();
         $this->dataFilepath = __DIR__ . "/../dataset/output/iso-8859/latin/$langFamily.csv";
         $this->stats = [];

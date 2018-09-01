@@ -52,7 +52,7 @@ class LanguageDataPreparer
     }
 
     /**
-     * Returns a phrase with the most frequent words.
+     * Returns a text with the most frequent words.
      *
      * @param array $freqWords
      * @return array

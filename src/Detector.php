@@ -14,7 +14,7 @@ class Detector
 
 	public function __construct(string $text)
 	{
-		$this->text = Filter::phrase($text);
+		$this->text = Filter::text($text);
 		$this->stats = [];
 	}
 
