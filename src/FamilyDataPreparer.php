@@ -39,7 +39,7 @@ class FamilyDataPreparer
                 }
                 fclose($file);
                 $csv .= $this->removeDuplicateWords(trim($line)).PHP_EOL;
-                $this->mssg .= "OK! The words in $file were successfully read...".PHP_EOL;
+                $this->mssg .= "OK! The words in $filename were successfully read...".PHP_EOL;
             } else {
                 $this->mssg .= "Whoops! The words in $filename could not be read...".PHP_EOL;
             }
