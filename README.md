@@ -37,6 +37,7 @@ $isoCode = (new LanguageDetector($text))->detect();
 
 | ISO 639-3 Code  | Language               |
 |-----------------|------------------------|
+| `ceb`           | Cebuano                |
 | `ces`           | Czech                  |
 | `cym`           | Welsh                  |
 | `dan`           | Danish                 |
