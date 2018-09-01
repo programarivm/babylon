@@ -1,6 +1,6 @@
 {
   "name": "programarivm/babylon",
-  "description": "Detects the language in which a piece of text is written.",
+  "description": "Babylon is the simplest, easiest-to-use language detector.",
   "type": "library",
   "license": "MIT",
   "keywords": [
@@ -10,11 +10,7 @@
       "phrase",
       "recognition",
       "detection",
-      "detect",
-      "support",
-      "vector",
-      "machine",
-      "learning"
+      "detect"
   ],
   "authors": [
     {
@@ -24,8 +20,7 @@
     }
   ],
   "require": {
-    "php": ">=7.1",
-    "php-ai/php-ml": "^0.6.2"
+    "php": ">=7.1"
   },
   "require-dev": {
     "phpunit/phpunit": "~5.0"

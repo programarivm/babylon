@@ -17,21 +17,46 @@ Via composer:
 
 ### Instantiation
 
-Just instantiate `Babylon` and detect the language of a text.
+Instantiate a `LanguageDetector` to detect a text's language.
 
 ```php
 <?php
 
-use Babylon\Language\Language;
+use Babylon\LanguageDetector;
 
-$babylon = new Babylon;
+$text = 'You will have your data soon, I remarked, pointing with my finger;
+		this is the Brixton Road, and that is the house, if I am not very much
+		mistaken.';
 
-$isoCode = $babylon->detect('Hi there, how are you today?');
+$isoCode = (new LanguageDetector($text))->detect();
 ```
 
-### Documentation
+> Note: The text needs to be a few words length in order for the language to be detected correctly; otherwise false positives may take place.
 
-For further information please read the [Documentation](https://babylon.readthedocs.io/en/latest/).
+### Languages Detected
+
+| ISO 639-3 Code  | Language               |
+|-----------------|------------------------|
+| `ces`           | Czech                  |
+| `cym`           | Welsh                  |
+| `dan`           | Danish                 |
+| `deu`           | German                 |
+| `eng`           | English                |
+| `fin`           | Finnish                |
+| `fra`           | French                 |
+| `gla`           | Scottish Gaelic        |
+| `gle`           | Irish                  |
+| `hun`           | Hungarian              |
+| `ita`           | Italian                |
+| `isl`           | Icelandic              |
+| `nld`           | Dutch; Flemish         |
+| `nob`           | Norwegian              |
+| `pol`           | Polish                 |
+| `por`           | Portuguese             |
+| `ron`           | Romanian               |
+| `spa`           | Spanish                |
+| `swe`           | Swedish                |
+| `tgl`           | Tagalog                |
 
 ### License
 
