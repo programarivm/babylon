@@ -1,9 +1,9 @@
 <?php
 
-namespace Babylon\Tests\Unit\Language;
+namespace Babylon\Tests\Unit\Unit;
 
-use Babylon\Filter;
-use Babylon\Language\Language;
+use Babylon\FamilyDetector;
+use Babylon\LanguageDetector;
 use PHPUnit\Framework\TestCase;
 
 class SlavicTest extends TestCase
@@ -12,18 +12,36 @@ class SlavicTest extends TestCase
      * @dataProvider cesData
      * @test
      */
-    public function detect_ces($text)
+    public function family_detect_ces($text)
     {
-        $this->assertEquals('ces', (new Language($text))->detect();
+        $this->assertEquals('slavic', (new FamilyDetector($text))->detect());
     }
 
     /**
      * @dataProvider polData
      * @test
      */
-    public function detect_pol($text)
+    public function family_detect_pol($text)
     {
-        $this->assertEquals('pol', (new Language($text))->detect();
+        $this->assertEquals('slavic', (new FamilyDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider cesData
+     * @test
+     */
+    public function language_detect_ces($text)
+    {
+        $this->assertEquals('ces', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider polData
+     * @test
+     */
+    public function language_detect_pol($text)
+    {
+        $this->assertEquals('pol', (new LanguageDetector($text))->detect());
     }
 
     public function cesData()

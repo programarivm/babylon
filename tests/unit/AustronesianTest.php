@@ -1,9 +1,9 @@
 <?php
 
-namespace Babylon\Tests\Unit\Language;
+namespace Babylon\Tests\Unit;
 
-use Babylon\Filter;
-use Babylon\Language\Language;
+use Babylon\FamilyDetector;
+use Babylon\LanguageDetector;
 use PHPUnit\Framework\TestCase;
 
 class AustronesianTest extends TestCase
@@ -12,9 +12,18 @@ class AustronesianTest extends TestCase
      * @dataProvider tglData
      * @test
      */
-    public function detect_tgl($text)
+    public function family_detect_tgl($text)
     {
-        $this->assertEquals('tgl', (new Language($text))->detect());
+        $this->assertEquals('austronesian', (new FamilyDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider tglData
+     * @test
+     */
+    public function language_detect_tgl($text)
+    {
+        $this->assertEquals('tgl', (new LanguageDetector($text))->detect());
     }
 
     public function tglData()

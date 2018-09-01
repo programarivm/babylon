@@ -1,9 +1,9 @@
 <?php
 
-namespace Babylon\Tests\Unit\Language;
+namespace Babylon\Tests\Unit;
 
-use Babylon\Filter;
-use Babylon\Language\Language;
+use Babylon\FamilyDetector;
+use Babylon\LanguageDetector;
 use PHPUnit\Framework\TestCase;
 
 class GermanicTest extends TestCase
@@ -12,63 +12,126 @@ class GermanicTest extends TestCase
      * @dataProvider danData
      * @test
      */
-    public function detect_dan($text)
+    public function family_detect_dan($text)
     {
-        $this->assertEquals('dan', (new Language($text))->detect());
+        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
     }
 
     /**
      * @dataProvider deuData
      * @test
      */
-    public function detect_deu($text)
+    public function family_detect_deu($text)
     {
-        $this->assertEquals('deu', (new Language($text))->detect());
+        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
     }
 
     /**
      * @dataProvider engData
      * @test
      */
-    public function detect_eng($text)
+    public function family_detect_eng($text)
     {
-        $this->assertEquals('eng', (new Language($text))->detect());
+        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
     }
 
     /**
      * @dataProvider islData
      * @test
      */
-    public function detect_isl($text)
+    public function family_detect_isl($text)
     {
-        $this->assertEquals('isl', (new Language($text))->detect());
+        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
     }
 
     /**
      * @dataProvider nldData
      * @test
      */
-    public function detect_nld($text)
+    public function family_detect_nld($text)
     {
-        $this->assertEquals('nld', (new Language($text))->detect());
+        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
     }
 
     /**
      * @dataProvider nobData
      * @test
      */
-    public function detect_nob($text)
+    public function family_detect_nob($text)
     {
-        $this->assertEquals('nob', (new Language($text))->detect());
+        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
     }
 
     /**
      * @dataProvider sweData
      * @test
      */
-    public function detect_swe($text)
+    public function family_detect_swe($text)
     {
-        $this->assertEquals('swe', (new Language($text))->detect());
+        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider danData
+     * @test
+     */
+    public function language_detect_dan($text)
+    {
+        $this->assertEquals('dan', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider deuData
+     * @test
+     */
+    public function language_detect_deu($text)
+    {
+        $this->assertEquals('deu', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider engData
+     * @test
+     */
+    public function language_detect_eng($text)
+    {
+        $this->assertEquals('eng', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider islData
+     * @test
+     */
+    public function language_detect_isl($text)
+    {
+        $this->assertEquals('isl', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider nldData
+     * @test
+     */
+    public function language_detect_nld($text)
+    {
+        $this->assertEquals('nld', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider nobData
+     * @test
+     */
+    public function language_detect_nob($text)
+    {
+        $this->assertEquals('nob', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider sweData
+     * @test
+     */
+    public function language_detect_swe($text)
+    {
+        $this->assertEquals('swe', (new LanguageDetector($text))->detect());
     }
 
     public function danData()

@@ -2,9 +2,9 @@
 
 namespace Babylon\Cli;
 
-use Babylon\Language\DataPreparer as LanguageDataPreparer;
-use Babylon\Family\DataPreparer as FamilyDataPreparer;
-use Babylon\Family\Family;
+use Babylon\Family;
+use Babylon\FamilyDataPreparer;
+use Babylon\LanguageDataPreparer;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
