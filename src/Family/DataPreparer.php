@@ -14,8 +14,7 @@ class DataPreparer
 
     public function prepare(): string
     {
-        $csv = $this->shuffle($this->csv());
-        $this->writeOutputFile($csv);
+        $this->writeOutputFile($this->csv());
 
         return $this->mssg.'Operation completed.'.PHP_EOL;
     }
@@ -25,12 +24,17 @@ class DataPreparer
         $csv = '';
         $files = array_diff(scandir(self::INPUT_FOLDER), ['.', '..']);
         foreach ($files as $filename) {
+            $nLines = count(file(self::INPUT_FOLDER.'/'.$filename, FILE_SKIP_EMPTY_LINES));
             $line = pathinfo($filename, PATHINFO_FILENAME).',';
             if ($file = fopen(self::INPUT_FOLDER.'/'.$filename, 'r')) {
                 while (!feof($file)) {
                     $exploded = explode(',', fgets($file));
                     if (isset($exploded[0]) && isset($exploded[1])) {
-                        $line .= preg_replace('~[[:cntrl:]]~', '', $exploded[1]);
+                        $nFirstWords = $this->nFirstWords(
+                            ceil(TxtStats::N_FREQ_WORDS/$nLines),
+                            preg_replace('~[[:cntrl:]]~', '', $exploded[1])
+                        );
+                        $line .= "$nFirstWords ";
                     }
                 }
                 fclose($file);
@@ -61,27 +65,8 @@ class DataPreparer
         return implode(' ', array_unique(explode(' ', $text)));
     }
 
-    private function shuffle(string $csv)
+    private function nFirstWords(int $n, string $text)
     {
-        $shuffled = '';
-        $line = strtok($csv, PHP_EOL);
-        while ($line !== false) {
-            $exploded = explode(',', $line);
-            if (isset($exploded[0]) && isset($exploded[1])) {
-                $shuffled .= $exploded[0] . ',' . $this->shuffleMbStr($exploded[1]) . PHP_EOL;
-            }
-            $line = strtok(PHP_EOL);
-        }
-
-        return $shuffled;
-    }
-
-    private function shuffleMbStr(string $text)
-    {
-        $words = explode(' ', $text);
-        shuffle($words);
-        $words = array_slice($words, 0, TxtStats::N_FREQ_WORDS);
-
-        return implode(' ', $words);
+        return implode(' ', array_slice(explode(' ', $text), 0, $n));
     }
 }

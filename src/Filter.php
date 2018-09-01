@@ -9,8 +9,10 @@ class Filter
         $phrase = mb_strtolower($phrase);
         $phrase = preg_replace('/\'/', ' ', $phrase);
         $phrase = preg_replace('/(“|”)/', ' ', $phrase);
+        $phrase = preg_replace('/(«|»)/', ' ', $phrase);
         $phrase = preg_replace('/(\"|\")/', ' ', $phrase);
         $phrase = preg_replace('/’/', ' ', $phrase);
+        $phrase = preg_replace('/…/', ' ', $phrase);
         $phrase = preg_replace('/[[:punct:]]/', ' ', $phrase);
         $phrase = preg_replace('#\p{Pd}#u', ' ', $phrase);
         $phrase = preg_replace('/[0-9]+/', ' ', $phrase);
