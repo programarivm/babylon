@@ -4,20 +4,20 @@ namespace Babylon;
 
 class Filter
 {
-    public static function phrase(string $phrase): string
+    public static function text(string $text): string
     {
-        $phrase = mb_strtolower($phrase);
-        $phrase = preg_replace('/\'/', ' ', $phrase);
-        $phrase = preg_replace('/(“|”)/', ' ', $phrase);
-        $phrase = preg_replace('/(«|»)/', ' ', $phrase);
-        $phrase = preg_replace('/(\"|\")/', ' ', $phrase);
-        $phrase = preg_replace('/’/', ' ', $phrase);
-        $phrase = preg_replace('/…/', ' ', $phrase);
-        $phrase = preg_replace('/[[:punct:]]/', ' ', $phrase);
-        $phrase = preg_replace('#\p{Pd}#u', ' ', $phrase);
-        $phrase = preg_replace('/[0-9]+/', ' ', $phrase);
-        $phrase = preg_replace('!\s+!', ' ', $phrase);
+        $text = mb_strtolower($text);
+        $text = preg_replace('/\'/', ' ', $text);
+        $text = preg_replace('/(“|”)/', ' ', $text);
+        $text = preg_replace('/(«|»)/', ' ', $text);
+        $text = preg_replace('/(\"|\")/', ' ', $text);
+        $text = preg_replace('/’/', ' ', $text);
+        $text = preg_replace('/…/', ' ', $text);
+        $text = preg_replace('/[[:punct:]]/', ' ', $text);
+        $text = preg_replace('#\p{Pd}#u', ' ', $text);
+        $text = preg_replace('/[0-9]+/', ' ', $text);
+        $text = preg_replace('!\s+!', ' ', $text);
 
-        return $phrase;
+        return $text;
     }
 }

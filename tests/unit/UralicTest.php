@@ -1,9 +1,9 @@
 <?php
 
-namespace Babylon\Tests\Unit\Language;
+namespace Babylon\Tests\Unit\Unit;
 
-use Babylon\Filter;
-use Babylon\Language\Language;
+use Babylon\FamilyDetector;
+use Babylon\LanguageDetector;
 use PHPUnit\Framework\TestCase;
 
 class UralicTest extends TestCase
@@ -12,18 +12,36 @@ class UralicTest extends TestCase
      * @dataProvider finData
      * @test
      */
-    public function detect_fin($text)
+    public function family_detect_fin($text)
     {
-        $this->assertEquals('fin', (new Language($text))->detect());
+        $this->assertEquals('uralic', (new FamilyDetector($text))->detect());
     }
 
     /**
      * @dataProvider hunData
      * @test
      */
-    public function detect_hun($text)
+    public function family_detect_hun($text)
     {
-        $this->assertEquals('hun', (new Language($text))->detect());
+        $this->assertEquals('uralic', (new FamilyDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider finData
+     * @test
+     */
+    public function language_detect_fin($text)
+    {
+        $this->assertEquals('fin', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider hunData
+     * @test
+     */
+    public function language_detect_hun($text)
+    {
+        $this->assertEquals('hun', (new LanguageDetector($text))->detect());
     }
 
     public function finData()
