@@ -2,8 +2,8 @@
 
 namespace Babylon\Tests\Unit;
 
-use Babylon\FamilyDetector;
-use Babylon\LanguageDetector;
+use Babylon\Detector\FamilyDetector;
+use Babylon\Detector\LanguageDetector;
 use PHPUnit\Framework\TestCase;
 
 class GermanicTest extends TestCase

@@ -3,8 +3,8 @@
 namespace Babylon\Cli;
 
 use Babylon\Family;
-use Babylon\FamilyDataPreparer;
-use Babylon\LanguageDataPreparer;
+use Babylon\DataPreparer\FamilyDataPreparer;
+use Babylon\DataPreparer\LanguageDataPreparer;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 

@@ -1,10 +1,11 @@
 <?php
 
-namespace Babylon;
+namespace Babylon\DataPreparer;
 
+use Babylon\Validator;
 use Babylon\File\TxtStats;
 
-class LanguageDataPreparer
+class LanguageDataPreparer implements DataPreparerInterface
 {
     protected $langFamily;
 
@@ -19,8 +20,8 @@ class LanguageDataPreparer
         Validator::langFamily($langFamily);
 
         $this->langFamily = $langFamily;
-        $this->inputFolder = __DIR__ . "/../dataset/input/iso-8859/latin/$langFamily";
-        $this->outputFolder = __DIR__ . "/../dataset/output/iso-8859/latin";
+        $this->inputFolder = __DIR__ . "/../../dataset/input/iso-8859/latin/$langFamily";
+        $this->outputFolder = __DIR__ . "/../../dataset/output/iso-8859/latin";
     }
 
     /**

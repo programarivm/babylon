@@ -2,7 +2,7 @@
 
 namespace Babylon\Cli;
 
-use Babylon\LanguageDetector;
+use Babylon\Detector\LanguageDetector;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 

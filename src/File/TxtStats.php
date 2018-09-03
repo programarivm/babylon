@@ -2,8 +2,9 @@
 
 namespace Babylon\File;
 
-use Babylon\Exception\FileExtensionException;
+use Babylon\AbstractFile;
 use Babylon\Filter;
+use Babylon\Exception\FileExtensionException;
 
 /**
  * Text stats.
