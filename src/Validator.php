@@ -2,10 +2,26 @@
 
 namespace Babylon;
 
+use Babylon\Exception\AlphabetException;
 use Babylon\Exception\LanguageFamilyException;
 
 class Validator
 {
+    public static function alphabet(string $alphabet): string
+    {
+        switch ($alphabet) {
+            case Alphabet::CYRILLIC:
+                break;
+            case Alphabet::LATIN:
+                break;
+            default:
+                throw new AlphabetException('Whoops! The alphabet is not valid.');
+                break;
+        }
+
+        return $alphabet;
+    }
+
     public static function langFamily(string $langFamily): string
     {
         switch ($langFamily) {

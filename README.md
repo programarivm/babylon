@@ -37,6 +37,7 @@ $isoCode = (new LanguageDetector($text))->detect();
 
 | ISO 639-3 Code  | Language               |
 |-----------------|------------------------|
+| `bul`           | Bulgarian              |
 | `ceb`           | Cebuano                |
 | `ces`           | Czech                  |
 | `cym`           | Welsh                  |
@@ -49,6 +50,7 @@ $isoCode = (new LanguageDetector($text))->detect();
 | `gla`           | Scottish Gaelic        |
 | `gle`           | Irish                  |
 | `heb`           | Hebrew                 |
+| `hrv`           | Croatian               |
 | `hun`           | Hungarian              |
 | `ita`           | Italian                |
 | `isl`           | Icelandic              |
@@ -59,6 +61,7 @@ $isoCode = (new LanguageDetector($text))->detect();
 | `pol`           | Polish                 |
 | `por`           | Portuguese             |
 | `ron`           | Romanian               |
+| `rus`           | Russian                |
 | `spa`           | Spanish                |
 | `swe`           | Swedish                |
 | `tgl`           | Tagalog                |

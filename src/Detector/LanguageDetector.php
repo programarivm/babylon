@@ -7,6 +7,10 @@ use Babylon\Filter;
 use Babylon\UnicodeRangeStats;
 use Babylon\Detector\FamilyDetector;
 use UnicodeRanges\Range\BasicLatin;
+use UnicodeRanges\Range\Cyrillic;
+use UnicodeRanges\Range\CyrillicExtendedA;
+use UnicodeRanges\Range\CyrillicExtendedB;
+use UnicodeRanges\Range\CyrillicSupplement;
 use UnicodeRanges\Range\GreekAndCoptic;
 use UnicodeRanges\Range\HangulCompatibilityJamo;
 use UnicodeRanges\Range\HangulJamo;
@@ -38,35 +42,49 @@ class LanguageDetector
 
     public function detect(): string
     {
-        if ($this->isLatin($this->text)) {
-            $this->text = Filter::text($this->text);
-            $langFamily = (new FamilyDetector($this->text))->detect();
-            $dataFilepath = __DIR__."/../../dataset/output/alphabet/latin/$langFamily.csv";
-            if ($file = fopen($dataFilepath, 'r')) {
-                while (!feof($file)) {
-                    $line = fgetcsv($file);
-                    if (!empty($line[0]) && !empty($line[1])) {
-                        $words = explode(' ', $line[1]);
-                        $textWords = explode(' ', $this->text);
-                        $this->detection[$line[0]] = count(array_intersect($words, $textWords));
-                    }
-                }
-                fclose($file);
-            }
-            arsort($this->detection);
+        switch (true) {
+            case $this->isCyrillic($this->text):
+                $this->text = Filter::text($this->text);
+                $langFamily = (new FamilyDetector($this->text))->detect();
+                $this->calc(__DIR__."/../../dataset/output/alphabet/cyrillic/$langFamily.csv");
+                return key(array_slice($this->detection, 0, 1));
 
-            return key(array_slice($this->detection, 0, 1));
-        } else {
-            $unicodeRangename = (new UnicodeRangeStats($this->text))->mostFreq();
-            $this->detection = $this->isoCodeByUnicodeRangename($unicodeRangename);
+            case $this->isLatin($this->text):
+                $this->text = Filter::text($this->text);
+                $langFamily = (new FamilyDetector($this->text))->detect();
+                $this->calc(__DIR__."/../../dataset/output/alphabet/latin/$langFamily.csv");
+                return key(array_slice($this->detection, 0, 1));
 
-            return $this->detection;
+            default:
+                $unicodeRangename = (new UnicodeRangeStats($this->text))->mostFreq();
+                $this->detection = $this->isoCodeByUnicodeRangename($unicodeRangename);
+                return $this->detection;
+        }
+    }
+
+    private function isCyrillic(string $text)
+    {
+        $unicodeRangename = (new UnicodeRangeStats($this->text))->mostFreq();
+
+        switch ($unicodeRangename) {
+            case Cyrillic::RANGE_NAME:
+                return true;
+            case CyrillicExtendedA::RANGE_NAME:
+                return true;
+            case CyrillicExtendedB::RANGE_NAME:
+                return true;
+            case CyrillicSupplement::RANGE_NAME:
+                return true;
+            default:
+                return false;
         }
     }
 
     private function isLatin(string $text)
     {
-        switch ((new UnicodeRangeStats($text))->mostFreq()) {
+        $unicodeRangename = (new UnicodeRangeStats($this->text))->mostFreq();
+
+        switch ($unicodeRangename) {
             case BasicLatin::RANGE_NAME:
                 return true;
             case Latin1Supplement::RANGE_NAME:
@@ -82,7 +100,25 @@ class LanguageDetector
         }
     }
 
-    private function isoCodeByUnicodeRangename(string $unicodeRangename) {
+    private function calc(string $dataFilepath): void
+    {
+        if ($file = fopen($dataFilepath, 'r')) {
+            while (!feof($file)) {
+                $line = fgetcsv($file);
+                if (!empty($line[0]) && !empty($line[1])) {
+                    $words = explode(' ', $line[1]);
+                    $textWords = explode(' ', $this->text);
+                    $this->detection[$line[0]] = count(array_intersect($words, $textWords));
+                }
+            }
+            fclose($file);
+        }
+
+        arsort($this->detection);
+    }
+
+    private function isoCodeByUnicodeRangename(string $unicodeRangename)
+    {
         switch ($unicodeRangename) {
             case GreekAndCoptic::RANGE_NAME:
                 return 'ell'; // Greek

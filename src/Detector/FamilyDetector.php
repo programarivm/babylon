@@ -3,6 +3,11 @@
 namespace Babylon\Detector;
 
 use Babylon\Filter;
+use Babylon\UnicodeRangeStats;
+use UnicodeRanges\Range\Cyrillic;
+use UnicodeRanges\Range\CyrillicExtendedA;
+use UnicodeRanges\Range\CyrillicExtendedB;
+use UnicodeRanges\Range\CyrillicSupplement;
 
 class FamilyDetector
 {
@@ -18,7 +23,32 @@ class FamilyDetector
 
 	public function detect(): string
 	{
-		$dataFilepath = __DIR__ . "/../../dataset/output/latin-fingerprint.csv";
+		$unicodeRangename = (new UnicodeRangeStats($this->text))->mostFreq();
+		
+		switch ($unicodeRangename) {
+			case Cyrillic::RANGE_NAME:
+				$this->calc(__DIR__.'/../../dataset/output/cyrillic-fingerprint.csv');
+				break;
+			case CyrillicExtendedA::RANGE_NAME:
+				$this->calc(__DIR__.'/../../dataset/output/cyrillic-fingerprint.csv');
+				break;
+			case CyrillicExtendedB::RANGE_NAME:
+				$this->calc(__DIR__.'/../../dataset/output/cyrillic-fingerprint.csv');
+				break;
+			case CyrillicSupplement::RANGE_NAME:
+				$this->calc(__DIR__.'/../../dataset/output/cyrillic-fingerprint.csv');
+				break;
+			default:
+				$this->calc(__DIR__.'/../../dataset/output/latin-fingerprint.csv');
+				break;
+
+		}
+
+		return key(array_slice($this->detection, 0, 1));
+	}
+
+	private function calc(string $dataFilepath): void
+	{
 		if ($file = fopen($dataFilepath, 'r')) {
 			while (!feof($file)) {
 				$line = fgetcsv($file);
@@ -30,8 +60,7 @@ class FamilyDetector
 			}
 			fclose($file);
 		}
-		arsort($this->detection);
 
-		return key(array_slice($this->detection, 0, 1));
+		arsort($this->detection);
 	}
 }
