@@ -26,6 +26,24 @@ class SlavicTest extends TestCase
         $this->assertEquals('slavic', (new FamilyDetector($text))->detect());
     }
 
+    /**
+     * @dataProvider bulData
+     * @test
+     */
+    public function language_detect_bul($text)
+    {
+        $this->assertEquals('bul', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider rusData
+     * @test
+     */
+    public function language_detect_rus($text)
+    {
+        $this->assertEquals('rus', (new LanguageDetector($text))->detect());
+    }
+
     public function bulData()
     {
         return [
