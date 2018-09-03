@@ -7,6 +7,7 @@ use Babylon\Filter;
 use Babylon\UnicodeRangeStats;
 use Babylon\Detector\FamilyDetector;
 use UnicodeRanges\Range\BasicLatin;
+use UnicodeRanges\Range\CJKUnifiedIdeographs;
 use UnicodeRanges\Range\Cyrillic;
 use UnicodeRanges\Range\CyrillicExtendedA;
 use UnicodeRanges\Range\CyrillicExtendedB;
@@ -26,7 +27,7 @@ use UnicodeRanges\Range\KatakanaPhoneticExtensions;
 use UnicodeRanges\Range\LatinExtendedA;
 use UnicodeRanges\Range\LatinExtendedB;
 use UnicodeRanges\Range\Latin1Supplement;
-use UnicodeRanges\Range\CJKUnifiedIdeographs;
+use UnicodeRanges\Range\Telugu;
 
 class LanguageDetector
 {
@@ -152,6 +153,9 @@ class LanguageDetector
                 break;
             case HangulSyllables::RANGE_NAME:
                 return 'kor'; // Korean
+                break;
+            case Telugu::RANGE_NAME:
+                return 'tel'; // Telugu
                 break;
             case CJKUnifiedIdeographs::RANGE_NAME:
                 return 'zho'; // Chinese

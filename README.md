@@ -64,6 +64,7 @@ $isoCode = (new LanguageDetector($text))->detect();
 | `rus`           | Russian                |
 | `spa`           | Spanish                |
 | `swe`           | Swedish                |
+| `tel`           | Telugu                 |
 | `tgl`           | Tagalog                |
 | `zho`           | Chinese                |
 
