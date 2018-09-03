@@ -39,7 +39,7 @@ class LanguageDetector
         if ($this->isLatin($this->text)) {
             $this->text = Filter::text($this->text);
             $langFamily = (new FamilyDetector($this->text))->detect();
-            $dataFilepath = __DIR__."/../../dataset/output/iso-8859/latin/$langFamily.csv";
+            $dataFilepath = __DIR__."/../../dataset/output/alphabet/latin/$langFamily.csv";
             if ($file = fopen($dataFilepath, 'r')) {
                 while (!feof($file)) {
                     $line = fgetcsv($file);

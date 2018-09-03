@@ -18,7 +18,7 @@ class FamilyDetector
 
 	public function detect(): string
 	{
-		$dataFilepath = __DIR__ . "/../../dataset/output/iso-8859-latin-family.csv";
+		$dataFilepath = __DIR__ . "/../../dataset/output/latin-family.csv";
 		if ($file = fopen($dataFilepath, 'r')) {
 			while (!feof($file)) {
 				$line = fgetcsv($file);

@@ -20,8 +20,8 @@ class LanguageDataPreparer implements DataPreparerInterface
         Validator::langFamily($langFamily);
 
         $this->langFamily = $langFamily;
-        $this->inputFolder = __DIR__ . "/../../dataset/input/iso-8859/latin/$langFamily";
-        $this->outputFolder = __DIR__ . "/../../dataset/output/iso-8859/latin";
+        $this->inputFolder = __DIR__ . "/../../dataset/input/alphabet/latin/$langFamily";
+        $this->outputFolder = __DIR__ . "/../../dataset/output/alphabet/latin";
     }
 
     /**
