@@ -28,4 +28,5 @@ echo (new LanguageDataPreparer(Family::SLAVIC))->prepare();
 echo (new LanguageDataPreparer(Family::SLAVIC, Alphabet::CYRILLIC))->prepare();
 echo (new LanguageDataPreparer(Family::URALIC))->prepare();
 
-echo (new FamilyDataPreparer)->prepare();
+echo (new FamilyDataPreparer(Alphabet::CYRILLIC))->prepare();
+echo (new FamilyDataPreparer(Alphabet::LATIN))->prepare();

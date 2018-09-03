@@ -19,7 +19,7 @@ class Validator
                 break;
         }
 
-        return $langFamily;
+        return $alphabet;
     }
 
     public static function langFamily(string $langFamily): string
