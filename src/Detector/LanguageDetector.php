@@ -7,6 +7,7 @@ use Babylon\Filter;
 use Babylon\UnicodeRangeStats;
 use Babylon\Detector\FamilyDetector;
 use UnicodeRanges\Range\BasicLatin;
+use UnicodeRanges\Range\GreekAndCoptic;
 use UnicodeRanges\Range\HangulCompatibilityJamo;
 use UnicodeRanges\Range\HangulJamo;
 use UnicodeRanges\Range\HangulJamoExtendedA;
@@ -83,6 +84,9 @@ class LanguageDetector
 
     private function isoCodeByUnicodeRangename(string $unicodeRangename) {
         switch ($unicodeRangename) {
+            case GreekAndCoptic::RANGE_NAME:
+                return 'ell'; // Greek
+                break;
             case Hebrew::RANGE_NAME:
                 return 'heb'; // Hebrew
                 break;

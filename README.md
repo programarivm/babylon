@@ -42,6 +42,7 @@ $isoCode = (new LanguageDetector($text))->detect();
 | `cym`           | Welsh                  |
 | `dan`           | Danish                 |
 | `deu`           | German                 |
+| `ell`           | Greek                  |
 | `eng`           | English                |
 | `fin`           | Finnish                |
 | `fra`           | French                 |
