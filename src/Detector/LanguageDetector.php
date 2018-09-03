@@ -7,6 +7,10 @@ use Babylon\Filter;
 use Babylon\UnicodeRangeStats;
 use Babylon\Detector\FamilyDetector;
 use UnicodeRanges\Range\BasicLatin;
+use UnicodeRanges\Range\Cyrillic;
+use UnicodeRanges\Range\CyrillicExtendedA;
+use UnicodeRanges\Range\CyrillicExtendedB;
+use UnicodeRanges\Range\CyrillicSupplement;
 use UnicodeRanges\Range\GreekAndCoptic;
 use UnicodeRanges\Range\HangulCompatibilityJamo;
 use UnicodeRanges\Range\HangulJamo;
@@ -61,6 +65,22 @@ class LanguageDetector
             $this->detection = $this->isoCodeByUnicodeRangename($unicodeRangename);
 
             return $this->detection;
+        }
+    }
+
+    private function isCyrillic(string $text)
+    {
+        switch ((new UnicodeRangeStats($text))->mostFreq()) {
+            case Cyrillic::RANGE_NAME:
+                return true;
+            case CyrillicExtendedA::RANGE_NAME:
+                return true;
+            case CyrillicExtendedB::RANGE_NAME:
+                return true;
+            case CyrillicSupplement::RANGE_NAME:
+                return true;
+            default:
+                return false;
         }
     }
 
