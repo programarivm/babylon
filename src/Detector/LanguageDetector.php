@@ -7,6 +7,11 @@ use Babylon\Filter;
 use Babylon\UnicodeRangeStats;
 use Babylon\Detector\FamilyDetector;
 use UnicodeRanges\Range\BasicLatin;
+use UnicodeRanges\Range\HangulCompatibilityJamo;
+use UnicodeRanges\Range\HangulJamo;
+use UnicodeRanges\Range\HangulJamoExtendedA;
+use UnicodeRanges\Range\HangulJamoExtendedB;
+use UnicodeRanges\Range\HangulSyllables;
 use UnicodeRanges\Range\Hiragana;
 use UnicodeRanges\Range\IpaExtensions;
 use UnicodeRanges\Range\Kanbun;
@@ -77,9 +82,6 @@ class LanguageDetector
 
     private function isoCodeByUnicodeRangename(string $unicodeRangename) {
         switch ($unicodeRangename) {
-            case CJKUnifiedIdeographs::RANGE_NAME:
-                return 'zho'; // Chinese
-                break;
             case Hiragana::RANGE_NAME:
                 return 'jpn'; // Japanese
                 break;
@@ -91,6 +93,24 @@ class LanguageDetector
                 break;
             case Kanbun::RANGE_NAME:
                 return 'jpn'; // Japanese
+                break;
+            case HangulCompatibilityJamo::RANGE_NAME:
+                return 'kor'; // Korean
+                break;
+            case HangulJamo::RANGE_NAME:
+                return 'kor'; // Korean
+                break;
+            case HangulJamoExtendedA::RANGE_NAME:
+                return 'kor'; // Korean
+                break;
+            case HangulJamoExtendedB::RANGE_NAME:
+                return 'kor'; // Korean
+                break;
+            case HangulSyllables::RANGE_NAME:
+                return 'kor'; // Korean
+                break;
+            case CJKUnifiedIdeographs::RANGE_NAME:
+                return 'zho'; // Chinese
                 break;
         }
     }
