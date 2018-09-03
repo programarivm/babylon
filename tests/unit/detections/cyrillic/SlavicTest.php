@@ -18,6 +18,15 @@ class SlavicTest extends TestCase
     }
 
     /**
+     * @dataProvider hrvData
+     * @test
+     */
+    public function family_detect_hrv($text)
+    {
+        $this->assertEquals('slavic', (new FamilyDetector($text))->detect());
+    }
+
+    /**
      * @dataProvider rusData
      * @test
      */
@@ -36,6 +45,15 @@ class SlavicTest extends TestCase
     }
 
     /**
+     * @dataProvider hrvData
+     * @test
+     */
+    public function language_detect_hrv($text)
+    {
+        $this->assertEquals('hrv', (new LanguageDetector($text))->detect());
+    }
+
+    /**
      * @dataProvider rusData
      * @test
      */
@@ -51,6 +69,18 @@ class SlavicTest extends TestCase
                 'И ето и до днес кръвта на тези мъченици не е още засъхнала по бащините ни
                 полета; сенките им бродят денем и нощем и чакат онези, кои от Петрушан им
                 пожелаха "добър час и добра стига!'
+            ],
+        ];
+    }
+
+    public function hrvData()
+    {
+        return [
+            [
+                'Онако насмешено, танких на лук обрва, крупних детињских очију што
+                га испод трепавица као свежина бистра извора разгаљиваху, нагла
+                се она над његовом постељом, дотиче га увојцима бујне косе и
+                страсно му шапуће.'
             ],
         ];
     }
