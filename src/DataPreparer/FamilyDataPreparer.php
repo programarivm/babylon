@@ -8,7 +8,7 @@ class FamilyDataPreparer implements DataPreparerInterface
 {
     const INPUT_FOLDER      = __DIR__ . '/../../dataset/output/alphabet/latin';
     const OUTPUT_FOLDER     = __DIR__ . '/../../dataset/output';
-    const OUTPUT_FILE       = 'latin-family.csv';
+    const OUTPUT_FILE       = 'latin-fingerprint.csv';
 
     protected $mssg = '';
 
