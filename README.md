@@ -50,6 +50,7 @@ $isoCode = (new LanguageDetector($text))->detect();
 | `hun`           | Hungarian              |
 | `ita`           | Italian                |
 | `isl`           | Icelandic              |
+| `jpn`           | Japanese               |
 | `nld`           | Dutch; Flemish         |
 | `nob`           | Norwegian              |
 | `pol`           | Polish                 |

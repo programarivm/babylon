@@ -7,7 +7,11 @@ use Babylon\Filter;
 use Babylon\UnicodeRangeStats;
 use Babylon\Detector\FamilyDetector;
 use UnicodeRanges\Range\BasicLatin;
+use UnicodeRanges\Range\Hiragana;
 use UnicodeRanges\Range\IpaExtensions;
+use UnicodeRanges\Range\Kanbun;
+use UnicodeRanges\Range\Katakana;
+use UnicodeRanges\Range\KatakanaPhoneticExtensions;
 use UnicodeRanges\Range\LatinExtendedA;
 use UnicodeRanges\Range\LatinExtendedB;
 use UnicodeRanges\Range\Latin1Supplement;
@@ -75,6 +79,18 @@ class LanguageDetector
         switch ($unicodeRangename) {
             case CJKUnifiedIdeographs::RANGE_NAME:
                 return 'zho'; // Chinese
+                break;
+            case Hiragana::RANGE_NAME:
+                return 'jpn'; // Japanese
+                break;
+            case Katakana::RANGE_NAME:
+                return 'jpn'; // Japanese
+                break;
+            case KatakanaPhoneticExtensions::RANGE_NAME:
+                return 'jpn'; // Japanese
+                break;
+            case Kanbun::RANGE_NAME:
+                return 'jpn'; // Japanese
                 break;
         }
     }
