@@ -47,6 +47,7 @@ $isoCode = (new LanguageDetector($text))->detect();
 | `fra`           | French                 |
 | `gla`           | Scottish Gaelic        |
 | `gle`           | Irish                  |
+| `heb`           | Hebrew                 |
 | `hun`           | Hungarian              |
 | `ita`           | Italian                |
 | `isl`           | Icelandic              |

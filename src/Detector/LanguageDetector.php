@@ -12,6 +12,7 @@ use UnicodeRanges\Range\HangulJamo;
 use UnicodeRanges\Range\HangulJamoExtendedA;
 use UnicodeRanges\Range\HangulJamoExtendedB;
 use UnicodeRanges\Range\HangulSyllables;
+use UnicodeRanges\Range\Hebrew;
 use UnicodeRanges\Range\Hiragana;
 use UnicodeRanges\Range\IpaExtensions;
 use UnicodeRanges\Range\Kanbun;
@@ -82,6 +83,9 @@ class LanguageDetector
 
     private function isoCodeByUnicodeRangename(string $unicodeRangename) {
         switch ($unicodeRangename) {
+            case Hebrew::RANGE_NAME:
+                return 'heb'; // Hebrew
+                break;
             case Hiragana::RANGE_NAME:
                 return 'jpn'; // Japanese
                 break;
