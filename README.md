@@ -58,6 +58,7 @@ $isoCode = (new LanguageDetector($text))->detect();
 | `spa`           | Spanish                |
 | `swe`           | Swedish                |
 | `tgl`           | Tagalog                |
+| `zho`           | Chinese                |
 
 ### License
 
