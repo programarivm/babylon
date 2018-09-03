@@ -1,6 +1,6 @@
 <?php
 
-namespace Babylon\File;
+namespace Babylon;
 
 use Babylon\Exception\FileCharacterEncodingException;
 

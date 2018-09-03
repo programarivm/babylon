@@ -11,7 +11,7 @@ use Babylon\Exception;
  * @link https://programarivm.com
  * @license MIT
  */
-final class FileExtensionException extends \DomainException implements Exception
+final class FileExtensionException extends \DomainException
 {
 
 }

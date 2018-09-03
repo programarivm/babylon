@@ -2,18 +2,19 @@
 
 namespace Babylon;
 
-class FamilyDetector extends Detector
-{
-	protected $text;
+use Babylon\Filter;
 
+abstract class AbstractDetector
+{
 	protected $dataFilepath;
+
+	protected $text;
 
 	protected $stats;
 
 	public function __construct(string $text)
 	{
 		$this->text = Filter::text($text);
-		$this->dataFilepath = __DIR__ . "/../dataset/output/iso-8859-latin-family.csv";
 		$this->stats = [];
 	}
 
@@ -23,9 +24,9 @@ class FamilyDetector extends Detector
 			while (!feof($file)) {
 				$line = fgetcsv($file);
 				if (!empty($line[0]) && !empty($line[1])) {
-					$familyWords = explode(' ', $line[1]);
+					$words = explode(' ', $line[1]);
 					$textWords = explode(' ', $this->text);
-					$this->stats[$line[0]] = count(array_intersect($familyWords, $textWords));
+					$this->stats[$line[0]] = count(array_intersect($words, $textWords));
 				}
 			}
 			fclose($file);

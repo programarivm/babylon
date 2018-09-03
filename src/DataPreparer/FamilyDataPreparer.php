@@ -1,13 +1,13 @@
 <?php
 
-namespace Babylon;
+namespace Babylon\DataPreparer;
 
 use Babylon\File\TxtStats;
 
-class FamilyDataPreparer
+class FamilyDataPreparer implements DataPreparerInterface
 {
-    const INPUT_FOLDER      = __DIR__ . '/../dataset/output/iso-8859/latin';
-    const OUTPUT_FOLDER     = __DIR__ . '/../dataset/output';
+    const INPUT_FOLDER      = __DIR__ . '/../../dataset/output/iso-8859/latin';
+    const OUTPUT_FOLDER     = __DIR__ . '/../../dataset/output';
     const OUTPUT_FILE       = 'iso-8859-latin-family.csv';
 
     protected $mssg = '';

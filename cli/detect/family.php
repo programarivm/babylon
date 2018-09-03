@@ -2,7 +2,7 @@
 
 namespace Babylon\Cli;
 
-use Babylon\FamilyDetector;
+use Babylon\Detector\FamilyDetector;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
