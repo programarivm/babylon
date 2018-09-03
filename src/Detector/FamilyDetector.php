@@ -24,6 +24,7 @@ class FamilyDetector
 	public function detect(): string
 	{
 		$unicodeRangename = (new UnicodeRangeStats($this->text))->mostFreq();
+		
 		switch ($unicodeRangename) {
 			case Cyrillic::RANGE_NAME:
 				$this->calc(__DIR__.'/../../dataset/output/cyrillic-fingerprint.csv');
@@ -42,12 +43,11 @@ class FamilyDetector
 				break;
 
 		}
-		arsort($this->detection);
 
 		return key(array_slice($this->detection, 0, 1));
 	}
 
-	private function calc($dataFilepath)
+	private function calc(string $dataFilepath): void
 	{
 		if ($file = fopen($dataFilepath, 'r')) {
 			while (!feof($file)) {
@@ -60,5 +60,7 @@ class FamilyDetector
 			}
 			fclose($file);
 		}
+
+		arsort($this->detection);
 	}
 }
