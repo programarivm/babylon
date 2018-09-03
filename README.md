@@ -42,14 +42,18 @@ $isoCode = (new LanguageDetector($text))->detect();
 | `cym`           | Welsh                  |
 | `dan`           | Danish                 |
 | `deu`           | German                 |
+| `ell`           | Greek                  |
 | `eng`           | English                |
 | `fin`           | Finnish                |
 | `fra`           | French                 |
 | `gla`           | Scottish Gaelic        |
 | `gle`           | Irish                  |
+| `heb`           | Hebrew                 |
 | `hun`           | Hungarian              |
 | `ita`           | Italian                |
 | `isl`           | Icelandic              |
+| `jpn`           | Japanese               |
+| `kor`           | Korean                 |
 | `nld`           | Dutch; Flemish         |
 | `nob`           | Norwegian              |
 | `pol`           | Polish                 |
@@ -58,6 +62,7 @@ $isoCode = (new LanguageDetector($text))->detect();
 | `spa`           | Spanish                |
 | `swe`           | Swedish                |
 | `tgl`           | Tagalog                |
+| `zho`           | Chinese                |
 
 ### License
 

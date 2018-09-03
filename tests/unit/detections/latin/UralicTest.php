@@ -1,6 +1,6 @@
 <?php
 
-namespace Babylon\Tests\Unit\Unit;
+namespace Babylon\Tests\Unit\Detections\Latin;
 
 use Babylon\Detector\FamilyDetector;
 use Babylon\Detector\LanguageDetector;

@@ -6,9 +6,9 @@ use Babylon\File\TxtStats;
 
 class FamilyDataPreparer implements DataPreparerInterface
 {
-    const INPUT_FOLDER      = __DIR__ . '/../../dataset/output/iso-8859/latin';
+    const INPUT_FOLDER      = __DIR__ . '/../../dataset/output/alphabet/latin';
     const OUTPUT_FOLDER     = __DIR__ . '/../../dataset/output';
-    const OUTPUT_FILE       = 'iso-8859-latin-family.csv';
+    const OUTPUT_FILE       = 'latin-fingerprint.csv';
 
     protected $mssg = '';
 
