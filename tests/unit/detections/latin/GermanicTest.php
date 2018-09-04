@@ -9,6 +9,15 @@ use PHPUnit\Framework\TestCase;
 class GermanicTest extends TestCase
 {
     /**
+     * @dataProvider afrData
+     * @test
+     */
+    public function family_detect_afr($text)
+    {
+        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
+    }
+
+    /**
      * @dataProvider danData
      * @test
      */
@@ -72,6 +81,15 @@ class GermanicTest extends TestCase
     }
 
     /**
+     * @dataProvider afrData
+     * @test
+     */
+    public function language_detect_afr($text)
+    {
+        $this->assertEquals('afr', (new LanguageDetector($text))->detect());
+    }
+
+    /**
      * @dataProvider danData
      * @test
      */
@@ -132,6 +150,19 @@ class GermanicTest extends TestCase
     public function language_detect_swe($text)
     {
         $this->assertEquals('swe', (new LanguageDetector($text))->detect());
+    }
+
+    public function afrData()
+    {
+        return [
+            [
+                "Hierdie vierde druk is dus meer dan ’n blote herdruk,
+                nie alleen omdat dit ’n uitgebreider en meer
+                oorsigtelike keuse bevat as die vorige drie nie, maar
+                ook omdat die oorspronklike keuse hier en daar gewysig
+                is volgens latere insigte."
+            ],
+        ];
     }
 
     public function danData()

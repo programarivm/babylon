@@ -2,6 +2,7 @@
 
 | ISO 639-3       | Language               |
 |-----------------|------------------------|
+| `afr`           | Afrikaans              |
 | `ara`           | Arabic                 |
 | `bul`           | Bulgarian              |
 | `ceb`           | Cebuano                |
