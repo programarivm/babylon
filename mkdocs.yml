@@ -1,0 +1,6 @@
+site_name: Babylon
+pages:
+  - Home: index.md
+  - Languages Detected: languages-detected.md
+  - Adding Languages: adding-languages.md
+theme: readthedocs
