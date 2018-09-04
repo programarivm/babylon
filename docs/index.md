@@ -4,10 +4,6 @@
 [![Documentation Status](https://readthedocs.org/projects/babylon/badge/?version=latest)](https://babylon.readthedocs.io/en/latest/?badge=latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-<p align="center">
-	<img src="https://github.com/programarivm/babylon/blob/master/resources/languages.jpg" />
-</p>
-
 Babylon is the simplest, easiest-to-use language detector.
 
 ### Install
