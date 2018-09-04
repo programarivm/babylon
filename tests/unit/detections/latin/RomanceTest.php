@@ -9,6 +9,15 @@ use PHPUnit\Framework\TestCase;
 class RomanceFamilyTest extends TestCase
 {
     /**
+     * @dataProvider catData
+     * @test
+     */
+    public function family_detect_cat($text)
+    {
+        $this->assertEquals('romance', (new FamilyDetector($text))->detect());
+    }
+
+    /**
      * @dataProvider fraData
      * @test
      */
@@ -54,6 +63,15 @@ class RomanceFamilyTest extends TestCase
     }
 
     /**
+     * @dataProvider catData
+     * @test
+     */
+    public function language_detect_cat($text)
+    {
+        $this->assertEquals('cat', (new LanguageDetector($text))->detect());
+    }
+
+    /**
      * @dataProvider fraData
      * @test
      */
@@ -96,6 +114,17 @@ class RomanceFamilyTest extends TestCase
     public function language_detect_spa($text)
     {
         $this->assertEquals('spa', (new LanguageDetector($text))->detect());
+    }
+
+    public function catData()
+    {
+        return [
+            [
+                "D'aquesta manera va succeir! D'aquesta mateixa manera, tan cert com
+                jo estic aquí asseguda. Tom, no podríeu dir-ne més si ho haguéssiu
+                vist! I, en acabat, què més? Endavant, Tom."
+            ],
+        ];
     }
 
     public function fraData()

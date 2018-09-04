@@ -5,6 +5,7 @@
 | `afr`           | Afrikaans              |
 | `ara`           | Arabic                 |
 | `bul`           | Bulgarian              |
+| `cat`           | Catalan                |
 | `ceb`           | Cebuano                |
 | `ces`           | Czech                  |
 | `cym`           | Welsh                  |
