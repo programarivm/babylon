@@ -12,6 +12,8 @@ class Validator
         switch ($alphabet) {
             case Alphabet::CYRILLIC:
                 break;
+            case Alphabet::DEVANAGARI:
+                break;
             case Alphabet::LATIN:
                 break;
             default:
@@ -30,6 +32,8 @@ class Validator
             case Family::GAELIC:
                 break;
             case Family::GERMANIC:
+                break;
+            case Family::INDO_ARYAN:
                 break;
             case Family::ROMANCE:
                 break;

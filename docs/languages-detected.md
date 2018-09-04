@@ -16,6 +16,7 @@
 | `gla`           | Scottish Gaelic        |
 | `gle`           | Irish                  |
 | `heb`           | Hebrew                 |
+| `hin`           | Hindi                  |
 | `hrv`           | Croatian               |
 | `hun`           | Hungarian              |
 | `ita`           | Italian                |

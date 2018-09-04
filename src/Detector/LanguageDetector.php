@@ -14,6 +14,8 @@ use UnicodeRanges\Range\Cyrillic;
 use UnicodeRanges\Range\CyrillicExtendedA;
 use UnicodeRanges\Range\CyrillicExtendedB;
 use UnicodeRanges\Range\CyrillicSupplement;
+use UnicodeRanges\Range\Devanagari;
+use UnicodeRanges\Range\DevanagariExtended;
 use UnicodeRanges\Range\GreekAndCoptic;
 use UnicodeRanges\Range\HangulCompatibilityJamo;
 use UnicodeRanges\Range\HangulJamo;
@@ -53,6 +55,12 @@ class LanguageDetector
                 $this->calc(__DIR__."/../../dataset/output/alphabet/cyrillic/$langFamily.csv");
                 return key(array_slice($this->detection, 0, 1));
 
+            case $this->isDevanagari($this->text):
+                $this->text = Filter::text($this->text);
+                $langFamily = (new FamilyDetector($this->text))->detect();
+                $this->calc(__DIR__."/../../dataset/output/alphabet/devanagari/$langFamily.csv");
+                return key(array_slice($this->detection, 0, 1));
+
             case $this->isLatin($this->text):
                 $this->text = Filter::text($this->text);
                 $langFamily = (new FamilyDetector($this->text))->detect();
@@ -78,6 +86,20 @@ class LanguageDetector
             case CyrillicExtendedB::RANGE_NAME:
                 return true;
             case CyrillicSupplement::RANGE_NAME:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    private function isDevanagari(string $text)
+    {
+        $unicodeRangename = (new UnicodeRangeStats($this->text))->mostFreq();
+
+        switch ($unicodeRangename) {
+            case Devanagari::RANGE_NAME:
+                return true;
+            case DevanagariExtended::RANGE_NAME:
                 return true;
             default:
                 return false;

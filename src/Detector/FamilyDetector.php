@@ -8,6 +8,8 @@ use UnicodeRanges\Range\Cyrillic;
 use UnicodeRanges\Range\CyrillicExtendedA;
 use UnicodeRanges\Range\CyrillicExtendedB;
 use UnicodeRanges\Range\CyrillicSupplement;
+use UnicodeRanges\Range\Devanagari;
+use UnicodeRanges\Range\DevanagariExtended;
 
 class FamilyDetector
 {
@@ -24,7 +26,7 @@ class FamilyDetector
 	public function detect(): string
 	{
 		$unicodeRangename = (new UnicodeRangeStats($this->text))->mostFreq();
-		
+
 		switch ($unicodeRangename) {
 			case Cyrillic::RANGE_NAME:
 				$this->calc(__DIR__.'/../../dataset/output/cyrillic-fingerprint.csv');
@@ -37,6 +39,12 @@ class FamilyDetector
 				break;
 			case CyrillicSupplement::RANGE_NAME:
 				$this->calc(__DIR__.'/../../dataset/output/cyrillic-fingerprint.csv');
+				break;
+			case Devanagari::RANGE_NAME:
+				$this->calc(__DIR__.'/../../dataset/output/devanagari-fingerprint.csv');
+				break;
+			case DevanagariExtended::RANGE_NAME:
+				$this->calc(__DIR__.'/../../dataset/output/devanagari-fingerprint.csv');
 				break;
 			default:
 				$this->calc(__DIR__.'/../../dataset/output/latin-fingerprint.csv');

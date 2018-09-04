@@ -22,17 +22,29 @@ class LanguageDataPreparer implements DataPreparerInterface
     {
         Validator::langFamily($langFamily);
 
-        $alphabet === Alphabet::CYRILLIC ? $this->alphabet = Alphabet::CYRILLIC : $this->alphabet = Alphabet::LATIN;
+        switch ($alphabet) {
+            case Alphabet::CYRILLIC:
+                $this->alphabet = Alphabet::CYRILLIC;
+                break;
+            case Alphabet::DEVANAGARI:
+                $this->alphabet = Alphabet::DEVANAGARI;
+                break;
+            default:
+                $this->alphabet = Alphabet::LATIN;
+                break;
+        }
 
         $this->langFamily = $langFamily;
 
         $this->inputFolder = [
             Alphabet::CYRILLIC => __DIR__.'/../../dataset/input/alphabet/'.Alphabet::CYRILLIC."/$langFamily",
+            Alphabet::DEVANAGARI => __DIR__.'/../../dataset/input/alphabet/'.Alphabet::DEVANAGARI."/$langFamily",
             Alphabet::LATIN => __DIR__.'/../../dataset/input/alphabet/'.Alphabet::LATIN."/$langFamily",
         ];
 
         $this->outputFolder = [
             Alphabet::CYRILLIC => __DIR__.'/../../dataset/output/alphabet/'.Alphabet::CYRILLIC,
+            Alphabet::DEVANAGARI => __DIR__.'/../../dataset/output/alphabet/'.Alphabet::DEVANAGARI,
             Alphabet::LATIN => __DIR__.'/../../dataset/output/alphabet/'.Alphabet::LATIN,
         ];
     }
