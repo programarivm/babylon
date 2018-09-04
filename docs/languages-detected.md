@@ -30,6 +30,7 @@
 | `rus`           | Russian                |
 | `spa`           | Spanish                |
 | `swe`           | Swedish                |
+| `tam`           | Tamil                  |
 | `tel`           | Telugu                 |
 | `tgl`           | Tagalog                |
 | `zho`           | Chinese                |
