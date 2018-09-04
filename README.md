@@ -21,8 +21,6 @@ Via composer:
 Instantiate a `LanguageDetector` to detect a text's language.
 
 ```php
-<?php
-
 use Babylon\LanguageDetector;
 
 $text = 'You will have your data soon, I remarked, pointing with my finger;
