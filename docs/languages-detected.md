@@ -4,6 +4,7 @@
 |-----------------|------------------------|
 | `afr`           | Afrikaans              |
 | `ara`           | Arabic                 |
+| `ben`           | Bengali                |
 | `bul`           | Bulgarian              |
 | `cat`           | Catalan                |
 | `ceb`           | Cebuano                |

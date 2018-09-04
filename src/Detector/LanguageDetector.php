@@ -9,6 +9,7 @@ use Babylon\Detector\FamilyDetector;
 use UnicodeRanges\Range\Arabic;
 use UnicodeRanges\Range\ArabicMathematicalAlphabeticSymbols;
 use UnicodeRanges\Range\BasicLatin;
+use UnicodeRanges\Range\Bengali;
 use UnicodeRanges\Range\CJKUnifiedIdeographs;
 use UnicodeRanges\Range\Cyrillic;
 use UnicodeRanges\Range\CyrillicExtendedA;
@@ -151,6 +152,9 @@ class LanguageDetector
                 break;
             case ArabicMathematicalAlphabeticSymbols::RANGE_NAME:
                 return 'ara'; // Arabic
+                break;
+            case Bengali::RANGE_NAME:
+                return 'ben'; // Bengali
                 break;
             case GreekAndCoptic::RANGE_NAME:
                 return 'ell'; // Greek
