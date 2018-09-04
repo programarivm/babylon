@@ -35,6 +35,8 @@ class Validator
                 break;
             case Family::SLAVIC:
                 break;
+            case Family::TURKIC:
+                break;
             case Family::URALIC:
                 break;
             default:

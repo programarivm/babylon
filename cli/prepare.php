@@ -26,6 +26,7 @@ echo (new LanguageDataPreparer(Family::GERMANIC))->prepare();
 echo (new LanguageDataPreparer(Family::ROMANCE))->prepare();
 echo (new LanguageDataPreparer(Family::SLAVIC))->prepare();
 echo (new LanguageDataPreparer(Family::SLAVIC, Alphabet::CYRILLIC))->prepare();
+echo (new LanguageDataPreparer(Family::TURKIC))->prepare();
 echo (new LanguageDataPreparer(Family::URALIC))->prepare();
 
 echo (new FamilyDataPreparer(Alphabet::CYRILLIC))->prepare();

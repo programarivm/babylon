@@ -33,4 +33,5 @@
 | `tam`           | Tamil                  |
 | `tel`           | Telugu                 |
 | `tgl`           | Tagalog                |
+| `tur`           | Turkish                |
 | `zho`           | Chinese                |
