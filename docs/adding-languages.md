@@ -1,6 +1,6 @@
 ## Adding Languages
 
-Are a PHP developer? If so you may want to help add more languages to this language detector by sending a PR :)
+Are you a PHP developer? Here is how you could help add more languages to this language detector by sending a PR :)
 
 Babylon implements a machine learning technique and can be trained to learn languages easily.
 
