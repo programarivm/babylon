@@ -29,6 +29,7 @@ use UnicodeRanges\Range\KatakanaPhoneticExtensions;
 use UnicodeRanges\Range\LatinExtendedA;
 use UnicodeRanges\Range\LatinExtendedB;
 use UnicodeRanges\Range\Latin1Supplement;
+use UnicodeRanges\Range\Tamil;
 use UnicodeRanges\Range\Telugu;
 
 class LanguageDetector
@@ -161,6 +162,9 @@ class LanguageDetector
                 break;
             case HangulSyllables::RANGE_NAME:
                 return 'kor'; // Korean
+                break;
+            case Tamil::RANGE_NAME:
+                return 'tam'; // Tamil
                 break;
             case Telugu::RANGE_NAME:
                 return 'tel'; // Telugu
