@@ -43,7 +43,7 @@ class LanguageDetector
 
     public function __construct(string $text)
     {
-        $this->text = $text;
+        $this->text = Filter::text($text);
         $this->detection = [];
     }
 
@@ -51,21 +51,18 @@ class LanguageDetector
     {
         switch (true) {
             case $this->isCyrillic($this->text):
-                $this->text = Filter::text($this->text);
                 $langFamily = (new FamilyDetector($this->text))->detect();
-                $this->calc(__DIR__."/../../dataset/output/alphabet/cyrillic/$langFamily.csv");
+                $this->compare(__DIR__."/../../dataset/output/alphabet/cyrillic/$langFamily.csv");
                 return key(array_slice($this->detection, 0, 1));
 
             case $this->isDevanagari($this->text):
-                $this->text = Filter::text($this->text);
                 $langFamily = (new FamilyDetector($this->text))->detect();
-                $this->calc(__DIR__."/../../dataset/output/alphabet/devanagari/$langFamily.csv");
+                $this->compare(__DIR__."/../../dataset/output/alphabet/devanagari/$langFamily.csv");
                 return key(array_slice($this->detection, 0, 1));
 
             case $this->isLatin($this->text):
-                $this->text = Filter::text($this->text);
                 $langFamily = (new FamilyDetector($this->text))->detect();
-                $this->calc(__DIR__."/../../dataset/output/alphabet/latin/$langFamily.csv");
+                $this->compare(__DIR__."/../../dataset/output/alphabet/latin/$langFamily.csv");
                 return key(array_slice($this->detection, 0, 1));
 
             default:
@@ -75,7 +72,7 @@ class LanguageDetector
         }
     }
 
-    private function isCyrillic(string $text)
+    private function isCyrillic(string $text): bool
     {
         $unicodeRangename = (new UnicodeRangeStats($this->text))->mostFreq();
 
@@ -93,7 +90,7 @@ class LanguageDetector
         }
     }
 
-    private function isDevanagari(string $text)
+    private function isDevanagari(string $text): bool
     {
         $unicodeRangename = (new UnicodeRangeStats($this->text))->mostFreq();
 
@@ -107,7 +104,7 @@ class LanguageDetector
         }
     }
 
-    private function isLatin(string $text)
+    private function isLatin(string $text): bool
     {
         $unicodeRangename = (new UnicodeRangeStats($this->text))->mostFreq();
 
@@ -127,7 +124,7 @@ class LanguageDetector
         }
     }
 
-    private function calc(string $dataFilepath): void
+    private function compare(string $dataFilepath): void
     {
         if ($file = fopen($dataFilepath, 'r')) {
             while (!feof($file)) {
@@ -144,7 +141,7 @@ class LanguageDetector
         arsort($this->detection);
     }
 
-    private function isoCodeByUnicodeRangename(string $unicodeRangename)
+    private function isoCodeByUnicodeRangename(string $unicodeRangename): string
     {
         switch ($unicodeRangename) {
             case Arabic::RANGE_NAME:

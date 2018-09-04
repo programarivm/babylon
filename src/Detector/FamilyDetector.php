@@ -19,7 +19,7 @@ class FamilyDetector
 
 	public function __construct(string $text)
 	{
-		$this->text = Filter::text($text);
+		$this->text = $text;
 		$this->detection = [];
 	}
 
@@ -29,25 +29,25 @@ class FamilyDetector
 
 		switch ($unicodeRangename) {
 			case Cyrillic::RANGE_NAME:
-				$this->calc(__DIR__.'/../../dataset/output/cyrillic-fingerprint.csv');
+				$this->compare(__DIR__.'/../../dataset/output/cyrillic-fingerprint.csv');
 				break;
 			case CyrillicExtendedA::RANGE_NAME:
-				$this->calc(__DIR__.'/../../dataset/output/cyrillic-fingerprint.csv');
+				$this->compare(__DIR__.'/../../dataset/output/cyrillic-fingerprint.csv');
 				break;
 			case CyrillicExtendedB::RANGE_NAME:
-				$this->calc(__DIR__.'/../../dataset/output/cyrillic-fingerprint.csv');
+				$this->compare(__DIR__.'/../../dataset/output/cyrillic-fingerprint.csv');
 				break;
 			case CyrillicSupplement::RANGE_NAME:
-				$this->calc(__DIR__.'/../../dataset/output/cyrillic-fingerprint.csv');
+				$this->compare(__DIR__.'/../../dataset/output/cyrillic-fingerprint.csv');
 				break;
 			case Devanagari::RANGE_NAME:
-				$this->calc(__DIR__.'/../../dataset/output/devanagari-fingerprint.csv');
+				$this->compare(__DIR__.'/../../dataset/output/devanagari-fingerprint.csv');
 				break;
 			case DevanagariExtended::RANGE_NAME:
-				$this->calc(__DIR__.'/../../dataset/output/devanagari-fingerprint.csv');
+				$this->compare(__DIR__.'/../../dataset/output/devanagari-fingerprint.csv');
 				break;
 			default:
-				$this->calc(__DIR__.'/../../dataset/output/latin-fingerprint.csv');
+				$this->compare(__DIR__.'/../../dataset/output/latin-fingerprint.csv');
 				break;
 
 		}
@@ -55,7 +55,7 @@ class FamilyDetector
 		return key(array_slice($this->detection, 0, 1));
 	}
 
-	private function calc(string $dataFilepath): void
+	private function compare(string $dataFilepath): void
 	{
 		if ($file = fopen($dataFilepath, 'r')) {
 			while (!feof($file)) {
