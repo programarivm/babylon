@@ -9,5 +9,6 @@ class Family
 	const GERMANIC       = 'germanic';
 	const ROMANCE        = 'romance';
 	const SLAVIC         = 'slavic';
+	const TURKIC         = 'turkic';
 	const URALIC         = 'uralic';
 }
