@@ -36,7 +36,7 @@ $isoCode = (new LanguageDetector($text))->detect();
 
 ### Language Detection
 
-Babylon implements a machine learning technique and can be trained to learn languages easily. Please read the [Documentation](https://babylon.readthedocs.io/en/latest/) to find out which ones can be detected so far.
+Please read the [Documentation](https://babylon.readthedocs.io/en/latest/) to find out which languages can be detected so far, and also to learn how to add new ones easily.
 
 ### License
 
