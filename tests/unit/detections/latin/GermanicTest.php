@@ -4,17 +4,33 @@ namespace Babylon\Tests\Unit\Detections\Latin;
 
 use Babylon\Detector\FamilyDetector;
 use Babylon\Detector\LanguageDetector;
+use Babylon\Unicode;
 use PHPUnit\Framework\TestCase;
 
 class GermanicTest extends TestCase
 {
+    /**
+     * @dataProvider afrData
+     * @test
+     */
+    public function family_detect_afr($text)
+    {
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('germanic', $family);
+    }
+
     /**
      * @dataProvider danData
      * @test
      */
     public function family_detect_dan($text)
     {
-        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('germanic', $family);
     }
 
     /**
@@ -23,7 +39,10 @@ class GermanicTest extends TestCase
      */
     public function family_detect_deu($text)
     {
-        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('germanic', $family);
     }
 
     /**
@@ -32,7 +51,10 @@ class GermanicTest extends TestCase
      */
     public function family_detect_eng($text)
     {
-        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('germanic', $family);
     }
 
     /**
@@ -41,7 +63,10 @@ class GermanicTest extends TestCase
      */
     public function family_detect_isl($text)
     {
-        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('germanic', $family);
     }
 
     /**
@@ -50,7 +75,10 @@ class GermanicTest extends TestCase
      */
     public function family_detect_nld($text)
     {
-        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('germanic', $family);
     }
 
     /**
@@ -59,7 +87,10 @@ class GermanicTest extends TestCase
      */
     public function family_detect_nob($text)
     {
-        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('germanic', $family);
     }
 
     /**
@@ -68,7 +99,19 @@ class GermanicTest extends TestCase
      */
     public function family_detect_swe($text)
     {
-        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('germanic', $family);
+    }
+
+    /**
+     * @dataProvider afrData
+     * @test
+     */
+    public function language_detect_afr($text)
+    {
+        $this->assertEquals('afr', (new LanguageDetector($text))->detect());
     }
 
     /**
@@ -132,6 +175,19 @@ class GermanicTest extends TestCase
     public function language_detect_swe($text)
     {
         $this->assertEquals('swe', (new LanguageDetector($text))->detect());
+    }
+
+    public function afrData()
+    {
+        return [
+            [
+                "Hierdie vierde druk is dus meer dan ’n blote herdruk,
+                nie alleen omdat dit ’n uitgebreider en meer
+                oorsigtelike keuse bevat as die vorige drie nie, maar
+                ook omdat die oorspronklike keuse hier en daar gewysig
+                is volgens latere insigte."
+            ],
+        ];
     }
 
     public function danData()

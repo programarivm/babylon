@@ -3,6 +3,7 @@
 namespace Babylon\DataPreparer;
 
 use Babylon\Alphabet;
+use Babylon\Family;
 use Babylon\Validator;
 use Babylon\File\TxtStats;
 
@@ -10,7 +11,7 @@ class LanguageDataPreparer implements DataPreparerInterface
 {
     protected $alphabet;
 
-    protected $langFamily;
+    protected $family ;
 
     protected $inputFolder;
 
@@ -18,23 +19,39 @@ class LanguageDataPreparer implements DataPreparerInterface
 
     protected $mssg = '';
 
-    public function __construct(string $langFamily, string $alphabet = null)
+    public function __construct(string $family , string $alphabet = null)
     {
-        Validator::langFamily($langFamily);
+        Family::validate($family);
 
-        $alphabet === Alphabet::CYRILLIC ? $this->alphabet = Alphabet::CYRILLIC : $this->alphabet = Alphabet::LATIN;
+        switch ($alphabet) {
+            case Alphabet::CYRILLIC:
+                $this->alphabet = Alphabet::CYRILLIC;
+                break;
+            case Alphabet::DEVANAGARI:
+                $this->alphabet = Alphabet::DEVANAGARI;
+                break;
+            default:
+                $this->alphabet = Alphabet::LATIN;
+                break;
+        }
 
-        $this->langFamily = $langFamily;
+        $this->family  = $family ;
 
-        $this->inputFolder = [
-            Alphabet::CYRILLIC => __DIR__.'/../../dataset/input/alphabet/'.Alphabet::CYRILLIC."/$langFamily",
-            Alphabet::LATIN => __DIR__.'/../../dataset/input/alphabet/'.Alphabet::LATIN."/$langFamily",
+        $this->inputFolder = __DIR__."/../../dataset/input/alphabet/{$this->alphabet}/$family";
+
+        $this->outputFolder = __DIR__."/../../dataset/output/alphabet/{$this->alphabet}";
+
+        /* $this->inputFolder = [
+            Alphabet::CYRILLIC => __DIR__.'/../../dataset/input/alphabet/'.Alphabet::CYRILLIC."/$family ",
+            Alphabet::DEVANAGARI => __DIR__.'/../../dataset/input/alphabet/'.Alphabet::DEVANAGARI."/$family ",
+            Alphabet::LATIN => __DIR__.'/../../dataset/input/alphabet/'.Alphabet::LATIN."/$family ",
         ];
 
         $this->outputFolder = [
             Alphabet::CYRILLIC => __DIR__.'/../../dataset/output/alphabet/'.Alphabet::CYRILLIC,
+            Alphabet::DEVANAGARI => __DIR__.'/../../dataset/output/alphabet/'.Alphabet::DEVANAGARI,
             Alphabet::LATIN => __DIR__.'/../../dataset/output/alphabet/'.Alphabet::LATIN,
-        ];
+        ]; */
     }
 
     /**
@@ -46,12 +63,12 @@ class LanguageDataPreparer implements DataPreparerInterface
     public function prepare(): string
     {
         $csv = '';
-        $files = array_diff(scandir($this->inputFolder[$this->alphabet]), ['.', '..']);
+        $files = array_diff(scandir($this->inputFolder), ['.', '..']);
         foreach ($files as $file) {
-            $txtStats = new TxtStats("{$this->inputFolder[$this->alphabet]}/$file");
+            $txtStats = new TxtStats("{$this->inputFolder}/$file");
             $freqWords = $txtStats->freqWords();
             $csv .= pathinfo($file, PATHINFO_FILENAME) .','.$this->magicPhrase($freqWords).PHP_EOL;
-            if ($handle = fopen("{$this->outputFolder[$this->alphabet]}/{$this->langFamily}.csv", 'w')) {
+            if ($handle = fopen("{$this->outputFolder}/{$this->family}.csv", 'w')) {
                 if (fwrite($handle, $csv) !== false) {
                     $this->mssg .= "OK! The most frequent words in $file were transformed into CSV format...".PHP_EOL;
                 } else {
@@ -60,7 +77,7 @@ class LanguageDataPreparer implements DataPreparerInterface
                 fclose($handle);
             }
         }
-        $this->mssg .= 'The '.$this->langFamily.' language family has been updated.'.PHP_EOL;
+        $this->mssg .= 'The '.$this->family .' language family has been updated.'.PHP_EOL;
 
         return $this->mssg;
     }

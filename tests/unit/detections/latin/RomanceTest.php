@@ -4,17 +4,33 @@ namespace Babylon\Tests\Unit\Detections\Latin;
 
 use Babylon\Detector\FamilyDetector;
 use Babylon\Detector\LanguageDetector;
+use Babylon\Unicode;
 use PHPUnit\Framework\TestCase;
 
 class RomanceFamilyTest extends TestCase
 {
+    /**
+     * @dataProvider catData
+     * @test
+     */
+    public function family_detect_cat($text)
+    {
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('romance', $family);
+    }
+
     /**
      * @dataProvider fraData
      * @test
      */
     public function family_detect_fra($text)
     {
-        $this->assertEquals('romance', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('romance', $family);
     }
 
     /**
@@ -23,7 +39,10 @@ class RomanceFamilyTest extends TestCase
      */
     public function family_detect_ita($text)
     {
-        $this->assertEquals('romance', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('romance', $family);
     }
 
     /**
@@ -32,7 +51,10 @@ class RomanceFamilyTest extends TestCase
      */
     public function family_detect_por($text)
     {
-        $this->assertEquals('romance', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('romance', $family);
     }
 
     /**
@@ -41,7 +63,10 @@ class RomanceFamilyTest extends TestCase
      */
     public function family_detect_ron($text)
     {
-        $this->assertEquals('romance', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('romance', $family);
     }
 
     /**
@@ -50,7 +75,22 @@ class RomanceFamilyTest extends TestCase
      */
     public function family_detect_spa($text)
     {
-        $this->assertEquals('romance', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('romance', $family);
+    }
+
+    /**
+     * @dataProvider catData
+     * @test
+     */
+    public function language_detect_cat($text)
+    {
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('romance', $family);
     }
 
     /**
@@ -96,6 +136,17 @@ class RomanceFamilyTest extends TestCase
     public function language_detect_spa($text)
     {
         $this->assertEquals('spa', (new LanguageDetector($text))->detect());
+    }
+
+    public function catData()
+    {
+        return [
+            [
+                "D'aquesta manera va succeir! D'aquesta mateixa manera, tan cert com
+                jo estic aquí asseguda. Tom, no podríeu dir-ne més si ho haguéssiu
+                vist! I, en acabat, què més? Endavant, Tom."
+            ],
+        ];
     }
 
     public function fraData()

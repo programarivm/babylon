@@ -2,8 +2,11 @@
 
 | ISO 639-3       | Language               |
 |-----------------|------------------------|
+| `afr`           | Afrikaans              |
 | `ara`           | Arabic                 |
+| `ben`           | Bengali                |
 | `bul`           | Bulgarian              |
+| `cat`           | Catalan                |
 | `ceb`           | Cebuano                |
 | `ces`           | Czech                  |
 | `cym`           | Welsh                  |
@@ -16,10 +19,12 @@
 | `gla`           | Scottish Gaelic        |
 | `gle`           | Irish                  |
 | `heb`           | Hebrew                 |
+| `hin`           | Hindi                  |
 | `hrv`           | Croatian               |
 | `hun`           | Hungarian              |
 | `ita`           | Italian                |
 | `isl`           | Icelandic              |
+| `jav`           | Javanese               |
 | `jpn`           | Japanese               |
 | `kor`           | Korean                 |
 | `nld`           | Dutch; Flemish         |
@@ -34,4 +39,5 @@
 | `tel`           | Telugu                 |
 | `tgl`           | Tagalog                |
 | `tur`           | Turkish                |
+| `vie`           | Vietnamese             |
 | `zho`           | Chinese                |

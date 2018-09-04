@@ -4,6 +4,7 @@ namespace Babylon\Tests\Unit\Detections\Latin;
 
 use Babylon\Detector\FamilyDetector;
 use Babylon\Detector\LanguageDetector;
+use Babylon\Unicode;
 use PHPUnit\Framework\TestCase;
 
 class SlavicTest extends TestCase
@@ -14,7 +15,10 @@ class SlavicTest extends TestCase
      */
     public function family_detect_ces($text)
     {
-        $this->assertEquals('slavic', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('slavic', $family);
     }
 
     /**
@@ -23,7 +27,10 @@ class SlavicTest extends TestCase
      */
     public function family_detect_pol($text)
     {
-        $this->assertEquals('slavic', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('slavic', $family);
     }
 
     /**

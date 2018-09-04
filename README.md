@@ -21,8 +21,6 @@ Via composer:
 Instantiate a `LanguageDetector` to detect a text's language.
 
 ```php
-<?php
-
 use Babylon\LanguageDetector;
 
 $text = 'You will have your data soon, I remarked, pointing with my finger;
@@ -36,7 +34,7 @@ $isoCode = (new LanguageDetector($text))->detect();
 
 ### Language Detection
 
-Babylon implements a machine learning technique and can be trained to learn languages easily. Please read the [Documentation](https://babylon.readthedocs.io/en/latest/) to find out which ones can be detected so far.
+Please read the [Documentation](https://babylon.readthedocs.io/en/latest/) to find out which languages can be detected so far, and also to learn how to add new ones easily.
 
 ### License
 

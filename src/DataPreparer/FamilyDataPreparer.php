@@ -2,8 +2,8 @@
 
 namespace Babylon\DataPreparer;
 
+use Babylon\Alphabet;
 use Babylon\File\TxtStats;
-use Babylon\Validator;
 
 class FamilyDataPreparer implements DataPreparerInterface
 {
@@ -17,7 +17,7 @@ class FamilyDataPreparer implements DataPreparerInterface
 
     public function __construct(string $alphabet)
     {
-        Validator::alphabet($alphabet);
+        Alphabet::validate($alphabet);
 
         $this->alphabet = $alphabet;
         $this->inputFolder = __DIR__."/../../dataset/output/alphabet/$alphabet";
