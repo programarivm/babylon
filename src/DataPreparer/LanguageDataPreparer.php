@@ -3,6 +3,7 @@
 namespace Babylon\DataPreparer;
 
 use Babylon\Alphabet;
+use Babylon\Family;
 use Babylon\Validator;
 use Babylon\File\TxtStats;
 
@@ -10,7 +11,7 @@ class LanguageDataPreparer implements DataPreparerInterface
 {
     protected $alphabet;
 
-    protected $langFamily;
+    protected $family ;
 
     protected $inputFolder;
 
@@ -18,9 +19,9 @@ class LanguageDataPreparer implements DataPreparerInterface
 
     protected $mssg = '';
 
-    public function __construct(string $langFamily, string $alphabet = null)
+    public function __construct(string $family , string $alphabet = null)
     {
-        Validator::langFamily($langFamily);
+        Family::validate($family);
 
         switch ($alphabet) {
             case Alphabet::CYRILLIC:
@@ -34,12 +35,12 @@ class LanguageDataPreparer implements DataPreparerInterface
                 break;
         }
 
-        $this->langFamily = $langFamily;
+        $this->family  = $family ;
 
         $this->inputFolder = [
-            Alphabet::CYRILLIC => __DIR__.'/../../dataset/input/alphabet/'.Alphabet::CYRILLIC."/$langFamily",
-            Alphabet::DEVANAGARI => __DIR__.'/../../dataset/input/alphabet/'.Alphabet::DEVANAGARI."/$langFamily",
-            Alphabet::LATIN => __DIR__.'/../../dataset/input/alphabet/'.Alphabet::LATIN."/$langFamily",
+            Alphabet::CYRILLIC => __DIR__.'/../../dataset/input/alphabet/'.Alphabet::CYRILLIC."/$family ",
+            Alphabet::DEVANAGARI => __DIR__.'/../../dataset/input/alphabet/'.Alphabet::DEVANAGARI."/$family ",
+            Alphabet::LATIN => __DIR__.'/../../dataset/input/alphabet/'.Alphabet::LATIN."/$family ",
         ];
 
         $this->outputFolder = [
@@ -63,7 +64,7 @@ class LanguageDataPreparer implements DataPreparerInterface
             $txtStats = new TxtStats("{$this->inputFolder[$this->alphabet]}/$file");
             $freqWords = $txtStats->freqWords();
             $csv .= pathinfo($file, PATHINFO_FILENAME) .','.$this->magicPhrase($freqWords).PHP_EOL;
-            if ($handle = fopen("{$this->outputFolder[$this->alphabet]}/{$this->langFamily}.csv", 'w')) {
+            if ($handle = fopen("{$this->outputFolder[$this->alphabet]}/{$this->family }.csv", 'w')) {
                 if (fwrite($handle, $csv) !== false) {
                     $this->mssg .= "OK! The most frequent words in $file were transformed into CSV format...".PHP_EOL;
                 } else {
@@ -72,7 +73,7 @@ class LanguageDataPreparer implements DataPreparerInterface
                 fclose($handle);
             }
         }
-        $this->mssg .= 'The '.$this->langFamily.' language family has been updated.'.PHP_EOL;
+        $this->mssg .= 'The '.$this->family .' language family has been updated.'.PHP_EOL;
 
         return $this->mssg;
     }

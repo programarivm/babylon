@@ -6,13 +6,13 @@ use Babylon;
 use UnicodeRanges\Converter;
 
 /**
- * Unicode range stats.
+ * Unicode class.
  *
  * @author Jordi Bassagañas <info@programarivm.com>
  * @link https://programarivm.com
  * @license MIT
  */
-class UnicodeRangeStats
+class Unicode
 {
 	const N_FREQ_UNICODE_RANGES = 10;
 

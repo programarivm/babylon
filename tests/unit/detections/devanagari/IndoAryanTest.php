@@ -4,6 +4,7 @@ namespace Babylon\Tests\Unit\Detections\Cyrillic;
 
 use Babylon\Detector\FamilyDetector;
 use Babylon\Detector\LanguageDetector;
+use Babylon\Unicode;
 use PHPUnit\Framework\TestCase;
 
 class IndoAryanTest extends TestCase
@@ -14,7 +15,10 @@ class IndoAryanTest extends TestCase
      */
     public function family_detect_hin($text)
     {
-        $this->assertEquals('indo-aryan', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('indo-aryan', $family);
     }
 
     /**

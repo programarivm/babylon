@@ -2,10 +2,10 @@
 
 namespace Babylon\Tests\Unit\Unit;
 
-use Babylon\UnicodeRangeStats;
+use Babylon\Unicode;
 use PHPUnit\Framework\TestCase;
 
-class UnicodeRangeStatsTest extends TestCase
+class UnicodeTest extends TestCase
 {
     /**
      * @test
@@ -22,7 +22,7 @@ class UnicodeRangeStatsTest extends TestCase
             'Hiragana' => 3,
         ];
 
-        $this->assertEquals($expected, (new UnicodeRangeStats($text))->freq());
+        $this->assertEquals($expected, (new Unicode($text))->freq());
     }
 
     /**
@@ -32,6 +32,6 @@ class UnicodeRangeStatsTest extends TestCase
     {
         $text = '律絕諸篇俱宇宙古今مليارات في мале,тъйжалнопе hola que tal como 토마토쥬스 estas tu hoy この平安朝の';
 
-        $this->assertEquals('Basic Latin', (new UnicodeRangeStats($text))->mostFreq());
+        $this->assertEquals('Basic Latin', (new Unicode($text))->mostFreq());
     }
 }

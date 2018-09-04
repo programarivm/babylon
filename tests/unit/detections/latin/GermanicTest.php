@@ -4,6 +4,7 @@ namespace Babylon\Tests\Unit\Detections\Latin;
 
 use Babylon\Detector\FamilyDetector;
 use Babylon\Detector\LanguageDetector;
+use Babylon\Unicode;
 use PHPUnit\Framework\TestCase;
 
 class GermanicTest extends TestCase
@@ -14,7 +15,10 @@ class GermanicTest extends TestCase
      */
     public function family_detect_afr($text)
     {
-        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('germanic', $family);
     }
 
     /**
@@ -23,7 +27,10 @@ class GermanicTest extends TestCase
      */
     public function family_detect_dan($text)
     {
-        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('germanic', $family);
     }
 
     /**
@@ -32,7 +39,10 @@ class GermanicTest extends TestCase
      */
     public function family_detect_deu($text)
     {
-        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('germanic', $family);
     }
 
     /**
@@ -41,7 +51,10 @@ class GermanicTest extends TestCase
      */
     public function family_detect_eng($text)
     {
-        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('germanic', $family);
     }
 
     /**
@@ -50,7 +63,10 @@ class GermanicTest extends TestCase
      */
     public function family_detect_isl($text)
     {
-        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('germanic', $family);
     }
 
     /**
@@ -59,7 +75,10 @@ class GermanicTest extends TestCase
      */
     public function family_detect_nld($text)
     {
-        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('germanic', $family);
     }
 
     /**
@@ -68,7 +87,10 @@ class GermanicTest extends TestCase
      */
     public function family_detect_nob($text)
     {
-        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('germanic', $family);
     }
 
     /**
@@ -77,7 +99,10 @@ class GermanicTest extends TestCase
      */
     public function family_detect_swe($text)
     {
-        $this->assertEquals('germanic', (new FamilyDetector($text))->detect());
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('germanic', $family);
     }
 
     /**
