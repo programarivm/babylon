@@ -38,4 +38,5 @@
 | `tel`           | Telugu                 |
 | `tgl`           | Tagalog                |
 | `tur`           | Turkish                |
+| `vie`           | Vietnamese             |
 | `zho`           | Chinese                |
