@@ -10,10 +10,10 @@ use PHPUnit\Framework\TestCase;
 class AustronesianTest extends TestCase
 {
     /**
-     * @dataProvider tglData
+     * @dataProvider cebData
      * @test
      */
-    public function family_detect_tgl($text)
+    public function family_detect_ceb($text)
     {
         $unicodeRangename = (new Unicode($text))->mostFreq();
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
@@ -22,10 +22,22 @@ class AustronesianTest extends TestCase
     }
 
     /**
-     * @dataProvider cebData
+     * @dataProvider javData
      * @test
      */
-    public function family_detect_ceb($text)
+    public function family_detect_jav($text)
+    {
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('austronesian', $family);
+    }
+
+    /**
+     * @dataProvider tglData
+     * @test
+     */
+    public function family_detect_tgl($text)
     {
         $unicodeRangename = (new Unicode($text))->mostFreq();
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
@@ -46,21 +58,30 @@ class AustronesianTest extends TestCase
     }
 
     /**
-     * @dataProvider tglData
-     * @test
-     */
-    public function language_detect_tgl($text)
-    {
-        $this->assertEquals('tgl', (new LanguageDetector($text))->detect());
-    }
-
-    /**
      * @dataProvider cebData
      * @test
      */
     public function language_detect_ceb($text)
     {
         $this->assertEquals('ceb', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider javData
+     * @test
+     */
+    public function language_detect_jav($text)
+    {
+        $this->assertEquals('jav', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider tglData
+     * @test
+     */
+    public function language_detect_tgl($text)
+    {
+        $this->assertEquals('tgl', (new LanguageDetector($text))->detect());
     }
 
     /**
@@ -72,6 +93,28 @@ class AustronesianTest extends TestCase
         $this->assertEquals('vie', (new LanguageDetector($text))->detect());
     }
 
+    public function cebData()
+    {
+        return [
+            [
+                "Sa usá ka bangko, naglingkod ang duhá ka tawo. Babaye ang usá
+                nga nagmaskará ug lalake ang ikaduhá nga waláy maskará. Ang lake
+                nagkanayón:"
+            ],
+        ];
+    }
+
+    public function javData()
+    {
+        return [
+            [
+                "Panjenengané banget kasep ing bali - dadi pungkasan, aku ngerti yen konser
+                ora bisa ditahan ing kabeh wektu. Nedha bengi ana ing meja sadurunge
+                dheweke metu."
+            ],
+        ];
+    }
+
     public function tglData()
     {
         return [
@@ -80,17 +123,6 @@ class AustronesianTest extends TestCase
                 ng sinomán ang nilalaman ng Bulalakaw ng Pag-asa: Pag-asa sa isang
                 Bayang matibay na mapapatayo at hindi sa isang Pag-ibig na balót ng
                 mga pagpapakunwari."
-            ],
-        ];
-    }
-
-    public function cebData()
-    {
-        return [
-            [
-                "Sa usá ka bangko, naglingkod ang duhá ka tawo. Babaye ang usá
-                nga nagmaskará ug lalake ang ikaduhá nga waláy maskará. Ang lake
-                nagkanayón:"
             ],
         ];
     }

@@ -24,6 +24,7 @@
 | `hun`           | Hungarian              |
 | `ita`           | Italian                |
 | `isl`           | Icelandic              |
+| `jav`           | Javanese               |
 | `jpn`           | Japanese               |
 | `kor`           | Korean                 |
 | `nld`           | Dutch; Flemish         |
