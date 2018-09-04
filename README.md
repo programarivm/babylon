@@ -37,6 +37,7 @@ $isoCode = (new LanguageDetector($text))->detect();
 
 | ISO 639-3 Code  | Language               |
 |-----------------|------------------------|
+| `ara`           | Arabic                 |
 | `bul`           | Bulgarian              |
 | `ceb`           | Cebuano                |
 | `ces`           | Czech                  |

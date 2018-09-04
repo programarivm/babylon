@@ -6,6 +6,8 @@ use Babylon\AbstractDetector;
 use Babylon\Filter;
 use Babylon\UnicodeRangeStats;
 use Babylon\Detector\FamilyDetector;
+use UnicodeRanges\Range\Arabic;
+use UnicodeRanges\Range\ArabicMathematicalAlphabeticSymbols;
 use UnicodeRanges\Range\BasicLatin;
 use UnicodeRanges\Range\CJKUnifiedIdeographs;
 use UnicodeRanges\Range\Cyrillic;
@@ -121,6 +123,12 @@ class LanguageDetector
     private function isoCodeByUnicodeRangename(string $unicodeRangename)
     {
         switch ($unicodeRangename) {
+            case Arabic::RANGE_NAME:
+                return 'ara'; // Arabic
+                break;
+            case ArabicMathematicalAlphabeticSymbols::RANGE_NAME:
+                return 'ara'; // Arabic
+                break;
             case GreekAndCoptic::RANGE_NAME:
                 return 'ell'; // Greek
                 break;
