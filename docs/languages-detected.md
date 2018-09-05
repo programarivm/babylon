@@ -29,6 +29,7 @@
 | `kor`           | Korean                 |
 | `nld`           | Dutch; Flemish         |
 | `nob`           | Norwegian              |
+| `pan`           | Punjabi (Gurmukhi)     |
 | `pol`           | Polish                 |
 | `por`           | Portuguese             |
 | `ron`           | Romanian               |

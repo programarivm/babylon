@@ -7,6 +7,7 @@ use UnicodeRanges\Range\ArabicMathematicalAlphabeticSymbols;
 use UnicodeRanges\Range\Bengali;
 use UnicodeRanges\Range\CJKUnifiedIdeographs;
 use UnicodeRanges\Range\GreekAndCoptic;
+use UnicodeRanges\Range\Gurmukhi;
 use UnicodeRanges\Range\HangulCompatibilityJamo;
 use UnicodeRanges\Range\HangulJamo;
 use UnicodeRanges\Range\HangulJamoExtendedA;
@@ -29,6 +30,7 @@ class Iso639
 	const HEBREW   		= 'heb';
 	const JAPANESE   	= 'jpn';
 	const KOREAN   	    = 'kor';
+	const PUNJABI   	= 'pan';
 	const TAMIL   	    = 'tam';
 	const TELUGU   	    = 'tel';
 	const CHINESE   	= 'zho';
@@ -44,6 +46,8 @@ class Iso639
 				return self::BENGALI;
 			case GreekAndCoptic::RANGE_NAME:
 				return self::GREEK;
+			case Gurmukhi::RANGE_NAME:
+				return self::PUNJABI;
 			case Hebrew::RANGE_NAME:
 				return self::HEBREW;
 			case Hiragana::RANGE_NAME:
