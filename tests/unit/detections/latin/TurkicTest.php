@@ -9,6 +9,8 @@ use PHPUnit\Framework\TestCase;
 
 class TurkicTest extends TestCase
 {
+    const DATA_FOLDER = __DIR__.'/../../../../dataset/input/alphabet/latin/turkic';
+
     /**
      * @dataProvider turData
      * @test
@@ -30,6 +32,17 @@ class TurkicTest extends TestCase
         $this->assertEquals('tur', (new LanguageDetector($text))->detect());
     }
 
+    /**
+     * @dataProvider txtData
+     * @test
+     */
+    public function language_detect($isoCode, $filename)
+    {
+        $text = file_get_contents(self::DATA_FOLDER."/$filename");
+
+        $this->assertEquals($isoCode, (new LanguageDetector($text))->detect());
+    }
+
     public function turData()
     {
         return [
@@ -38,6 +51,13 @@ class TurkicTest extends TestCase
                 ve vücut tarafından diz çöküp, sonra yürüdün ve denedin.
                 mutfak kapısı ve sonra."
             ],
+        ];
+    }
+
+    public function txtData()
+    {
+        return [
+            ['tur', 'tur.txt'],
         ];
     }
 }

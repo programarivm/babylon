@@ -9,6 +9,8 @@ use PHPUnit\Framework\TestCase;
 
 class SlavicTest extends TestCase
 {
+    const DATA_FOLDER = __DIR__.'/../../../../dataset/input/alphabet/cyrillic/slavic';
+
     /**
      * @dataProvider bulData
      * @test
@@ -72,6 +74,17 @@ class SlavicTest extends TestCase
         $this->assertEquals('rus', (new LanguageDetector($text))->detect());
     }
 
+    /**
+     * @dataProvider txtData
+     * @test
+     */
+    public function language_detect($isoCode, $filename)
+    {
+        $text = file_get_contents(self::DATA_FOLDER."/$filename");
+
+        $this->assertEquals($isoCode, (new LanguageDetector($text))->detect());
+    }
+
     public function bulData()
     {
         return [
@@ -103,6 +116,15 @@ class SlavicTest extends TestCase
                 постель, а по воскресеньям—церковь. Счастливая Австралия кроме этик
                 трех позволенных вещей дала женщине и четвертую—право голоса.'
             ],
+        ];
+    }
+
+    public function txtData()
+    {
+        return [
+            ['bul', 'bul.txt'],
+            ['hrv', 'hrv.txt'],
+            ['rus', 'rus.txt'],
         ];
     }
 }

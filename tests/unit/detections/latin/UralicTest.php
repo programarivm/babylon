@@ -9,6 +9,8 @@ use PHPUnit\Framework\TestCase;
 
 class UralicTest extends TestCase
 {
+    const DATA_FOLDER = __DIR__.'/../../../../dataset/input/alphabet/latin/uralic';
+
     /**
      * @dataProvider finData
      * @test
@@ -51,6 +53,17 @@ class UralicTest extends TestCase
         $this->assertEquals('hun', (new LanguageDetector($text))->detect());
     }
 
+    /**
+     * @dataProvider txtData
+     * @test
+     */
+    public function language_detect($isoCode, $filename)
+    {
+        $text = file_get_contents(self::DATA_FOLDER."/$filename");
+
+        $this->assertEquals($isoCode, (new LanguageDetector($text))->detect());
+    }
+
     public function finData()
     {
         return [
@@ -72,6 +85,14 @@ class UralicTest extends TestCase
                 arany tálakkal a vállukon. A nagy ebédlő négy sarkában, ezüstből
                 faragott póznákon, drága fűszerszámok égtek."
             ],
+        ];
+    }
+
+    public function txtData()
+    {
+        return [
+            ['fin', 'fin.txt'],
+            ['hun', 'hun.txt'],
         ];
     }
 }

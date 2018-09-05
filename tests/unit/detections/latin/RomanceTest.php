@@ -9,6 +9,8 @@ use PHPUnit\Framework\TestCase;
 
 class RomanceFamilyTest extends TestCase
 {
+    const DATA_FOLDER = __DIR__.'/../../../../dataset/input/alphabet/latin/romance';
+
     /**
      * @dataProvider catData
      * @test
@@ -138,6 +140,17 @@ class RomanceFamilyTest extends TestCase
         $this->assertEquals('spa', (new LanguageDetector($text))->detect());
     }
 
+    /**
+     * @dataProvider txtData
+     * @test
+     */
+    public function language_detect($isoCode, $filename)
+    {
+        $text = file_get_contents(self::DATA_FOLDER."/$filename");
+
+        $this->assertEquals($isoCode, (new LanguageDetector($text))->detect());
+    }
+
     public function catData()
     {
         return [
@@ -205,6 +218,18 @@ class RomanceFamilyTest extends TestCase
                 lugareño se pasmaba y su señora repetía aquellas admiraciones, Obdulia
                 se miraba como podía, en las altas cornucopias."
             ],
+        ];
+    }
+
+    public function txtData()
+    {
+        return [
+            ['cat', 'cat.txt'],
+            ['fra', 'fra.txt'],
+            ['ita', 'ita.txt'],
+            ['por', 'por.txt'],
+            ['ron', 'ron.txt'],
+            ['spa', 'spa.txt'],
         ];
     }
 }
