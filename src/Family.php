@@ -10,7 +10,9 @@ class Family
 	const GAELIC   		 = 'gaelic';
 	const GERMANIC       = 'germanic';
 	const INDO_ARYAN     = 'indo-aryan';
+	const IRANIAN        = 'iranian';
 	const ROMANCE        = 'romance';
+	const SEMITIC        = 'semitic';
 	const SLAVIC         = 'slavic';
 	const TURKIC         = 'turkic';
 	const URALIC         = 'uralic';
@@ -26,7 +28,11 @@ class Family
 				break;
 			case Family::INDO_ARYAN:
 				break;
+			case Family::IRANIAN:
+				break;
 			case Family::ROMANCE:
+				break;
+			case Family::SEMITIC:
 				break;
 			case Family::SLAVIC:
 				break;

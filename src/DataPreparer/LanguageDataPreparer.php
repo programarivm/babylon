@@ -23,35 +23,16 @@ class LanguageDataPreparer implements DataPreparerInterface
     {
         Family::validate($family);
 
-        switch ($alphabet) {
-            case Alphabet::CYRILLIC:
-                $this->alphabet = Alphabet::CYRILLIC;
-                break;
-            case Alphabet::DEVANAGARI:
-                $this->alphabet = Alphabet::DEVANAGARI;
-                break;
-            default:
-                $this->alphabet = Alphabet::LATIN;
-                break;
+        if (isset($alphabet)) {
+            Alphabet::validate($alphabet);
+            $this->alphabet = $alphabet;
+        } else {
+            $this->alphabet = Alphabet::LATIN;
         }
 
         $this->family  = $family ;
-
         $this->inputFolder = __DIR__."/../../dataset/input/alphabet/{$this->alphabet}/$family";
-
         $this->outputFolder = __DIR__."/../../dataset/output/alphabet/{$this->alphabet}";
-
-        /* $this->inputFolder = [
-            Alphabet::CYRILLIC => __DIR__.'/../../dataset/input/alphabet/'.Alphabet::CYRILLIC."/$family ",
-            Alphabet::DEVANAGARI => __DIR__.'/../../dataset/input/alphabet/'.Alphabet::DEVANAGARI."/$family ",
-            Alphabet::LATIN => __DIR__.'/../../dataset/input/alphabet/'.Alphabet::LATIN."/$family ",
-        ];
-
-        $this->outputFolder = [
-            Alphabet::CYRILLIC => __DIR__.'/../../dataset/output/alphabet/'.Alphabet::CYRILLIC,
-            Alphabet::DEVANAGARI => __DIR__.'/../../dataset/output/alphabet/'.Alphabet::DEVANAGARI,
-            Alphabet::LATIN => __DIR__.'/../../dataset/output/alphabet/'.Alphabet::LATIN,
-        ]; */
     }
 
     /**

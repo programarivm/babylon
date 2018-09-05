@@ -3,7 +3,7 @@
 | ISO 639-3       | Language               |
 |-----------------|------------------------|
 | `afr`           | Afrikaans              |
-| `ara`           | Arabic                 |
+| `arb`           | Arabic                 |
 | `ben`           | Bengali                |
 | `bul`           | Bulgarian              |
 | `cat`           | Catalan                |
@@ -14,6 +14,7 @@
 | `deu`           | German                 |
 | `ell`           | Greek                  |
 | `eng`           | English                |
+| `fas`           | Persian                |
 | `fin`           | Finnish                |
 | `fra`           | French                 |
 | `gla`           | Scottish Gaelic        |
@@ -29,6 +30,7 @@
 | `kor`           | Korean                 |
 | `nld`           | Dutch; Flemish         |
 | `nob`           | Norwegian              |
+| `pan`           | Punjabi (Gurmukhi)     |
 | `pol`           | Polish                 |
 | `por`           | Portuguese             |
 | `ron`           | Romanian               |
@@ -39,5 +41,6 @@
 | `tel`           | Telugu                 |
 | `tgl`           | Tagalog                |
 | `tur`           | Turkish                |
+| `urd`           | Urdu                   |
 | `vie`           | Vietnamese             |
 | `zho`           | Chinese                |
