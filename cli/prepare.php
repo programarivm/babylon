@@ -25,6 +25,7 @@ echo (new LanguageDataPreparer(Family::GAELIC))->prepare();
 echo (new LanguageDataPreparer(Family::GERMANIC))->prepare();
 echo (new LanguageDataPreparer(Family::INDO_ARYAN, Alphabet::ARABIC))->prepare();
 echo (new LanguageDataPreparer(Family::INDO_ARYAN, Alphabet::DEVANAGARI))->prepare();
+echo (new LanguageDataPreparer(Family::IRANIAN, Alphabet::ARABIC))->prepare();
 echo (new LanguageDataPreparer(Family::ROMANCE))->prepare();
 echo (new LanguageDataPreparer(Family::SEMITIC, Alphabet::ARABIC))->prepare();
 echo (new LanguageDataPreparer(Family::SLAVIC))->prepare();

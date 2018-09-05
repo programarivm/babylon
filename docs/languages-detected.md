@@ -14,6 +14,7 @@
 | `deu`           | German                 |
 | `ell`           | Greek                  |
 | `eng`           | English                |
+| `fas`           | Persian                |
 | `fin`           | Finnish                |
 | `fra`           | French                 |
 | `gla`           | Scottish Gaelic        |
