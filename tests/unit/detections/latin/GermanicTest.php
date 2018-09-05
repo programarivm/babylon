@@ -9,6 +9,8 @@ use PHPUnit\Framework\TestCase;
 
 class GermanicTest extends TestCase
 {
+    const DATA_FOLDER = __DIR__.'/../../../../dataset/input/alphabet/latin/germanic';
+
     /**
      * @dataProvider afrData
      * @test
@@ -177,6 +179,17 @@ class GermanicTest extends TestCase
         $this->assertEquals('swe', (new LanguageDetector($text))->detect());
     }
 
+    /**
+     * @dataProvider txtData
+     * @test
+     */
+    public function language_detect($isoCode, $filename)
+    {
+        $text = file_get_contents(self::DATA_FOLDER."/$filename");
+
+        $this->assertEquals($isoCode, (new LanguageDetector($text))->detect());
+    }
+
     public function afrData()
     {
         return [
@@ -269,6 +282,20 @@ class GermanicTest extends TestCase
                 täcke kvar. “Husfadern“ hade kastat det över främlingen då han gick.
                 David begrep att denne Terje var en beprövad man."
             ],
+        ];
+    }
+
+    public function txtData()
+    {
+        return [
+            ['afr', 'afr.txt'],
+            ['dan', 'dan.txt'],
+            ['deu', 'deu.txt'],
+            ['eng', 'eng.txt'],
+            ['isl', 'isl.txt'],
+            ['nld', 'nld.txt'],
+            ['nob', 'nob.txt'],
+            ['swe', 'swe.txt'],
         ];
     }
 }

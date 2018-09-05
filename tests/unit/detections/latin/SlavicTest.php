@@ -9,6 +9,8 @@ use PHPUnit\Framework\TestCase;
 
 class SlavicTest extends TestCase
 {
+    const DATA_FOLDER = __DIR__.'/../../../../dataset/input/alphabet/latin/slavic';
+
     /**
      * @dataProvider cesData
      * @test
@@ -51,6 +53,17 @@ class SlavicTest extends TestCase
         $this->assertEquals('pol', (new LanguageDetector($text))->detect());
     }
 
+    /**
+     * @dataProvider txtData
+     * @test
+     */
+    public function language_detect($isoCode, $filename)
+    {
+        $text = file_get_contents(self::DATA_FOLDER."/$filename");
+
+        $this->assertEquals($isoCode, (new LanguageDetector($text))->detect());
+    }
+
     public function cesData()
     {
         return [
@@ -73,6 +86,14 @@ class SlavicTest extends TestCase
                 są odpowiednie dla jej eleganckiego koteczka, który w tej chwili
                 tak delikatnie, tak ślicznie mieszał łyżeczką herbatę."
             ],
+        ];
+    }
+
+    public function txtData()
+    {
+        return [
+            ['ces', 'ces.txt'],
+            ['pol', 'pol.txt'],
         ];
     }
 }
