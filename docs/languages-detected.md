@@ -41,5 +41,6 @@
 | `tel`           | Telugu                 |
 | `tgl`           | Tagalog                |
 | `tur`           | Turkish                |
+| `urd`           | Urdu                   |
 | `vie`           | Vietnamese             |
 | `zho`           | Chinese                |
