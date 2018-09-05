@@ -11,6 +11,7 @@ class Family
 	const GERMANIC       = 'germanic';
 	const INDO_ARYAN     = 'indo-aryan';
 	const ROMANCE        = 'romance';
+	const SEMITIC        = 'semitic';
 	const SLAVIC         = 'slavic';
 	const TURKIC         = 'turkic';
 	const URALIC         = 'uralic';
@@ -27,6 +28,8 @@ class Family
 			case Family::INDO_ARYAN:
 				break;
 			case Family::ROMANCE:
+				break;
+			case Family::SEMITIC:
 				break;
 			case Family::SLAVIC:
 				break;

@@ -2,8 +2,6 @@
 
 namespace Babylon;
 
-use UnicodeRanges\Range\Arabic;
-use UnicodeRanges\Range\ArabicMathematicalAlphabeticSymbols;
 use UnicodeRanges\Range\Bengali;
 use UnicodeRanges\Range\CJKUnifiedIdeographs;
 use UnicodeRanges\Range\GreekAndCoptic;
@@ -24,7 +22,6 @@ use UnicodeRanges\Range\Telugu;
 
 class Iso639
 {
-	const ARABIC     	= 'ara';
 	const BENGALI       = 'ben';
 	const GREEK   		= 'ell';
 	const HEBREW   		= 'heb';
@@ -38,10 +35,6 @@ class Iso639
 	public static function code(string $unicodeRangename): string
 	{
 		switch ($unicodeRangename) {
-			case Arabic::RANGE_NAME:
-				return self::ARABIC;
-			case ArabicMathematicalAlphabeticSymbols::RANGE_NAME:
-				return self::ARABIC;
 			case Bengali::RANGE_NAME:
 				return self::BENGALI;
 			case GreekAndCoptic::RANGE_NAME:

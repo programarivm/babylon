@@ -3,6 +3,12 @@
 namespace Babylon;
 
 use Babylon\Exception\AlphabetException;
+use UnicodeRanges\Range\Arabic;
+use UnicodeRanges\Range\ArabicExtendedA;
+use UnicodeRanges\Range\ArabicMathematicalAlphabeticSymbols;
+use UnicodeRanges\Range\ArabicPresentationFormsA;
+use UnicodeRanges\Range\ArabicPresentationFormsB;
+use UnicodeRanges\Range\ArabicSupplement;
 use UnicodeRanges\Range\Cyrillic;
 use UnicodeRanges\Range\CyrillicExtendedA;
 use UnicodeRanges\Range\CyrillicExtendedB;
@@ -17,6 +23,7 @@ use UnicodeRanges\Range\IpaExtensions;
 
 class Alphabet
 {
+	const ARABIC     	 = 'arabic';
 	const DEVANAGARI     = 'devanagari';
 	const CYRILLIC       = 'cyrillic';
 	const LATIN   		 = 'latin';
@@ -24,6 +31,8 @@ class Alphabet
 	public static function validate(string $alphabet): void
     {
         switch ($alphabet) {
+			case Alphabet::ARABIC:
+				break;
             case Alphabet::CYRILLIC:
                 break;
             case Alphabet::DEVANAGARI:
@@ -35,6 +44,26 @@ class Alphabet
                 break;
         }
     }
+
+	public static function isArabic(string $unicodeRangename): bool
+	{
+		switch ($unicodeRangename) {
+			case Arabic::RANGE_NAME:
+				return true;
+			case ArabicExtendedA::RANGE_NAME:
+				return true;
+			case ArabicMathematicalAlphabeticSymbols::RANGE_NAME:
+				return true;
+			case ArabicPresentationFormsA::RANGE_NAME:
+				return true;
+			case ArabicPresentationFormsB::RANGE_NAME:
+				return true;
+			case ArabicSupplement::RANGE_NAME:
+				return true;
+			default:
+				return false;
+		}
+	}
 
 	public static function isCyrillic(string $unicodeRangename): bool
 	{
@@ -84,7 +113,9 @@ class Alphabet
 
 	public static function reveal(string $unicodeRangename)
 	{
-		if (self::isCyrillic($unicodeRangename)) {
+		if (self::isArabic($unicodeRangename)) {
+			return self::ARABIC;
+		} elseif (self::isCyrillic($unicodeRangename)) {
 			return self::CYRILLIC;
 		} elseif (self::isDevanagari($unicodeRangename)) {
 			return self::DEVANAGARI;

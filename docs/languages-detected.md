@@ -3,7 +3,7 @@
 | ISO 639-3       | Language               |
 |-----------------|------------------------|
 | `afr`           | Afrikaans              |
-| `ara`           | Arabic                 |
+| `arb`           | Arabic                 |
 | `ben`           | Bengali                |
 | `bul`           | Bulgarian              |
 | `cat`           | Catalan                |
