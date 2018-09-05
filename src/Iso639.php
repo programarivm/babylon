@@ -19,6 +19,7 @@ use UnicodeRanges\Range\Katakana;
 use UnicodeRanges\Range\KatakanaPhoneticExtensions;
 use UnicodeRanges\Range\Tamil;
 use UnicodeRanges\Range\Telugu;
+use UnicodeRanges\Range\Thai;
 
 class Iso639
 {
@@ -30,6 +31,7 @@ class Iso639
 	const PUNJABI   	= 'pan';
 	const TAMIL   	    = 'tam';
 	const TELUGU   	    = 'tel';
+	const THAI   	    = 'tha';
 	const CHINESE   	= 'zho';
 
 	public static function code(string $unicodeRangename): string
@@ -65,6 +67,8 @@ class Iso639
 				return self::TAMIL;
 			case Telugu::RANGE_NAME:
 				return self::TELUGU;
+			case Thai::RANGE_NAME:
+				return self::THAI;
 			case CJKUnifiedIdeographs::RANGE_NAME:
 				return self::CHINESE;
 		}
