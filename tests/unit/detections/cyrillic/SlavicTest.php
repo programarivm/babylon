@@ -48,6 +48,18 @@ class SlavicTest extends TestCase
     }
 
     /**
+     * @dataProvider ukrData
+     * @test
+     */
+    public function family_detect_ukr($text)
+    {
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('slavic', $family);
+    }
+
+    /**
      * @dataProvider bulData
      * @test
      */
@@ -72,6 +84,15 @@ class SlavicTest extends TestCase
     public function language_detect_rus($text)
     {
         $this->assertEquals('rus', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider ukrData
+     * @test
+     */
+    public function language_detect_ukr($text)
+    {
+        $this->assertEquals('ukr', (new LanguageDetector($text))->detect());
     }
 
     /**
@@ -115,6 +136,17 @@ class SlavicTest extends TestCase
                 'Женщине тут же мудрый обычай говорит: знай только три вещи: кухню,
                 постель, а по воскресеньям—церковь. Счастливая Австралия кроме этик
                 трех позволенных вещей дала женщине и четвертую—право голоса.'
+            ],
+        ];
+    }
+
+    public function ukrData()
+    {
+        return [
+            [
+                'Я подивився на Холмса, почувши опис вбивці, який
+                так зі своїми власними силами. Проте, не було слідів
+                радість або задоволення на його обличчі.'
             ],
         ];
     }
