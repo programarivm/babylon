@@ -19,6 +19,7 @@
 | `fra`           | French                 |
 | `gla`           | Scottish Gaelic        |
 | `gle`           | Irish                  |
+| `glg`           | Galician               |
 | `heb`           | Hebrew                 |
 | `hin`           | Hindi                  |
 | `hrv`           | Croatian               |
