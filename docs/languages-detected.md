@@ -4,6 +4,7 @@
 |-----------------|------------------------|
 | `afr`           | Afrikaans              |
 | `arb`           | Arabic                 |
+| `bel`           | Belarusian             |
 | `ben`           | Bengali                |
 | `bul`           | Bulgarian              |
 | `cat`           | Catalan                |
@@ -19,6 +20,7 @@
 | `fra`           | French                 |
 | `gla`           | Scottish Gaelic        |
 | `gle`           | Irish                  |
+| `glg`           | Galician               |
 | `heb`           | Hebrew                 |
 | `hin`           | Hindi                  |
 | `hrv`           | Croatian               |
@@ -41,6 +43,7 @@
 | `tel`           | Telugu                 |
 | `tgl`           | Tagalog                |
 | `tur`           | Turkish                |
+| `ukr`           | Ukranian               |
 | `urd`           | Urdu                   |
 | `vie`           | Vietnamese             |
 | `zho`           | Chinese                |

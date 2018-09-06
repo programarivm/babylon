@@ -36,6 +36,18 @@ class RomanceFamilyTest extends TestCase
     }
 
     /**
+     * @dataProvider glgData
+     * @test
+     */
+    public function family_detect_glg($text)
+    {
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('romance', $family);
+    }
+
+    /**
      * @dataProvider itaData
      * @test
      */
@@ -105,6 +117,15 @@ class RomanceFamilyTest extends TestCase
     }
 
     /**
+     * @dataProvider glgData
+     * @test
+     */
+    public function language_detect_glg($text)
+    {
+        $this->assertEquals('glg', (new LanguageDetector($text))->detect());
+    }
+
+    /**
      * @dataProvider itaData
      * @test
      */
@@ -171,6 +192,17 @@ class RomanceFamilyTest extends TestCase
                 M. Christiensen, consul à Hambourg et l'ami du professeur. Cela
                 devait nous donner toute facilité d'obtenir à Copenhague des
                 recommandations pour le gouverneur de l'Islande."
+            ],
+        ];
+    }
+
+    public function glgData()
+    {
+        return [
+            [
+                "É a cousa mais condanada que se pode decir nin pensar: un señor
+                infinitamente malo, burro, larpeiro, inxusto, prencipio de todal-as
+                nosas disgracias e fin de todal-as nosas facendas."
             ],
         ];
     }
