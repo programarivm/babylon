@@ -12,6 +12,18 @@ class SlavicTest extends TestCase
     const DATA_FOLDER = __DIR__.'/../../../../dataset/input/alphabet/cyrillic/slavic';
 
     /**
+     * @dataProvider belData
+     * @test
+     */
+    public function family_detect_bel($text)
+    {
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('slavic', $family);
+    }
+
+    /**
      * @dataProvider bulData
      * @test
      */
@@ -60,6 +72,15 @@ class SlavicTest extends TestCase
     }
 
     /**
+     * @dataProvider belData
+     * @test
+     */
+    public function language_detect_bel($text)
+    {
+        $this->assertEquals('bel', (new LanguageDetector($text))->detect());
+    }
+
+    /**
      * @dataProvider bulData
      * @test
      */
@@ -104,6 +125,17 @@ class SlavicTest extends TestCase
         $text = file_get_contents(self::DATA_FOLDER."/$filename");
 
         $this->assertEquals($isoCode, (new LanguageDetector($text))->detect());
+    }
+
+    public function belData()
+    {
+        return [
+            [
+                'На самай справе, якая карысьць ад яго разбіць стары кварта, чый
+                таму і стравы, здавалася, зробленыя з грубага цяля, кнігі
+                жаўтлявы обесцвеченных, які вісеў закладку?'
+            ],
+        ];
     }
 
     public function bulData()
