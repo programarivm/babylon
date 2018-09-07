@@ -68,9 +68,7 @@ class SlavicTest extends TestCase
     {
         return [
             [
-                "A tak jednoho večera, když tma byla zvlášť hustá a neproniknutelná,
-                Slávek se vydal na cestu k Dolině. Přehoupl se přes návrší, jež
-                odděluje Spěchalovo údolí od silnice"
+                "A tak jednoho večera, když tma byla zvlášť hustá a neproniknutelná, Slávek se vydal na cestu"
             ],
         ];
     }
@@ -79,9 +77,7 @@ class SlavicTest extends TestCase
     {
         return [
             [
-                "Lecz o czem? -- o czem ona mówić mogła, pogrążona cała w drobnych
-                kłopotach swego nędznego gospodarstwa, pomiędzy imbrykiem melisy
-                a wiązką rzodkiewki."
+                "Lecz o czem? -- o czem ona mówić mogła, pogrążona cała w drobnych kłopotach swego nędznego"
             ],
         ];
     }

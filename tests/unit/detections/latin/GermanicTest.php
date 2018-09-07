@@ -194,9 +194,7 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "Hierdie vierde druk is dus meer dan ’n blote herdruk,
-                nie alleen omdat dit ’n uitgebreider en meer
-                oorsigtelike keuse bevat as die vorige drie nie"
+                "Aangesien die bundel egter van die aanvang af in Suid-Afrika veel meer aftrek"
             ],
         ];
     }
@@ -205,9 +203,7 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "Hun var et af Jomfru Buxboms allerinteressanteste og paa en vis Maade
-                allerfineste Bekjendtskaber; hun sagde vi om Herskabet, kunde
-                fortælle om Baller"
+                "Hun var et af Jomfru Buxboms allerinteressanteste og paa en vis Maade allerfineste"
             ],
         ];
     }
@@ -216,9 +212,7 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "Und wenn alles nach Euren Spitzen schrie, was nicht mehr sein kann
-                und niemals mehr sein wird, weil die Maschinen da sind, so werden die
-                Zwischenhändler doch fett dabei und Ihr?"
+                "Und wenn alles nach Euren Spitzen schrie, was nicht mehr sein kann und niemals"
             ],
         ];
     }
@@ -227,9 +221,7 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "As he spoke, his nimble fingers were flying here, there, and everywhere,
-                feeling, pressing, unbuttoning, examining, while his eyes wore the same
-                far-away expression which I have already remarked upon."
+                "As he spoke, his nimble fingers were flying here, there, and everywhere"
             ],
         ];
     }
@@ -238,10 +230,7 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "Þú hefir nú heyrt, hversu mentun og víðsýni eru gott vopn í höndum
-                karlmanna, þegar þeir ætla að vinna hinn ramgerva kastala: konuhjartað,
-                en að endingu vil eg benda þér á, hvað mörgum hættir við að misbeita
-                því."
+                "Þú hefir nú heyrt, hversu mentun og víðsýni eru gott vopn í höndum karlmanna"
             ],
         ];
     }
@@ -250,9 +239,7 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "Dat Maximus inzonderheid door magische kunsten zulk een ontzaglijken
-                invloed op Julianus heeft uitgeoefend, dat deze het Christendom den rug
-                toekeerde en de oude religie in eere trachtte te herstellen"
+                "Dat Maximus inzonderheid door magische kunsten zulk een ontzaglijken invloed op"
             ],
         ];
     }
@@ -261,9 +248,7 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "Oline syntes vel ikke at Stunden var til at spøke i, aa hun selv var
-                blit saa snytt og endog ved Gammel-Sivert sin Kiste hadde hun opbydd al
-                sin seige Kraft og graatt Taarer."
+                "Oline syntes vel ikke at Stunden var til at spøke i, aa hun selv var blit saa snytt og"
             ],
         ];
     }
@@ -272,9 +257,7 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "Han steg upp. Då först märkte han att han hade ett täcke över sig som ej
-                funnits där kvällen förut. Han tittade i Terjes säng: där fanns intet
-                täcke kvar."
+                "Han steg upp. Då först märkte han att han hade ett täcke över sig som ej funnits där"
             ],
         ];
     }

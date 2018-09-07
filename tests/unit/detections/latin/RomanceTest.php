@@ -176,8 +176,7 @@ class RomanceFamilyTest extends TestCase
     {
         return [
             [
-                "Els gemecs pararen, i s'esvaí el mal que sentia el dit del peu. El
-                noi s'adonà de quedar una mica com un babau, i digué:"
+                "Els gemecs pararen, i s'esvaí el mal que sentia el dit del peu."
             ],
         ];
     }
@@ -186,11 +185,7 @@ class RomanceFamilyTest extends TestCase
     {
         return [
             [
-                "Entre autres, une feuille de papier, pliée avec soin, portait
-                l'entête de la chancellerie danoise, avec la signature de
-                M. Christiensen, consul à Hambourg et l'ami du professeur. Cela
-                devait nous donner toute facilité d'obtenir à Copenhague des
-                recommandations pour le gouverneur de l'Islande."
+                "Entre autres, une feuille de papier, pliée avec soin, portait l'entête de la chancellerie"
             ],
         ];
     }
@@ -199,9 +194,7 @@ class RomanceFamilyTest extends TestCase
     {
         return [
             [
-                "É a cousa mais condanada que se pode decir nin pensar: un señor
-                infinitamente malo, burro, larpeiro, inxusto, prencipio de todal-as
-                nosas disgracias e fin de todal-as nosas facendas."
+                "É a cousa mais condanada que se pode decir nin pensar"
             ],
         ];
     }
@@ -210,10 +203,7 @@ class RomanceFamilyTest extends TestCase
     {
         return [
             [
-                "— Via, mi fate perdere il filo con le vostre malignità. Che cosa
-                dicevo? Ah dicevo che gli sforzi fatti per addomesticarlo erano
-                falliti, che non era stato possibile di renderlo soggetto alle
-                debolezze della sua età! A ventitrè anni, egli era."
+                "Anche i Dareni, patrizi molto boriosi e molto bene incamminati verso il fallimento"
             ],
         ];
     }
@@ -222,9 +212,7 @@ class RomanceFamilyTest extends TestCase
     {
         return [
             [
-                "Torvos luaceiros cardavam sobre as coisas, aspectos pardos e monacaes,
-                d'esse tom vago, inquietador, inexplicavel, que permitte á imaginação
-                de agigantar o que apenas entrevê."
+                "Torvos luaceiros cardavam sobre as coisas, aspectos pardos e monacaes"
             ],
         ];
     }
@@ -233,10 +221,7 @@ class RomanceFamilyTest extends TestCase
     {
         return [
             [
-                "Pe pareti cu colb, pe podul cu lungi panze de painjen
-                Roiesc plosnitele rosii, de ti-i drag sa te-uiti la ele!
-                Greu li-i de mindir de paie, si apoi din biata-mi piele
-                Nici ca au ce sa mai suga. - Intr-un roi mai de un stanjen"
+                "Pe pareti cu colb, pe podul cu lungi panze de painjen Roiesc plosnitele rosii"
             ],
         ];
     }
@@ -245,9 +230,7 @@ class RomanceFamilyTest extends TestCase
     {
         return [
             [
-                "Mientras se hablaba de lo mucho bueno que había en la catedral y el
-                lugareño se pasmaba y su señora repetía aquellas admiraciones, Obdulia
-                se miraba como podía, en las altas cornucopias."
+                "Mientras se hablaba de lo mucho bueno que había en la catedral y el lugareño se pasmaba"
             ],
         ];
     }

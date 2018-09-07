@@ -56,6 +56,6 @@ class LanguageDetector
         $words = explode(' ', $this->text);
         shuffle($words);
 
-        return implode(' ', array_slice($words, 0, 50));
+        return implode(' ', array_slice($words, 0, 40));
     }
 }
