@@ -176,9 +176,8 @@ class RomanceFamilyTest extends TestCase
     {
         return [
             [
-                "D'aquesta manera va succeir! D'aquesta mateixa manera, tan cert com
-                jo estic aquí asseguda. Tom, no podríeu dir-ne més si ho haguéssiu
-                vist! I, en acabat, què més? Endavant, Tom."
+                "Els gemecs pararen, i s'esvaí el mal que sentia el dit del peu. El
+                noi s'adonà de quedar una mica com un babau, i digué:"
             ],
         ];
     }

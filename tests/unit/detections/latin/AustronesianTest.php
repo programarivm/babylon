@@ -111,8 +111,7 @@ class AustronesianTest extends TestCase
         return [
             [
                 "Sa usá ka bangko, naglingkod ang duhá ka tawo. Babaye ang usá
-                nga nagmaskará ug lalake ang ikaduhá nga waláy maskará. Ang lake
-                nagkanayón:"
+                nga nagmaskará ug lalake ang ikaduhá nga waláy maskará."
             ],
         ];
     }
@@ -122,8 +121,7 @@ class AustronesianTest extends TestCase
         return [
             [
                 "Panjenengané banget kasep ing bali - dadi pungkasan, aku ngerti yen konser
-                ora bisa ditahan ing kabeh wektu. Nedha bengi ana ing meja sadurunge
-                dheweke metu."
+                ora bisa ditahan ing kabeh wektu."
             ],
         ];
     }
@@ -133,9 +131,7 @@ class AustronesianTest extends TestCase
         return [
             [
                 "Sa pamamagitan ng mga paunang talatang itó ay sukat nang mahinuha
-                ng sinomán ang nilalaman ng Bulalakaw ng Pag-asa: Pag-asa sa isang
-                Bayang matibay na mapapatayo at hindi sa isang Pag-ibig na balót ng
-                mga pagpapakunwari."
+                ng sinomán ang nilalaman ng Bulalakaw ng Pag-asa."
             ],
         ];
     }
@@ -144,8 +140,7 @@ class AustronesianTest extends TestCase
     {
         return [
             [
-                "Như những tuần đã đi theo, quan tâm của tôi trong anh ta và tò mò của tôi như để ông
-                nhằm mục đích trong cuộc sống, từng bước sâu sắc và tăng lên."
+                "Như những tuần đã đi theo, quan tâm của tôi trong anh ta và tò mò của tôi như để ông."
             ],
         ];
     }

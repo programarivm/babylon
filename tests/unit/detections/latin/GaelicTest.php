@@ -90,9 +90,7 @@ class GaelicTest extends TestCase
         return [
             [
                 "Ni ddaeth tlodi ei hun, daeth clefyd trwm i Dan y Castell.  Daeth
-                mam y penteulu yno, a bu farw dan y clefyd.  Daeth chwaer Dr. Ellis
-                Evans i'w gwylio y nos tra'n gweithio yn ei lle y dydd.  Gorfod troi
-                at y plwy am gymorth.  Dyma ddernyn o hanes yr amser hwnnw"
+                mam y penteulu yno, a bu farw dan y clefyd."
             ],
         ];
     }
@@ -102,9 +100,7 @@ class GaelicTest extends TestCase
         return [
             [
                 "An deigh do theaghlach tuineachadh air an fhearann, thoisicheadh iad air
-                a reiteachadh 's air a ghlanadh. Mar thug sinn fainear cheana cha b' i
-                obair shocrach so, gu h-àraidh far nach robh eòlas na tuaighe aig na
-                daoine. Mar tha' n sean-fhacal ag radh."
+                a reiteachadh 's air a ghlanadh."
             ],
         ];
     }
@@ -115,8 +111,7 @@ class GaelicTest extends TestCase
             [
                 "Ach, a Thighearna Easboig,” arsa Colla, “ní gádh dul chun na
                 trioblóide sin i n-aon chor. Tá aithne mhaith ag Meargach ar Art le
-                fada riamh. Dá mb’ é Art a gheóbhadh an eochair d’ aithneóch’ Meargach
-                é le linn na h-eochrach a thabhairt dó."
+                fada riamh."
             ],
         ];
     }

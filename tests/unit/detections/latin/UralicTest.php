@@ -70,8 +70,7 @@ class UralicTest extends TestCase
             [
                 "En voi! hän sanoo. En voi nyt... voimani ovat lopussa! Onneton olen!
                 Ja onneton on Anna Erastovnakin! Me rakastimme toisiamme, lupauduimme
-                toisillemme, mutta pahat ihmiset erottivat meidät säälittä. Menkää
-                matkoihinne, Erast Ivanovitsh! Minä en voi sietää teitä!"
+                toisillemme, mutta pahat ihmiset erottivat meidät säälittä."
             ],
         ];
     }
@@ -80,10 +79,8 @@ class UralicTest extends TestCase
     {
         return [
             [
-                "A csillár ezer mécsese repkedő tűzcsíkokat szórt a kristály-kancsókra s
-                a karcsu bronz-oszlopok árnyékából bronz szinü törpék lépkedtek elő,
-                arany tálakkal a vállukon. A nagy ebédlő négy sarkában, ezüstből
-                faragott póznákon, drága fűszerszámok égtek."
+                "És szólt a kis kinai lány, olyan hangon, mint ahogy a karácsonyfák
+                csengettyüje szól"
             ],
         ];
     }

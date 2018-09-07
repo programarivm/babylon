@@ -70,8 +70,7 @@ class SlavicTest extends TestCase
             [
                 "A tak jednoho večera, když tma byla zvlášť hustá a neproniknutelná,
                 Slávek se vydal na cestu k Dolině. Přehoupl se přes návrší, jež
-                odděluje Spěchalovo údolí od silnice, minul Kubišův hostinec a
-                pěšinkou se blížil k domovu."
+                odděluje Spěchalovo údolí od silnice"
             ],
         ];
     }
@@ -82,9 +81,7 @@ class SlavicTest extends TestCase
             [
                 "Lecz o czem? -- o czem ona mówić mogła, pogrążona cała w drobnych
                 kłopotach swego nędznego gospodarstwa, pomiędzy imbrykiem melisy
-                a wiązką rzodkiewki. Instynktem zgadywała, że podobne przedmioty nie
-                są odpowiednie dla jej eleganckiego koteczka, który w tej chwili
-                tak delikatnie, tak ślicznie mieszał łyżeczką herbatę."
+                a wiązką rzodkiewki."
             ],
         ];
     }
