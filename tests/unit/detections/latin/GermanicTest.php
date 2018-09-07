@@ -196,9 +196,7 @@ class GermanicTest extends TestCase
             [
                 "Hierdie vierde druk is dus meer dan ’n blote herdruk,
                 nie alleen omdat dit ’n uitgebreider en meer
-                oorsigtelike keuse bevat as die vorige drie nie, maar
-                ook omdat die oorspronklike keuse hier en daar gewysig
-                is volgens latere insigte."
+                oorsigtelike keuse bevat as die vorige drie nie"
             ],
         ];
     }
@@ -209,8 +207,7 @@ class GermanicTest extends TestCase
             [
                 "Hun var et af Jomfru Buxboms allerinteressanteste og paa en vis Maade
                 allerfineste Bekjendtskaber; hun sagde vi om Herskabet, kunde
-                fortælle om Baller, hvor der kom Prinser og Prinsesser, og vidste paa
-                en Prik, om Damerne for Tiden brugte rundt eller firkantet Slæb."
+                fortælle om Baller"
             ],
         ];
     }
@@ -255,8 +252,7 @@ class GermanicTest extends TestCase
             [
                 "Dat Maximus inzonderheid door magische kunsten zulk een ontzaglijken
                 invloed op Julianus heeft uitgeoefend, dat deze het Christendom den rug
-                toekeerde en de oude religie in eere trachtte te herstellen, blijkt ook
-                uit de verhalen die dienaangaande bij de Christenen in omloop waren."
+                toekeerde en de oude religie in eere trachtte te herstellen"
             ],
         ];
     }
@@ -267,8 +263,7 @@ class GermanicTest extends TestCase
             [
                 "Oline syntes vel ikke at Stunden var til at spøke i, aa hun selv var
                 blit saa snytt og endog ved Gammel-Sivert sin Kiste hadde hun opbydd al
-                sin seige Kraft og graatt Taarer. Eleseus visste jo selv bedst hvad han
-                hadde skrevet."
+                sin seige Kraft og graatt Taarer."
             ],
         ];
     }
@@ -279,8 +274,7 @@ class GermanicTest extends TestCase
             [
                 "Han steg upp. Då först märkte han att han hade ett täcke över sig som ej
                 funnits där kvällen förut. Han tittade i Terjes säng: där fanns intet
-                täcke kvar. “Husfadern“ hade kastat det över främlingen då han gick.
-                David begrep att denne Terje var en beprövad man."
+                täcke kvar."
             ],
         ];
     }
