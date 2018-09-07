@@ -48,7 +48,7 @@ class TurkicTest extends TestCase
         return [
             [
                 "Evet, gördüğün her şeyi biliyorum. Odaya birkaç kez yürüdün,
-                ve vücut tarafından diz çöküp, sonra yürüdün ve denedin."
+                ve vücut tarafından diz çöküp."
             ],
         ];
     }

@@ -110,8 +110,7 @@ class AustronesianTest extends TestCase
     {
         return [
             [
-                "Sa usá ka bangko, naglingkod ang duhá ka tawo. Babaye ang usá
-                nga nagmaskará ug lalake ang ikaduhá nga waláy maskará."
+                "Sa usá ka bangko, naglingkod ang duhá ka tawo. Babaye ang usá"
             ],
         ];
     }
@@ -120,8 +119,7 @@ class AustronesianTest extends TestCase
     {
         return [
             [
-                "Panjenengané banget kasep ing bali - dadi pungkasan, aku ngerti yen konser
-                ora bisa ditahan ing kabeh wektu."
+                "Panjenengané banget kasep ing bali - dadi pungkasan, aku ngerti yen konser"
             ],
         ];
     }
@@ -130,8 +128,7 @@ class AustronesianTest extends TestCase
     {
         return [
             [
-                "Sa pamamagitan ng mga paunang talatang itó ay sukat nang mahinuha
-                ng sinomán ang nilalaman ng Bulalakaw ng Pag-asa."
+                "Sa pamamagitan ng mga paunang talatang itó ay sukat nang mahinuha ng sinomán"
             ],
         ];
     }

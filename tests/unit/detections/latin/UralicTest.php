@@ -69,8 +69,7 @@ class UralicTest extends TestCase
         return [
             [
                 "En voi! hän sanoo. En voi nyt... voimani ovat lopussa! Onneton olen!
-                Ja onneton on Anna Erastovnakin! Me rakastimme toisiamme, lupauduimme
-                toisillemme, mutta pahat ihmiset erottivat meidät säälittä."
+                Ja onneton on Anna Erastovnakin!"
             ],
         ];
     }

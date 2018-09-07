@@ -89,8 +89,7 @@ class GaelicTest extends TestCase
     {
         return [
             [
-                "Ni ddaeth tlodi ei hun, daeth clefyd trwm i Dan y Castell.  Daeth
-                mam y penteulu yno, a bu farw dan y clefyd."
+                "Daeth mam y penteulu yno, a bu farw dan y clefyd."
             ],
         ];
     }
@@ -99,8 +98,7 @@ class GaelicTest extends TestCase
     {
         return [
             [
-                "An deigh do theaghlach tuineachadh air an fhearann, thoisicheadh iad air
-                a reiteachadh 's air a ghlanadh."
+                "Tha bàrdachd Oisein luchdaichte le trom thùrsa airson nam marbh gaisgeil"
             ],
         ];
     }
@@ -109,9 +107,7 @@ class GaelicTest extends TestCase
     {
         return [
             [
-                "Ach, a Thighearna Easboig,” arsa Colla, “ní gádh dul chun na
-                trioblóide sin i n-aon chor. Tá aithne mhaith ag Meargach ar Art le
-                fada riamh."
+                "Tá aithne mhaith ag Meargach ar Art le fada riamh."
             ],
         ];
     }
