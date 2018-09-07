@@ -15,6 +15,7 @@
 | `deu`           | German                 |
 | `ell`           | Greek                  |
 | `eng`           | English                |
+| `eus`           | Basque                 |
 | `fas`           | Persian                |
 | `fin`           | Finnish                |
 | `fra`           | French                 |

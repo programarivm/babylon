@@ -16,6 +16,7 @@ class Family
 	const SLAVIC         = 'slavic';
 	const TURKIC         = 'turkic';
 	const URALIC         = 'uralic';
+	const VASCONIC       = 'vasconic';
 
 	public static function validate(string $family): void
 	{
@@ -39,6 +40,8 @@ class Family
 			case Family::TURKIC:
 				break;
 			case Family::URALIC:
+				break;
+			case Family::VASCONIC:
 				break;
 			default:
 				throw new LanguageFamilyException('Whoops! The language family is not valid.');

@@ -32,6 +32,7 @@ echo (new LanguageDataPreparer(Family::SLAVIC))->prepare();
 echo (new LanguageDataPreparer(Family::SLAVIC, Alphabet::CYRILLIC))->prepare();
 echo (new LanguageDataPreparer(Family::TURKIC))->prepare();
 echo (new LanguageDataPreparer(Family::URALIC))->prepare();
+echo (new LanguageDataPreparer(Family::VASCONIC))->prepare();
 
 echo (new FamilyDataPreparer(Alphabet::ARABIC))->prepare();
 echo (new FamilyDataPreparer(Alphabet::CYRILLIC))->prepare();
