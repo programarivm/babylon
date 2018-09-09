@@ -24,12 +24,33 @@ class BalticTest extends TestCase
     }
 
     /**
+     * @dataProvider lvsData
+     * @test
+     */
+    public function family_detect_lvs($text)
+    {
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('baltic', $family);
+    }
+
+    /**
      * @dataProvider litData
      * @test
      */
     public function language_detect_lit($text)
     {
         $this->assertEquals('lit', (new LanguageDetector($text))->detect());
+    }
+
+    /**
+     * @dataProvider lvsData
+     * @test
+     */
+    public function language_detect_lvs($text)
+    {
+        $this->assertEquals('lvs', (new LanguageDetector($text))->detect());
     }
 
     public function litData()
@@ -41,10 +62,20 @@ class BalticTest extends TestCase
         ];
     }
 
+    public function lvsData()
+    {
+        return [
+            [
+                "vai tu nekad lūgt viņam to, ko viņš norisinās par? Es jautāju."
+            ],
+        ];
+    }
+
     public function txtData()
     {
         return [
             ['lit', 'lit.txt'],
+            ['lvs', 'lvs.txt'],
         ];
     }
 }
