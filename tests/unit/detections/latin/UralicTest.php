@@ -12,6 +12,18 @@ class UralicTest extends TestCase
     const DATA_FOLDER = __DIR__.'/../../../../dataset/input/alphabet/latin/uralic';
 
     /**
+     * @dataProvider estData
+     * @test
+     */
+    public function family_detect_est($text)
+    {
+        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+
+        $this->assertEquals('uralic', $family);
+    }
+
+    /**
      * @dataProvider finData
      * @test
      */
@@ -33,6 +45,15 @@ class UralicTest extends TestCase
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
 
         $this->assertEquals('uralic', $family);
+    }
+
+    /**
+     * @dataProvider estData
+     * @test
+     */
+    public function language_detect_est($text)
+    {
+        $this->assertEquals('est', (new LanguageDetector($text))->detect());
     }
 
     /**
@@ -64,6 +85,15 @@ class UralicTest extends TestCase
         $this->assertEquals($isoCode, (new LanguageDetector($text))->detect());
     }
 
+    public function estData()
+    {
+        return [
+            [
+                "Ma andsin talle seiklustest lühikese joonise ja oli seda vaevalt järeldanud selleks ajaks."
+            ],
+        ];
+    }
+
     public function finData()
     {
         return [
@@ -87,6 +117,7 @@ class UralicTest extends TestCase
     public function txtData()
     {
         return [
+            ['est', 'est.txt'],
             ['fin', 'fin.txt'],
             ['hun', 'hun.txt'],
         ];
