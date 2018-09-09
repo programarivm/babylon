@@ -7,6 +7,7 @@ use Babylon\Exception\LanguageFamilyException;
 class Family
 {
 	const AUSTRONESIAN   = 'austronesian';
+	const BALTIC         = 'baltic';
 	const GAELIC   		 = 'gaelic';
 	const GERMANIC       = 'germanic';
 	const INDO_ARYAN     = 'indo-aryan';
@@ -22,6 +23,8 @@ class Family
 	{
 		switch ($family) {
 			case Family::AUSTRONESIAN:
+				break;
+			case Family::BALTIC:
 				break;
 			case Family::GAELIC:
 				break;
