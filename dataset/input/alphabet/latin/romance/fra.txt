@@ -1,13 +1,3 @@
-Jules Verne
-
-VOYAGE  AU  CENTRE DE  LA TERRE
-
-
-
-
-I
-
-
 Le 24 mai 1863, un dimanche, mon oncle, le professeur Lidenbrock,
 revint précipitamment vers sa petite maison située au numéro 19
 de König-strasse, l'une des plus anciennes rues du vieux quartier
@@ -312,14 +302,6 @@ signes bizarres, car ils amenèrent le professeur Lidenbrock et
 son neveu à entreprendre la plus étrange expédition du
 dix-neuvième siècle:
 
-    EF  . E6 B3 DA DA BC    C5 BC E6 C5 A2 C5 DA    BC C5 C5 B4 C1 A6 C5
-    BC CE CF BC BC D8 A0    A2 B3 CF C5 C1 C5 A0    B3 C1 C5 A6 E6 B4 C5
-    B4 CF  , BC D0 D8 B3    D0 CF E6 D0 CF C5_BC_  _BC_D0 AD A6 E6 E6 B3
-    C5 D8 CF B3 D0 C5_C1_   B3 A2 D0 C5 B4 CF       E6 E6 C1 DA_BC_D0
-   _D0_CF A2 D0 D0 E6        . B3 BC B4 E6 B4       C1 C5 D0 D0 B2 BC
-    B4 B4 A6 E6 D8 C1       C5 C5 A2 CF A2 DA       A0 E6 D0 B3 CF A2
-    A6 CF  , C1 D0 B4       AD BC C5 C1 B2 AD      _B4_C5 A6 C1 C1_E6_
-
 Le professeur considéra pendant quelques instants cette série de
 caractères; puis il dit en relevant ses lunettes:
 
@@ -461,8 +443,6 @@ caractères à demi effacés.  Mon oncle comprit que là était le
 point intéressant; il s'acharna donc sur la macule et, sa grosse
 loupe aidant, il finit par reconnaître les signes que voici,
 caractères runiques qu'il lut sans hésiter:
-
-  D0 E6 B3 C5   BC D0 B4 B3 A2 BC BC C5 EF
 
 «Arne Saknussem!  s'écria-t-il d'un ton triomphant, mais c'est un
 nom cela, et un nom islandais encore!  celui d'un savant du

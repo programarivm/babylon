@@ -68,7 +68,7 @@ class SlavicTest extends TestCase
     {
         return [
             [
-                "A tak jednoho večera, když tma byla zvlášť hustá a neproniknutelná, Slávek se vydal na cestu"
+                "A tak jednoho večera, když tma byla zvlášť hustá a neproniknutelná, Slávek se vydal"
             ],
         ];
     }
@@ -77,7 +77,7 @@ class SlavicTest extends TestCase
     {
         return [
             [
-                "Lecz o czem? -- o czem ona mówić mogła, pogrążona cała w drobnych kłopotach swego nędznego"
+                "Różni różnie opowiadają bajkę, ale my opowiemy ją tak, jak nam ją kiedyś"
             ],
         ];
     }

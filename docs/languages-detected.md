@@ -15,6 +15,8 @@
 | `deu`           | German                 |
 | `ell`           | Greek                  |
 | `eng`           | English                |
+| `est`           | Estonian               |
+| `eus`           | Basque                 |
 | `fas`           | Persian                |
 | `fin`           | Finnish                |
 | `fra`           | French                 |
@@ -30,6 +32,8 @@
 | `jav`           | Javanese               |
 | `jpn`           | Japanese               |
 | `kor`           | Korean                 |
+| `lit`           | Lithuanian             |
+| `lvs`           | Latvian                |
 | `nld`           | Dutch; Flemish         |
 | `nob`           | Norwegian              |
 | `pan`           | Punjabi (Gurmukhi)     |

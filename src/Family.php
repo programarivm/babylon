@@ -7,6 +7,7 @@ use Babylon\Exception\LanguageFamilyException;
 class Family
 {
 	const AUSTRONESIAN   = 'austronesian';
+	const BALTIC         = 'baltic';
 	const GAELIC   		 = 'gaelic';
 	const GERMANIC       = 'germanic';
 	const INDO_ARYAN     = 'indo-aryan';
@@ -16,11 +17,14 @@ class Family
 	const SLAVIC         = 'slavic';
 	const TURKIC         = 'turkic';
 	const URALIC         = 'uralic';
+	const VASCONIC       = 'vasconic';
 
 	public static function validate(string $family): void
 	{
 		switch ($family) {
 			case Family::AUSTRONESIAN:
+				break;
+			case Family::BALTIC:
 				break;
 			case Family::GAELIC:
 				break;
@@ -39,6 +43,8 @@ class Family
 			case Family::TURKIC:
 				break;
 			case Family::URALIC:
+				break;
+			case Family::VASCONIC:
 				break;
 			default:
 				throw new LanguageFamilyException('Whoops! The language family is not valid.');
