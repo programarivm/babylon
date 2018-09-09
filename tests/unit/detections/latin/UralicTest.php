@@ -98,8 +98,7 @@ class UralicTest extends TestCase
     {
         return [
             [
-                "En voi! hän sanoo. En voi nyt... voimani ovat lopussa! Onneton olen!
-                Ja onneton on Anna Erastovnakin!"
+                "En voi! hän sanoo. En voi nyt... voimani ovat lopussa! Onneton olen!"
             ],
         ];
     }
@@ -108,8 +107,7 @@ class UralicTest extends TestCase
     {
         return [
             [
-                "És szólt a kis kinai lány, olyan hangon, mint ahogy a karácsonyfák
-                csengettyüje szól"
+                "És szólt a kis kinai lány, olyan hangon, mint ahogy a karácsonyfák csengettyüje szól"
             ],
         ];
     }
