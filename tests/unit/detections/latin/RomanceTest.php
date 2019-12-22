@@ -4,8 +4,8 @@ namespace Babylon\Tests\Unit\Detections\Latin;
 
 use Babylon\Detector\FamilyDetector;
 use Babylon\Detector\LanguageDetector;
-use Babylon\Unicode;
 use PHPUnit\Framework\TestCase;
+use UnicodeRanges\Analyzer;
 
 class RomanceFamilyTest extends TestCase
 {
@@ -17,7 +17,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function family_detect_cat($text)
     {
-        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $unicodeRangename = (new Analyzer($text))->mostFreq();
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
 
         $this->assertEquals('romance', $family);
@@ -29,7 +29,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function family_detect_fra($text)
     {
-        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $unicodeRangename = (new Analyzer($text))->mostFreq();
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
 
         $this->assertEquals('romance', $family);
@@ -41,7 +41,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function family_detect_glg($text)
     {
-        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $unicodeRangename = (new Analyzer($text))->mostFreq();
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
 
         $this->assertEquals('romance', $family);
@@ -53,7 +53,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function family_detect_ita($text)
     {
-        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $unicodeRangename = (new Analyzer($text))->mostFreq();
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
 
         $this->assertEquals('romance', $family);
@@ -65,7 +65,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function family_detect_por($text)
     {
-        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $unicodeRangename = (new Analyzer($text))->mostFreq();
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
 
         $this->assertEquals('romance', $family);
@@ -77,7 +77,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function family_detect_ron($text)
     {
-        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $unicodeRangename = (new Analyzer($text))->mostFreq();
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
 
         $this->assertEquals('romance', $family);
@@ -89,7 +89,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function family_detect_spa($text)
     {
-        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $unicodeRangename = (new Analyzer($text))->mostFreq();
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
 
         $this->assertEquals('romance', $family);
@@ -101,7 +101,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function language_detect_cat($text)
     {
-        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $unicodeRangename = (new Analyzer($text))->mostFreq();
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
 
         $this->assertEquals('romance', $family);

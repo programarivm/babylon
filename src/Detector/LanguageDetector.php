@@ -5,8 +5,8 @@ namespace Babylon\Detector;
 use Babylon\Alphabet;
 use Babylon\Filter;
 use Babylon\Iso639;
-use Babylon\Unicode;
 use Babylon\Detector\FamilyDetector;
+use UnicodeRanges\Analyzer;
 
 class LanguageDetector
 {
@@ -22,7 +22,7 @@ class LanguageDetector
     {
         $this->text = Filter::text($text);
         $this->sample = $this->sample($this->text);
-        $this->unicodeRangename = (new Unicode($this->sample))->mostFreq();
+        $this->unicodeRangename = (new Analyzer($this->sample))->mostFreq();
         $this->detection = [];
     }
 

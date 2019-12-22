@@ -4,8 +4,8 @@ namespace Babylon\Tests\Unit\Detections\Latin;
 
 use Babylon\Detector\FamilyDetector;
 use Babylon\Detector\LanguageDetector;
-use Babylon\Unicode;
 use PHPUnit\Framework\TestCase;
+use UnicodeRanges\Analyzer;
 
 class AustronesianTest extends TestCase
 {
@@ -17,7 +17,7 @@ class AustronesianTest extends TestCase
      */
     public function family_detect_ceb($text)
     {
-        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $unicodeRangename = (new Analyzer($text))->mostFreq();
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
 
         $this->assertEquals('austronesian', $family);
@@ -29,7 +29,7 @@ class AustronesianTest extends TestCase
      */
     public function family_detect_jav($text)
     {
-        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $unicodeRangename = (new Analyzer($text))->mostFreq();
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
 
         $this->assertEquals('austronesian', $family);
@@ -41,7 +41,7 @@ class AustronesianTest extends TestCase
      */
     public function family_detect_tgl($text)
     {
-        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $unicodeRangename = (new Analyzer($text))->mostFreq();
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
 
         $this->assertEquals('austronesian', $family);
@@ -53,7 +53,7 @@ class AustronesianTest extends TestCase
      */
     public function family_detect_vie($text)
     {
-        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $unicodeRangename = (new Analyzer($text))->mostFreq();
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
 
         $this->assertEquals('austronesian', $family);

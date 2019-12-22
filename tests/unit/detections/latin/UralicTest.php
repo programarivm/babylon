@@ -4,8 +4,8 @@ namespace Babylon\Tests\Unit\Detections\Latin;
 
 use Babylon\Detector\FamilyDetector;
 use Babylon\Detector\LanguageDetector;
-use Babylon\Unicode;
 use PHPUnit\Framework\TestCase;
+use UnicodeRanges\Analyzer;
 
 class UralicTest extends TestCase
 {
@@ -17,7 +17,7 @@ class UralicTest extends TestCase
      */
     public function family_detect_est($text)
     {
-        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $unicodeRangename = (new Analyzer($text))->mostFreq();
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
 
         $this->assertEquals('uralic', $family);
@@ -29,7 +29,7 @@ class UralicTest extends TestCase
      */
     public function family_detect_fin($text)
     {
-        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $unicodeRangename = (new Analyzer($text))->mostFreq();
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
 
         $this->assertEquals('uralic', $family);
@@ -41,7 +41,7 @@ class UralicTest extends TestCase
      */
     public function family_detect_hun($text)
     {
-        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $unicodeRangename = (new Analyzer($text))->mostFreq();
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
 
         $this->assertEquals('uralic', $family);

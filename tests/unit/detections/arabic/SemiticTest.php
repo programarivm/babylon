@@ -4,8 +4,8 @@ namespace Babylon\Tests\Unit\Detections\Arabic;
 
 use Babylon\Detector\FamilyDetector;
 use Babylon\Detector\LanguageDetector;
-use Babylon\Unicode;
 use PHPUnit\Framework\TestCase;
+use UnicodeRanges\Analyzer;
 
 class SemiticTest extends TestCase
 {
@@ -17,7 +17,7 @@ class SemiticTest extends TestCase
      */
     public function family_detect_arb($text)
     {
-        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $unicodeRangename = (new Analyzer($text))->mostFreq();
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
 
         $this->assertEquals('semitic', $family);

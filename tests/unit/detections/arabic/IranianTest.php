@@ -4,8 +4,8 @@ namespace Babylon\Tests\Unit\Detections\Arabic;
 
 use Babylon\Detector\FamilyDetector;
 use Babylon\Detector\LanguageDetector;
-use Babylon\Unicode;
 use PHPUnit\Framework\TestCase;
+use UnicodeRanges\Analyzer;
 
 class IranianTest extends TestCase
 {
@@ -17,7 +17,7 @@ class IranianTest extends TestCase
      */
     public function family_detect_fas($text)
     {
-        $unicodeRangename = (new Unicode($text))->mostFreq();
+        $unicodeRangename = (new Analyzer($text))->mostFreq();
         $family = (new FamilyDetector($text, $unicodeRangename))->detect();
 
         $this->assertEquals('iranian', $family);
