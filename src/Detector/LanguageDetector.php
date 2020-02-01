@@ -12,24 +12,23 @@ class LanguageDetector
 {
     protected $text;
 
-    protected $sample;
+    protected $alphabet;
 
-    protected $unicodeRangename;
+    protected $sample;
 
     public function __construct(string $text)
     {
         $this->text = Filter::text($text);
+        $this->alphabet = Alphabet::reveal((new Analyzer($text))->mostFreq());
         $this->sample = $this->sample($this->text);
-        $this->unicodeRangename = (new Analyzer($this->sample))->mostFreq();
     }
 
     public function detect(): string
     {
         $detection = [];
-        $family = (new FamilyDetector($this->text, $this->unicodeRangename))->detect();
+        $family = (new FamilyDetector($this->text))->detect();
         if ($family) {
-            $alphabet = Alphabet::reveal($this->unicodeRangename);
-            if ($file = fopen(__DIR__."/../../dataset/output/alphabet/$alphabet/$family.csv", 'r')) {
+            if ($file = fopen(__DIR__."/../../dataset/output/alphabet/{$this->alphabet}/$family.csv", 'r')) {
                 while (!feof($file)) {
                     $line = fgetcsv($file);
                     if (!empty($line[0]) && !empty($line[1])) {

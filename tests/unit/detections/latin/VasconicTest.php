@@ -5,7 +5,6 @@ namespace Babylon\Tests\Unit\Detections\Latin;
 use Babylon\Detector\FamilyDetector;
 use Babylon\Detector\LanguageDetector;
 use PHPUnit\Framework\TestCase;
-use UnicodeRanges\Analyzer;
 
 class VasconicTest extends TestCase
 {
@@ -17,8 +16,7 @@ class VasconicTest extends TestCase
      */
     public function family_detect_eus($text)
     {
-        $unicodeRangename = (new Analyzer($text))->mostFreq();
-        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+        $family = (new FamilyDetector($text))->detect();
 
         $this->assertEquals('vasconic', $family);
     }

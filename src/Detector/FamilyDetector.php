@@ -3,25 +3,25 @@
 namespace Babylon\Detector;
 
 use Babylon\Alphabet;
+use UnicodeRanges\Analyzer;
 
 class FamilyDetector
 {
 	protected $text;
 
-	protected $unicodeRangename;
+	protected $alphabet;
 
-	public function __construct(string $text, string $unicodeRangename)
+	public function __construct(string $text)
 	{
 		$this->text = $text;
-		$this->unicodeRangename = $unicodeRangename;
+		$this->alphabet = Alphabet::reveal((new Analyzer($text))->mostFreq());
 	}
 
 	public function detect(): string
 	{
 		$detection = [];
-		$alphabet = Alphabet::reveal($this->unicodeRangename);
-		if ($alphabet) {
-			if ($file = fopen(__DIR__."/../../dataset/output/$alphabet-fingerprint.csv", 'r')) {
+		if ($this->alphabet) {
+			if ($file = fopen(__DIR__."/../../dataset/output/{$this->alphabet}-fingerprint.csv", 'r')) {
 				while (!feof($file)) {
 					$line = fgetcsv($file);
 					if (!empty($line[0]) && !empty($line[1])) {

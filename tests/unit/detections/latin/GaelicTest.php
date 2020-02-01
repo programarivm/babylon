@@ -5,7 +5,6 @@ namespace Babylon\Tests\Unit\Detections\Latin;
 use Babylon\Detector\FamilyDetector;
 use Babylon\Detector\LanguageDetector;
 use PHPUnit\Framework\TestCase;
-use UnicodeRanges\Analyzer;
 
 class GaelicTest extends TestCase
 {
@@ -17,8 +16,7 @@ class GaelicTest extends TestCase
      */
     public function family_detect_cym($text)
     {
-        $unicodeRangename = (new Analyzer($text))->mostFreq();
-        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+        $family = (new FamilyDetector($text))->detect();
 
         $this->assertEquals('gaelic', $family);
     }
@@ -29,8 +27,7 @@ class GaelicTest extends TestCase
      */
     public function family_detect_gla($text)
     {
-        $unicodeRangename = (new Analyzer($text))->mostFreq();
-        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+        $family = (new FamilyDetector($text))->detect();
 
         $this->assertEquals('gaelic', $family);
     }
@@ -41,8 +38,7 @@ class GaelicTest extends TestCase
      */
     public function family_detect_gle($text)
     {
-        $unicodeRangename = (new Analyzer($text))->mostFreq();
-        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+        $family = (new FamilyDetector($text))->detect();
 
         $this->assertEquals('gaelic', $family);
     }

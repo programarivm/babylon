@@ -5,7 +5,6 @@ namespace Babylon\Tests\Unit\Detections\Latin;
 use Babylon\Detector\FamilyDetector;
 use Babylon\Detector\LanguageDetector;
 use PHPUnit\Framework\TestCase;
-use UnicodeRanges\Analyzer;
 
 class BalticTest extends TestCase
 {
@@ -17,8 +16,7 @@ class BalticTest extends TestCase
      */
     public function family_detect_lit($text)
     {
-        $unicodeRangename = (new Analyzer($text))->mostFreq();
-        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+        $family = (new FamilyDetector($text))->detect();
 
         $this->assertEquals('baltic', $family);
     }
@@ -29,8 +27,7 @@ class BalticTest extends TestCase
      */
     public function family_detect_lvs($text)
     {
-        $unicodeRangename = (new Analyzer($text))->mostFreq();
-        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+        $family = (new FamilyDetector($text))->detect();
 
         $this->assertEquals('baltic', $family);
     }

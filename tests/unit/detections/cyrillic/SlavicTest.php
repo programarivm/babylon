@@ -5,7 +5,6 @@ namespace Babylon\Tests\Unit\Detections\Cyrillic;
 use Babylon\Detector\FamilyDetector;
 use Babylon\Detector\LanguageDetector;
 use PHPUnit\Framework\TestCase;
-use UnicodeRanges\Analyzer;
 
 class SlavicTest extends TestCase
 {
@@ -17,8 +16,7 @@ class SlavicTest extends TestCase
      */
     public function family_detect_bel($text)
     {
-        $unicodeRangename = (new Analyzer($text))->mostFreq();
-        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+        $family = (new FamilyDetector($text))->detect();
 
         $this->assertEquals('slavic', $family);
     }
@@ -29,8 +27,7 @@ class SlavicTest extends TestCase
      */
     public function family_detect_bul($text)
     {
-        $unicodeRangename = (new Analyzer($text))->mostFreq();
-        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+        $family = (new FamilyDetector($text))->detect();
 
         $this->assertEquals('slavic', $family);
     }
@@ -41,8 +38,7 @@ class SlavicTest extends TestCase
      */
     public function family_detect_hrv($text)
     {
-        $unicodeRangename = (new Analyzer($text))->mostFreq();
-        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+        $family = (new FamilyDetector($text))->detect();
 
         $this->assertEquals('slavic', $family);
     }
@@ -53,8 +49,7 @@ class SlavicTest extends TestCase
      */
     public function family_detect_rus($text)
     {
-        $unicodeRangename = (new Analyzer($text))->mostFreq();
-        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+        $family = (new FamilyDetector($text))->detect();
 
         $this->assertEquals('slavic', $family);
     }
@@ -65,8 +60,7 @@ class SlavicTest extends TestCase
      */
     public function family_detect_ukr($text)
     {
-        $unicodeRangename = (new Analyzer($text))->mostFreq();
-        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+        $family = (new FamilyDetector($text))->detect();
 
         $this->assertEquals('slavic', $family);
     }

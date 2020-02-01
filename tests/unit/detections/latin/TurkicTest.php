@@ -5,7 +5,6 @@ namespace Babylon\Tests\Unit\Detections\Latin;
 use Babylon\Detector\FamilyDetector;
 use Babylon\Detector\LanguageDetector;
 use PHPUnit\Framework\TestCase;
-use UnicodeRanges\Analyzer;
 
 class TurkicTest extends TestCase
 {
@@ -17,8 +16,7 @@ class TurkicTest extends TestCase
      */
     public function family_detect_tur($text)
     {
-        $unicodeRangename = (new Analyzer($text))->mostFreq();
-        $family = (new FamilyDetector($text, $unicodeRangename))->detect();
+        $family = (new FamilyDetector($text))->detect();
 
         $this->assertEquals('turkic', $family);
     }
