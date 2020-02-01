@@ -34,43 +34,28 @@ class Iso639
 	const THAI   	    = 'tha';
 	const CHINESE   	= 'zho';
 
-	public static function code(string $unicodeRangename): string
+	protected static $codes = [
+		Bengali::RANGE_NAME => self::BENGALI,
+		GreekAndCoptic::RANGE_NAME => self::GREEK,
+		Gurmukhi::RANGE_NAME => self::PUNJABI,
+		Hebrew::RANGE_NAME => self::HEBREW,
+		Hiragana::RANGE_NAME => self::JAPANESE,
+		Katakana::RANGE_NAME => self::JAPANESE,
+		KatakanaPhoneticExtensions::RANGE_NAME => self::JAPANESE,
+		Kanbun::RANGE_NAME => self::JAPANESE,
+		HangulCompatibilityJamo::RANGE_NAME => self::KOREAN,
+		HangulJamo::RANGE_NAME => self::KOREAN,
+		HangulJamoExtendedA::RANGE_NAME => self::KOREAN,
+		HangulJamoExtendedB::RANGE_NAME => self::KOREAN,
+		HangulSyllables::RANGE_NAME => self::KOREAN,
+		Tamil::RANGE_NAME => self::TAMIL,
+		Telugu::RANGE_NAME => self::TELUGU,
+		Thai::RANGE_NAME => self::THAI,
+		CJKUnifiedIdeographs::RANGE_NAME => self::CHINESE,
+	];
+
+	public static function code(string $rangename): string
 	{
-		switch ($unicodeRangename) {
-			case Bengali::RANGE_NAME:
-				return self::BENGALI;
-			case GreekAndCoptic::RANGE_NAME:
-				return self::GREEK;
-			case Gurmukhi::RANGE_NAME:
-				return self::PUNJABI;
-			case Hebrew::RANGE_NAME:
-				return self::HEBREW;
-			case Hiragana::RANGE_NAME:
-				return self::JAPANESE;
-			case Katakana::RANGE_NAME:
-				return self::JAPANESE;
-			case KatakanaPhoneticExtensions::RANGE_NAME:
-				return self::JAPANESE;
-			case Kanbun::RANGE_NAME:
-				return self::JAPANESE;
-			case HangulCompatibilityJamo::RANGE_NAME:
-				return self::KOREAN;
-			case HangulJamo::RANGE_NAME:
-				return self::KOREAN;
-			case HangulJamoExtendedA::RANGE_NAME:
-				return self::KOREAN;
-			case HangulJamoExtendedB::RANGE_NAME:
-				return self::KOREAN;
-			case HangulSyllables::RANGE_NAME:
-				return self::KOREAN;
-			case Tamil::RANGE_NAME:
-				return self::TAMIL;
-			case Telugu::RANGE_NAME:
-				return self::TELUGU;
-			case Thai::RANGE_NAME:
-				return self::THAI;
-			case CJKUnifiedIdeographs::RANGE_NAME:
-				return self::CHINESE;
-		}
+		return self::$codes[$rangename];
 	}
 }
