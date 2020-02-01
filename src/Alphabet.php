@@ -28,87 +28,67 @@ class Alphabet
 	const CYRILLIC       = 'cyrillic';
 	const LATIN   		 = 'latin';
 
+	protected static $valid = [
+		Alphabet::ARABIC,
+		Alphabet::CYRILLIC,
+		Alphabet::DEVANAGARI,
+		Alphabet::LATIN,
+	];
+
+	protected static $arabic = [
+		Arabic::RANGE_NAME,
+		ArabicExtendedA::RANGE_NAME,
+		ArabicMathematicalAlphabeticSymbols::RANGE_NAME,
+		ArabicPresentationFormsA::RANGE_NAME,
+		ArabicPresentationFormsB::RANGE_NAME,
+		ArabicSupplement::RANGE_NAME,
+	];
+
+	protected static $cyrillic = [
+		Cyrillic::RANGE_NAME,
+		CyrillicExtendedA::RANGE_NAME,
+		CyrillicExtendedB::RANGE_NAME,
+		CyrillicSupplement::RANGE_NAME,
+	];
+
+	protected static $devanagari = [
+		Devanagari::RANGE_NAME,
+		DevanagariExtended::RANGE_NAME,
+	];
+
+	protected static $latin = [
+		BasicLatin::RANGE_NAME,
+		Latin1Supplement::RANGE_NAME,
+		LatinExtendedA::RANGE_NAME,
+		LatinExtendedB::RANGE_NAME,
+		IpaExtensions::RANGE_NAME,
+	];
+
 	public static function validate(string $alphabet): void
     {
-        switch ($alphabet) {
-			case Alphabet::ARABIC:
-				break;
-            case Alphabet::CYRILLIC:
-                break;
-            case Alphabet::DEVANAGARI:
-                break;
-            case Alphabet::LATIN:
-                break;
-            default:
-                throw new AlphabetException('Whoops! The alphabet is not valid.');
-                break;
-        }
+		if (!in_array($alphabet, self::$valid)) {
+			throw new AlphabetException('Whoops! The alphabet is not valid.');
+		}
     }
 
 	public static function isArabic(string $unicodeRangename): bool
 	{
-		switch ($unicodeRangename) {
-			case Arabic::RANGE_NAME:
-				return true;
-			case ArabicExtendedA::RANGE_NAME:
-				return true;
-			case ArabicMathematicalAlphabeticSymbols::RANGE_NAME:
-				return true;
-			case ArabicPresentationFormsA::RANGE_NAME:
-				return true;
-			case ArabicPresentationFormsB::RANGE_NAME:
-				return true;
-			case ArabicSupplement::RANGE_NAME:
-				return true;
-			default:
-				return false;
-		}
+		return in_array($unicodeRangename, self::$arabic);
 	}
 
 	public static function isCyrillic(string $unicodeRangename): bool
 	{
-		switch ($unicodeRangename) {
-			case Cyrillic::RANGE_NAME:
-				return true;
-			case CyrillicExtendedA::RANGE_NAME:
-				return true;
-			case CyrillicExtendedB::RANGE_NAME:
-				return true;
-			case CyrillicSupplement::RANGE_NAME:
-				return true;
-			default:
-				return false;
-		}
+		return in_array($unicodeRangename, self::$cyrillic);
 	}
 
 	public static function isDevanagari(string $unicodeRangename): bool
 	{
-		switch ($unicodeRangename) {
-			case Devanagari::RANGE_NAME:
-				return true;
-			case DevanagariExtended::RANGE_NAME:
-				return true;
-			default:
-				return false;
-		}
+		return in_array($unicodeRangename, self::$devanagari);
 	}
 
 	public static function isLatin(string $unicodeRangename): bool
 	{
-		switch ($unicodeRangename) {
-			case BasicLatin::RANGE_NAME:
-				return true;
-			case Latin1Supplement::RANGE_NAME:
-				return true;
-			case LatinExtendedA::RANGE_NAME:
-				return true;
-			case LatinExtendedB::RANGE_NAME:
-				return true;
-			case IpaExtensions::RANGE_NAME:
-				return true;
-			default:
-				return false;
-		}
+		return in_array($unicodeRangename, self::$latin);
 	}
 
 	public static function reveal(string $unicodeRangename)
