@@ -71,35 +71,35 @@ class Alphabet
 		}
     }
 
-	public static function isArabic(string $unicodeRangename): bool
+	protected static function isArabic(string $rangename): bool
 	{
-		return in_array($unicodeRangename, self::$arabic);
+		return in_array($rangename, self::$arabic);
 	}
 
-	public static function isCyrillic(string $unicodeRangename): bool
+	protected static function isCyrillic(string $rangename): bool
 	{
-		return in_array($unicodeRangename, self::$cyrillic);
+		return in_array($rangename, self::$cyrillic);
 	}
 
-	public static function isDevanagari(string $unicodeRangename): bool
+	protected static function isDevanagari(string $rangename): bool
 	{
-		return in_array($unicodeRangename, self::$devanagari);
+		return in_array($rangename, self::$devanagari);
 	}
 
-	public static function isLatin(string $unicodeRangename): bool
+	protected static function isLatin(string $rangename): bool
 	{
-		return in_array($unicodeRangename, self::$latin);
+		return in_array($rangename, self::$latin);
 	}
 
-	public static function reveal(string $unicodeRangename)
+	public static function reveal(string $rangename)
 	{
-		if (self::isArabic($unicodeRangename)) {
+		if (self::isArabic($rangename)) {
 			return self::ARABIC;
-		} elseif (self::isCyrillic($unicodeRangename)) {
+		} elseif (self::isCyrillic($rangename)) {
 			return self::CYRILLIC;
-		} elseif (self::isDevanagari($unicodeRangename)) {
+		} elseif (self::isDevanagari($rangename)) {
 			return self::DEVANAGARI;
-		} elseif (self::isLatin($unicodeRangename)) {
+		} elseif (self::isLatin($rangename)) {
 			return self::LATIN;
 		} else {
 			return false;
