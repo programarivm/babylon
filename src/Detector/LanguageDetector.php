@@ -21,7 +21,7 @@ class LanguageDetector
     public function __construct(string $text)
     {
         $this->text = Filter::text($text);
-        $this->unicode = (new Analyzer($this->text))->mostFreq();
+        $this->unicode = (new Analyzer($this->sample($this->text)))->mostFreq();
         $this->alphabet = Alphabet::reveal($this->unicode);
         $this->family = (new FamilyDetector($this->text))->detect();
     }
@@ -48,5 +48,13 @@ class LanguageDetector
         }
 
         return $detection;
+    }
+
+    private function sample(string $text): string
+    {
+        $words = explode(' ', $this->text);
+        shuffle($words);
+
+        return implode(' ', array_slice($words, 0, 30));
     }
 }
