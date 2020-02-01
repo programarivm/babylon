@@ -19,36 +19,25 @@ class Family
 	const URALIC         = 'uralic';
 	const VASCONIC       = 'vasconic';
 
+	protected static $valid = [
+		Family::AUSTRONESIAN,
+		Family::BALTIC,
+		Family::GAELIC,
+		Family::GERMANIC,
+		Family::INDO_ARYAN,
+		Family::IRANIAN,
+		Family::ROMANCE,
+		Family::SEMITIC,
+		Family::SLAVIC,
+		Family::TURKIC,
+		Family::URALIC,
+		Family::VASCONIC,
+	];
+
 	public static function validate(string $family): void
 	{
-		switch ($family) {
-			case Family::AUSTRONESIAN:
-				break;
-			case Family::BALTIC:
-				break;
-			case Family::GAELIC:
-				break;
-			case Family::GERMANIC:
-				break;
-			case Family::INDO_ARYAN:
-				break;
-			case Family::IRANIAN:
-				break;
-			case Family::ROMANCE:
-				break;
-			case Family::SEMITIC:
-				break;
-			case Family::SLAVIC:
-				break;
-			case Family::TURKIC:
-				break;
-			case Family::URALIC:
-				break;
-			case Family::VASCONIC:
-				break;
-			default:
-				throw new LanguageFamilyException('Whoops! The language family is not valid.');
-				break;
+		if (!in_array($family, self::$valid)) {
+			throw new LanguageFamilyException('Whoops! The language family is not valid.');
 		}
 	}
 }
