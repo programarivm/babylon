@@ -1,8 +1,6 @@
 ## Adding Languages
 
-Are you a PHP developer? Here is how you could help add more languages to this language detector by sending a PR :)
-
-Babylon implements a machine learning technique and can be trained to learn languages easily.
+Babylon implements a machine learning technique and can be trained to learn languages easily. Here is how you can help add more languages to this language detector by sending a PR :)
 
 ### One-to-Many
 
@@ -26,9 +24,9 @@ The following explanation is valid for alphabets such as Cyrillic and Latin, whe
 
 In such cases:
 
-Find a public domain ebook -- in `txt` format -- written in the language you want to add, and copy/paste it into the `input` folder.
+Find a public domain ebook written in the new language to be added, and copy/paste some text into the `input` folder.
 
-> **Important**: More specifically, the ebook must be copypasted into the right `alphabet/family` folder; otherwise the training of the model won't work properly.
+> **Important**: The text must be copypasted into the right `alphabet/family` folder; otherwise the training of the model won't work properly.
 
 So for example, let's say we want to teach Babylon the Cebuano language. The `ceb.txt` file (the ebook in Cebuano) needs to be copy and pasted into the `babylon/dataset/input/alphabet/latin/austronesian/` folder.
 
@@ -85,9 +83,7 @@ OK! latin-fingerprint.csv was successfully written...
 Operation completed.
 ```
 
-That's it!
-
-Finally I'd suggest to write a test to make sure the new language is properly detected.
+That's it! Finally I'd suggest to write a test to make sure the new language is properly detected.
 
 In a nutshell, this is a three-step process:
 
