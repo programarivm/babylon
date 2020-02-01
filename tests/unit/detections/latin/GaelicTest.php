@@ -72,7 +72,7 @@ class GaelicTest extends TestCase
     {
         return [
             [
-                "Daeth mam y penteulu yno, a bu farw dan y clefyd."
+                "Yr wyf yn eistedd mewn ystafell hirgul, gyda nenfwd isel, a ffenestri yn edrych"
             ],
         ];
     }
@@ -81,7 +81,7 @@ class GaelicTest extends TestCase
     {
         return [
             [
-                "Tha bàrdachd Oisein luchdaichte le trom thùrsa airson nam marbh gaisgeil"
+                "B'iomadh neach 'n am measg nach do leag craobh riamh, agus a bha ni b'eòlaiche air"
             ],
         ];
     }
@@ -90,7 +90,7 @@ class GaelicTest extends TestCase
     {
         return [
             [
-                "Tá aithne mhaith ag Meargach ar Art le fada riamh."
+                "Ach do críochnuigheadh an dínnér agus tháinig deire na cainte agus d’eirigh an"
             ],
         ];
     }

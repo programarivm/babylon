@@ -41,6 +41,7 @@
 | `por`           | Portuguese             |
 | `ron`           | Romanian               |
 | `rus`           | Russian                |
+| `smo`           | Samoan                 |
 | `spa`           | Spanish                |
 | `swe`           | Swedish                |
 | `tam`           | Tamil                  |

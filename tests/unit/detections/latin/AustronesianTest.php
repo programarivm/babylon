@@ -31,6 +31,17 @@ class AustronesianTest extends TestCase
     }
 
     /**
+     * @dataProvider smoData
+     * @test
+     */
+    public function family_detect_smo($text)
+    {
+        $family = (new FamilyDetector($text))->detect();
+
+        $this->assertEquals('austronesian', $family);
+    }
+
+    /**
      * @dataProvider tglData
      * @test
      */
@@ -71,6 +82,15 @@ class AustronesianTest extends TestCase
     }
 
     /**
+     * @dataProvider smoData
+     * @test
+     */
+    public function language_detect_smo($text)
+    {
+        $this->assertEquals('smo', (new LanguageDetector($text))->detect());
+    }
+
+    /**
      * @dataProvider tglData
      * @test
      */
@@ -102,6 +122,15 @@ class AustronesianTest extends TestCase
         return [
             [
                 "Panjenengané banget kasep ing bali - dadi pungkasan, aku ngerti yen konser"
+            ],
+        ];
+    }
+
+    public function smoData()
+    {
+        return [
+            [
+                "O le tauvaga na aumaia ai le faʻaaloalo ma le faʻamalosia i le toatele"
             ],
         ];
     }
