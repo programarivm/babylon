@@ -26,8 +26,6 @@ $text = 'You will have your data soon, I remarked, pointing with my finger;
 $isoCode = (new LanguageDetector($text))->detect();
 ```
 
-> Note: The text needs to be a few words length in order for the language to be detected correctly; otherwise false positives may take place.
-
 ### Language Detection
 
 Please read the [Documentation](https://babylon.readthedocs.io/en/latest/) to find out which languages can be detected so far, and also to learn how to add new ones easily.
