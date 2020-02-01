@@ -10,17 +10,15 @@ class FamilyDetector
 
 	protected $unicodeRangename;
 
-	protected $detection;
-
 	public function __construct(string $text, string $unicodeRangename)
 	{
 		$this->text = $text;
 		$this->unicodeRangename = $unicodeRangename;
-		$this->detection = [];
 	}
 
 	public function detect(): string
 	{
+		$detection = [];
 		$alphabet = Alphabet::reveal($this->unicodeRangename);
 		if ($alphabet) {
 			if ($file = fopen(__DIR__."/../../dataset/output/$alphabet-fingerprint.csv", 'r')) {
@@ -29,13 +27,13 @@ class FamilyDetector
 					if (!empty($line[0]) && !empty($line[1])) {
 						$words = explode(' ', $line[1]);
 						$textWords = explode(' ', $this->text);
-						$this->detection[$line[0]] = count(array_intersect($words, $textWords));
+						$detection[$line[0]] = count(array_intersect($words, $textWords));
 					}
 				}
 				fclose($file);
 			}
-			arsort($this->detection);
-			return key(array_slice($this->detection, 0, 1));
+			arsort($detection);
+			return key(array_slice($detection, 0, 1));
 		}
 
 		return false;

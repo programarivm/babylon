@@ -16,18 +16,16 @@ class LanguageDetector
 
     protected $unicodeRangename;
 
-    protected $detection;
-
     public function __construct(string $text)
     {
         $this->text = Filter::text($text);
         $this->sample = $this->sample($this->text);
         $this->unicodeRangename = (new Analyzer($this->sample))->mostFreq();
-        $this->detection = [];
     }
 
     public function detect(): string
     {
+        $detection = [];
         $family = (new FamilyDetector($this->text, $this->unicodeRangename))->detect();
         if ($family) {
             $alphabet = Alphabet::reveal($this->unicodeRangename);
@@ -37,18 +35,18 @@ class LanguageDetector
                     if (!empty($line[0]) && !empty($line[1])) {
                         $words = explode(' ', $line[1]);
                         $textWords = explode(' ', $this->text);
-                        $this->detection[$line[0]] = count(array_intersect($words, $textWords));
+                        $detection[$line[0]] = count(array_intersect($words, $textWords));
                     }
                 }
                 fclose($file);
             }
-            arsort($this->detection);
-            $this->detection = key(array_slice($this->detection, 0, 1));
+            arsort($detection);
+            $detection = key(array_slice($detection, 0, 1));
         } else {
-            $this->detection = Iso639::code($this->unicodeRangename);
+            $detection = Iso639::code($this->unicodeRangename);
         }
 
-        return $this->detection;
+        return $detection;
     }
 
     private function sample(string $text): string
