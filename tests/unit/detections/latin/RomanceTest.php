@@ -188,7 +188,7 @@ class RomanceFamilyTest extends TestCase
     {
         return [
             [
-                "Torvos luaceiros cardavam sobre as coisas, aspectos pardos e monacaes"
+                "Mas tu és minha amiga, balbuciava a creatura querendo tomar-lhe as mãos n'uma"
             ],
         ];
     }

@@ -172,7 +172,7 @@ class GermanicTest extends TestCase
     {
         return [
             [
-                "Aangesien die bundel egter van die aanvang af in Suid-Afrika veel meer aftrek"
+                "Verder word bo aan iedere bladsy die naam van die bundel vermeld, waaraan die gedigte"
             ],
         ];
     }
