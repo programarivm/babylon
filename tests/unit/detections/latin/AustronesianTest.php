@@ -8,8 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class AustronesianTest extends TestCase
 {
-    const DATA_FOLDER = __DIR__.'/../../../../dataset/input/alphabet/latin/austronesian';
-
     /**
      * @dataProvider cebData
      * @test
@@ -90,17 +88,6 @@ class AustronesianTest extends TestCase
         $this->assertEquals('vie', (new LanguageDetector($text))->detect());
     }
 
-    /**
-     * @dataProvider txtData
-     * @test
-     */
-    public function language_detect($isoCode, $filename)
-    {
-        $text = file_get_contents(self::DATA_FOLDER."/$filename");
-
-        $this->assertEquals($isoCode, (new LanguageDetector($text))->detect());
-    }
-
     public function cebData()
     {
         return [
@@ -134,16 +121,6 @@ class AustronesianTest extends TestCase
             [
                 "Như những tuần đã đi theo, quan tâm của tôi trong anh ta và tò mò của tôi như để ông."
             ],
-        ];
-    }
-
-    public function txtData()
-    {
-        return [
-            ['ceb', 'ceb.txt'],
-            ['jav', 'jav.txt'],
-            ['tgl', 'tgl.txt'],
-            ['vie', 'vie.txt'],
         ];
     }
 }

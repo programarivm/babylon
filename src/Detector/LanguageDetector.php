@@ -16,10 +16,13 @@ class LanguageDetector
 
     protected $sample;
 
+    protected $unicodeRangename;
+
     public function __construct(string $text)
     {
         $this->text = Filter::text($text);
-        $this->alphabet = Alphabet::reveal((new Analyzer($text))->mostFreq());
+        $this->unicodeRangename = (new Analyzer($text))->mostFreq();
+        $this->alphabet = Alphabet::reveal($this->unicodeRangename);
         $this->sample = $this->sample($this->text);
     }
 

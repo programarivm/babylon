@@ -8,8 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class SemiticTest extends TestCase
 {
-    const DATA_FOLDER = __DIR__.'/../../../../dataset/input/alphabet/arabic/semitic';
-
     /**
      * @dataProvider arbData
      * @test
@@ -30,17 +28,6 @@ class SemiticTest extends TestCase
         $this->assertEquals('arb', (new LanguageDetector($text))->detect());
     }
 
-    /**
-     * @dataProvider txtData
-     * @test
-     */
-    public function language_detect($isoCode, $filename)
-    {
-        $text = file_get_contents(self::DATA_FOLDER."/$filename");
-
-        $this->assertEquals($isoCode, (new LanguageDetector($text))->detect());
-    }
-
     public function arbData()
     {
         return [
@@ -48,13 +35,6 @@ class SemiticTest extends TestCase
                 'يميل إلى الوراء في سيارة اجره ، وهذا الدموية الهواة  بعيدا مثل
                 قبره بينما كنت التامل في الكثير من التحيز للعقل البشري.'
             ],
-        ];
-    }
-
-    public function txtData()
-    {
-        return [
-            ['arb', 'arb.txt'],
         ];
     }
 }

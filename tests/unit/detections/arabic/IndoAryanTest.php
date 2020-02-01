@@ -8,8 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class IndoAryanTest extends TestCase
 {
-    const DATA_FOLDER = __DIR__.'/../../../../dataset/input/alphabet/arabic/indo-aryan';
-
     /**
      * @dataProvider urdData
      * @test
@@ -30,17 +28,6 @@ class IndoAryanTest extends TestCase
         $this->assertEquals('urd', (new LanguageDetector($text))->detect());
     }
 
-    /**
-     * @dataProvider txtData
-     * @test
-     */
-    public function language_detect($isoCode, $filename)
-    {
-        $text = file_get_contents(self::DATA_FOLDER."/$filename");
-
-        $this->assertEquals($isoCode, (new LanguageDetector($text))->detect());
-    }
-
     public function urdData()
     {
         return [
@@ -48,13 +35,6 @@ class IndoAryanTest extends TestCase
                 'میں اپنی گفتگو کا اہنکاری طرز پر اب بھی ناراض تھی ۔ میرا یہ خیال تھا کہ
                 اس موضوع کو تبدیل کرنے کے لیے بہترین ہے ۔'
             ],
-        ];
-    }
-
-    public function txtData()
-    {
-        return [
-            ['urd', 'urd.txt'],
         ];
     }
 }

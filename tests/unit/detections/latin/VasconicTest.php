@@ -8,8 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class VasconicTest extends TestCase
 {
-    const DATA_FOLDER = __DIR__.'/../../../../dataset/input/alphabet/latin/vasconic';
-
     /**
      * @dataProvider eusData
      * @test
@@ -30,30 +28,12 @@ class VasconicTest extends TestCase
         $this->assertEquals('eus', (new LanguageDetector($text))->detect());
     }
 
-    /**
-     * @dataProvider txtData
-     * @test
-     */
-    public function language_detect($isoCode, $filename)
-    {
-        $text = file_get_contents(self::DATA_FOLDER."/$filename");
-
-        $this->assertEquals($isoCode, (new LanguageDetector($text))->detect());
-    }
-
     public function eusData()
     {
         return [
             [
                 "Ez nuen denbora mugitu irakasleek oihu egin zidaten ia ausardia azentu zorrotz batekin."
             ],
-        ];
-    }
-
-    public function txtData()
-    {
-        return [
-            ['eus', 'eus.txt'],
         ];
     }
 }

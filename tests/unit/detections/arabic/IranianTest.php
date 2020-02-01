@@ -8,8 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class IranianTest extends TestCase
 {
-    const DATA_FOLDER = __DIR__.'/../../../../dataset/input/alphabet/arabic/iranian';
-
     /**
      * @dataProvider fasData
      * @test
@@ -30,17 +28,6 @@ class IranianTest extends TestCase
         $this->assertEquals('fas', (new LanguageDetector($text))->detect());
     }
 
-    /**
-     * @dataProvider txtData
-     * @test
-     */
-    public function language_detect($isoCode, $filename)
-    {
-        $text = file_get_contents(self::DATA_FOLDER."/$filename");
-
-        $this->assertEquals($isoCode, (new LanguageDetector($text))->detect());
-    }
-
     public function fasData()
     {
         return [
@@ -49,13 +36,6 @@ class IranianTest extends TestCase
                 تپانچه جدول پاک شده بود و هولمز در خود مشغول بود
                 شغل مورد علاقه از تراشیدن بر او ویولن.'
             ],
-        ];
-    }
-
-    public function txtData()
-    {
-        return [
-            ['fas', 'fas.txt'],
         ];
     }
 }

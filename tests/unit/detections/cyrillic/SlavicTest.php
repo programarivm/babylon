@@ -8,8 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class SlavicTest extends TestCase
 {
-    const DATA_FOLDER = __DIR__.'/../../../../dataset/input/alphabet/cyrillic/slavic';
-
     /**
      * @dataProvider belData
      * @test
@@ -110,17 +108,6 @@ class SlavicTest extends TestCase
         $this->assertEquals('ukr', (new LanguageDetector($text))->detect());
     }
 
-    /**
-     * @dataProvider txtData
-     * @test
-     */
-    public function language_detect($isoCode, $filename)
-    {
-        $text = file_get_contents(self::DATA_FOLDER."/$filename");
-
-        $this->assertEquals($isoCode, (new LanguageDetector($text))->detect());
-    }
-
     public function belData()
     {
         return [
@@ -163,15 +150,6 @@ class SlavicTest extends TestCase
             [
                 'Я подивився на Холмса, почувши опис вбивці, який так зі своїми власними силами.'
             ],
-        ];
-    }
-
-    public function txtData()
-    {
-        return [
-            ['bul', 'bul.txt'],
-            ['hrv', 'hrv.txt'],
-            ['rus', 'rus.txt'],
         ];
     }
 }

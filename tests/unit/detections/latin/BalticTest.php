@@ -8,8 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class BalticTest extends TestCase
 {
-    const DATA_FOLDER = __DIR__.'/../../../../dataset/input/alphabet/latin/baltic';
-
     /**
      * @dataProvider litData
      * @test
@@ -65,14 +63,6 @@ class BalticTest extends TestCase
             [
                 "vai tu nekad lūgt viņam to, ko viņš norisinās par? Es jautāju."
             ],
-        ];
-    }
-
-    public function txtData()
-    {
-        return [
-            ['lit', 'lit.txt'],
-            ['lvs', 'lvs.txt'],
         ];
     }
 }

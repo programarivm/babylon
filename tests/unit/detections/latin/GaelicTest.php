@@ -8,8 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class GaelicTest extends TestCase
 {
-    const DATA_FOLDER = __DIR__.'/../../../../dataset/input/alphabet/latin/gaelic';
-
     /**
      * @dataProvider cymData
      * @test
@@ -70,17 +68,6 @@ class GaelicTest extends TestCase
         $this->assertEquals('gle', (new LanguageDetector($text))->detect());
     }
 
-    /**
-     * @dataProvider txtData
-     * @test
-     */
-    public function language_detect($isoCode, $filename)
-    {
-        $text = file_get_contents(self::DATA_FOLDER."/$filename");
-
-        $this->assertEquals($isoCode, (new LanguageDetector($text))->detect());
-    }
-
     public function cymData()
     {
         return [
@@ -105,15 +92,6 @@ class GaelicTest extends TestCase
             [
                 "Tá aithne mhaith ag Meargach ar Art le fada riamh."
             ],
-        ];
-    }
-
-    public function txtData()
-    {
-        return [
-            ['cym', 'cym.txt'],
-            ['gla', 'gla.txt'],
-            ['gle', 'gle.txt'],
         ];
     }
 }
