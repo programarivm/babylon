@@ -42,8 +42,6 @@ $text = 'You will have your data soon, I remarked, pointing with my finger;
 $family = (new FamilyDetector($text))->detect();
 ```
 
----
-
 ### Languages Detected
 
 | ISO 639-3       | Language               |
@@ -101,9 +99,7 @@ $family = (new FamilyDetector($text))->detect();
 
 ### How it Works
 
-Babylon implements a machine learning technique and can be trained to learn languages easily.
-
-Please read the [Documentation](https://babylon.readthedocs.io/en/latest/) to find out how you can help add more languages.
+Babylon implements a machine learning technique and can be trained to learn languages easily. Please read the [Documentation](https://babylon.readthedocs.io/en/latest/) to find out how you can help add more languages.
 
 ### License
 

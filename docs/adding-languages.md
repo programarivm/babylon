@@ -1,8 +1,8 @@
-## Adding Languages
+## Would You Want to Help Add More Languages?
 
 Babylon implements a machine learning technique and can be trained to learn languages easily.
 
-### One-to-Many
+### One-to-Many Alphabets
 
 The following explanation is valid for alphabets such as Cyrillic and Latin where there is let's say a one-to-many correspondence between such alphabet and the language families using it.
 
@@ -81,7 +81,9 @@ OK! latin-fingerprint.csv was successfully written...
 Operation completed.
 ```
 
-That's it! The `cli/prepare.php` command calculates some statistics: the fingerprint of the language families which is a disjointish set containing the most frequent words expected to be found in each family of languages.
+That's it!
+
+The `cli/prepare.php` command calculates some statistics: the fingerprint of the language families which is a disjointish set containing the most frequent words expected to be found in each family of languages.
 
 Example: [babylon/dataset/output/latin-fingerprint.csv](https://github.com/programarivm/babylon/blob/master/dataset/output/latin-fingerprint.csv)
 
@@ -93,11 +95,11 @@ In a nutshell, this is a three-step process:
 2. Run php `cli/prepare.php`
 3. Write a test to make sure the language is recognized
 
-Example:
+PR example:
 
 - [the Cebuano language is taught to Babylon #14](https://github.com/programarivm/babylon/pull/14/files)
 
-### One-to-One
+### One-to-One Alphabets
 
 In alphabets such as Telugu or Hangul (Korean alphabet) there is a one-to-one correspondence between the alphabet and the language.
 
@@ -111,3 +113,7 @@ This is a two-step process:
 
 1. Tweak the `src/Detector/LanguageDetector.php` file
 2. Write a test to make sure the language is recognized
+
+PR example:
+
+- [Tamil language added #22](https://github.com/programarivm/babylon/pull/22)
