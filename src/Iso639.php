@@ -15,6 +15,7 @@ use UnicodeRanges\Range\Hebrew;
 use UnicodeRanges\Range\Hiragana;
 use UnicodeRanges\Range\IpaExtensions;
 use UnicodeRanges\Range\Kanbun;
+use UnicodeRanges\Range\Kannada;
 use UnicodeRanges\Range\Katakana;
 use UnicodeRanges\Range\KatakanaPhoneticExtensions;
 use UnicodeRanges\Range\Tamil;
@@ -27,6 +28,7 @@ class Iso639
 	const GREEK   		= 'ell';
 	const HEBREW   		= 'heb';
 	const JAPANESE   	= 'jpn';
+	const KANNADA   	= 'kan';
 	const KOREAN   	    = 'kor';
 	const PUNJABI   	= 'pan';
 	const TAMIL   	    = 'tam';
@@ -40,6 +42,7 @@ class Iso639
 		Gurmukhi::RANGE_NAME => self::PUNJABI,
 		Hebrew::RANGE_NAME => self::HEBREW,
 		Hiragana::RANGE_NAME => self::JAPANESE,
+		Kannada::RANGE_NAME => self::KANNADA,
 		Katakana::RANGE_NAME => self::JAPANESE,
 		KatakanaPhoneticExtensions::RANGE_NAME => self::JAPANESE,
 		Kanbun::RANGE_NAME => self::JAPANESE,
