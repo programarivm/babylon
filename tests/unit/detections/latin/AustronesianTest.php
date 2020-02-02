@@ -20,6 +20,17 @@ class AustronesianTest extends TestCase
     }
 
     /**
+     * @dataProvider fijData
+     * @test
+     */
+    public function family_detect_fij($text)
+    {
+        $family = (new FamilyDetector($text))->detect();
+
+        $this->assertEquals('austronesian', $family);
+    }
+
+    /**
      * @dataProvider javData
      * @test
      */
@@ -73,6 +84,15 @@ class AustronesianTest extends TestCase
     }
 
     /**
+     * @dataProvider fijData
+     * @test
+     */
+    public function language_detect_fij($text)
+    {
+        $this->assertEquals('fij', (new LanguageDetector($text))->detect());
+    }
+
+    /**
      * @dataProvider javData
      * @test
      */
@@ -113,6 +133,15 @@ class AustronesianTest extends TestCase
         return [
             [
                 "Sa usá ka bangko, naglingkod ang duhá ka tawo. Babaye ang usá"
+            ],
+        ];
+    }
+
+    public function fijData()
+    {
+        return [
+            [
+                "O a sega beka ni tarogi koya se cava e lako tiko kina? Au a taroga"
             ],
         ];
     }

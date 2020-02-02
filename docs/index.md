@@ -4,10 +4,6 @@
 [![Documentation Status](https://readthedocs.org/projects/babylon/badge/?version=latest)](https://babylon.readthedocs.io/en/latest/?badge=latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-<p align="center">
-	<img src="https://github.com/programarivm/babylon/blob/master/resources/languages.jpg" />
-</p>
-
 Babylon is the simplest, easiest-to-use language detector.
 
 ### Install
@@ -42,8 +38,6 @@ $text = 'You will have your data soon, I remarked, pointing with my finger;
 $family = (new FamilyDetector($text))->detect();
 ```
 
----
-
 ### Languages Detected
 
 | ISO 639-3       | Language               |
@@ -64,6 +58,7 @@ $family = (new FamilyDetector($text))->detect();
 | `est`           | Estonian               |
 | `eus`           | Basque                 |
 | `fas`           | Persian                |
+| `fij`           | Fijian                 |
 | `fin`           | Finnish                |
 | `fra`           | French                 |
 | `gla`           | Scottish Gaelic        |
@@ -101,9 +96,7 @@ $family = (new FamilyDetector($text))->detect();
 
 ### How it Works
 
-Babylon implements a machine learning technique and can be trained to learn languages easily.
-
-Please read the [Documentation](https://babylon.readthedocs.io/en/latest/) to find out how you can help add more languages.
+Babylon implements a machine learning technique and can be trained to learn languages easily. Please read the [Documentation](https://babylon.readthedocs.io/en/latest/) to find out how you can help add more languages.
 
 ### License
 

@@ -62,6 +62,7 @@ $family = (new FamilyDetector($text))->detect();
 | `est`           | Estonian               |
 | `eus`           | Basque                 |
 | `fas`           | Persian                |
+| `fij`           | Fijian                 |
 | `fin`           | Finnish                |
 | `fra`           | French                 |
 | `gla`           | Scottish Gaelic        |
