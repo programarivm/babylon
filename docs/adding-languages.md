@@ -1,10 +1,10 @@
 ## Adding Languages
 
-Babylon implements a machine learning technique and can be trained to learn languages easily. Here is how you can help add more languages to this language detector by sending a PR :)
+Babylon implements a machine learning technique and can be trained to learn languages easily.
 
 ### One-to-Many
 
-The following explanation is valid for alphabets such as Cyrillic and Latin, where there is a one-to-many correspondence between the alphabet and the languages.
+The following explanation is valid for alphabets such as Cyrillic and Latin where there is let's say a one-to-many correspondence between such alphabet and the language families using it.
 
 | Alphabet        | Family                 | ISO 639-3       |           
 |-----------------|------------------------|-----------------|
@@ -22,13 +22,11 @@ The following explanation is valid for alphabets such as Cyrillic and Latin, whe
 | Latin           | Germanic               | `eng`           |
 | ...             | ...                    | ...             |
 
-In such cases:
-
-Find a public domain ebook written in the new language to be added, and copy/paste some text into the `input` folder.
+In such cases, find a public domain text written in the language you'd want to add and copy/paste it into the `input` folder.
 
 > **Important**: The text must be copypasted into the right `alphabet/family` folder; otherwise the training of the model won't work properly.
 
-So for example, let's say we want to teach Babylon the Cebuano language. The `ceb.txt` file (the ebook in Cebuano) needs to be copy and pasted into the `babylon/dataset/input/alphabet/latin/austronesian/` folder.
+So for example, let's say we want to teach Babylon the Cebuano language. Then a `ceb.txt` file needs to be copy and pasted into the `babylon/dataset/input/alphabet/latin/austronesian/` folder.
 
 > **Note**: By convention, the ISO 639-3 is used when naming the new `txt` file: `ceb.txt`
 
@@ -83,7 +81,11 @@ OK! latin-fingerprint.csv was successfully written...
 Operation completed.
 ```
 
-That's it! Finally I'd suggest to write a test to make sure the new language is properly detected.
+That's it! The `cli/prepare.php` command calculates some statistics: the fingerprint of the language families which is a disjointish set containing the most frequent words expected to be found in each family of languages.
+
+Example: [babylon/dataset/output/latin-fingerprint.csv](https://github.com/programarivm/babylon/blob/master/dataset/output/latin-fingerprint.csv)
+
+Finally I'd suggest to write a test to make sure the new language is properly detected.
 
 In a nutshell, this is a three-step process:
 
@@ -97,15 +99,13 @@ Example:
 
 ### One-to-One
 
-The following explanation is valid for alphabets such as Telugu or Hangul (Korean alphabet), where there is a one-to-one correspondence between the alphabet and the language.
+In alphabets such as Telugu or Hangul (Korean alphabet) there is a one-to-one correspondence between the alphabet and the language.
 
 | Alphabet        | ISO 639-3       |           
 |-----------------|-----------------|
 | Telugu          | `tel`           |
 
-This scenario is easier than the previous one since there isn't any data preparation involved, no machine learning stuff.
-
-Just tweak the `src/Detector/LanguageDetector.php` file as it is shown in [Babylon is taught the Telugu language](https://github.com/programarivm/babylon/pull/19/files).
+This scenario is easier than the previous one since there isn't any data preparation involved. No machine learning stuff, just tweak the `src/Detector/LanguageDetector.php` file as it is shown in [Babylon is taught the Telugu language](https://github.com/programarivm/babylon/pull/19/files).
 
 This is a two-step process:
 

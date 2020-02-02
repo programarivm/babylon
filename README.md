@@ -18,7 +18,7 @@ Via composer:
 
 ### Instantiation
 
-Instantiate a `LanguageDetector` to detect a text's language.
+This is how to detect the language of a text:
 
 ```php
 use Babylon\LanguageDetector;
@@ -30,9 +30,80 @@ $text = 'You will have your data soon, I remarked, pointing with my finger;
 $isoCode = (new LanguageDetector($text))->detect();
 ```
 
-### Language Detection
+To detect the language family of a text:
 
-Please read the [Documentation](https://babylon.readthedocs.io/en/latest/) to find out which languages can be detected so far, and also to learn how to add new ones easily.
+```php
+use Babylon\FamilyDetector;
+
+$text = 'You will have your data soon, I remarked, pointing with my finger;
+		this is the Brixton Road, and that is the house, if I am not very much
+		mistaken.';
+
+$family = (new FamilyDetector($text))->detect();
+```
+
+---
+
+### Languages Detected
+
+| ISO 639-3       | Language               |
+|-----------------|------------------------|
+| `afr`           | Afrikaans              |
+| `arb`           | Arabic                 |
+| `bel`           | Belarusian             |
+| `ben`           | Bengali                |
+| `bul`           | Bulgarian              |
+| `cat`           | Catalan                |
+| `ceb`           | Cebuano                |
+| `ces`           | Czech                  |
+| `cym`           | Welsh                  |
+| `dan`           | Danish                 |
+| `deu`           | German                 |
+| `ell`           | Greek                  |
+| `eng`           | English                |
+| `est`           | Estonian               |
+| `eus`           | Basque                 |
+| `fas`           | Persian                |
+| `fin`           | Finnish                |
+| `fra`           | French                 |
+| `gla`           | Scottish Gaelic        |
+| `gle`           | Irish                  |
+| `glg`           | Galician               |
+| `heb`           | Hebrew                 |
+| `hin`           | Hindi                  |
+| `hrv`           | Croatian               |
+| `hun`           | Hungarian              |
+| `ita`           | Italian                |
+| `isl`           | Icelandic              |
+| `jav`           | Javanese               |
+| `jpn`           | Japanese               |
+| `kor`           | Korean                 |
+| `lit`           | Lithuanian             |
+| `lvs`           | Latvian                |
+| `nld`           | Dutch; Flemish         |
+| `nob`           | Norwegian              |
+| `pan`           | Punjabi (Gurmukhi)     |
+| `pol`           | Polish                 |
+| `por`           | Portuguese             |
+| `ron`           | Romanian               |
+| `rus`           | Russian                |
+| `smo`           | Samoan                 |
+| `spa`           | Spanish                |
+| `swe`           | Swedish                |
+| `tam`           | Tamil                  |
+| `tel`           | Telugu                 |
+| `tgl`           | Tagalog                |
+| `tur`           | Turkish                |
+| `ukr`           | Ukranian               |
+| `urd`           | Urdu                   |
+| `vie`           | Vietnamese             |
+| `zho`           | Chinese                |
+
+### How it Works
+
+Babylon implements a machine learning technique and can be trained to learn languages easily.
+
+Please read the [Documentation](https://babylon.readthedocs.io/en/latest/) to find out how you can help add more languages.
 
 ### License
 
@@ -45,6 +116,5 @@ Would you help make this library better? Contributions are welcome.
 - Feel free to send a pull request
 - Drop an email at info@programarivm.com with the subject "Babylon Contributions"
 - Leave me a comment on [Twitter](https://twitter.com/programarivm)
-- Say hello on [Google+](https://plus.google.com/+Programarivm)
 
 Many thanks.
