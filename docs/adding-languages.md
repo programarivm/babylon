@@ -107,7 +107,7 @@ In alphabets such as Telugu or Hangul (Korean alphabet) there is a one-to-one co
 |-----------------|-----------------|
 | Telugu          | `tel`           |
 
-This scenario is easier than the previous one since there isn't any data preparation involved. No machine learning stuff, just tweak the `src/Detector/LanguageDetector.php` file as it is shown in [Babylon is taught the Telugu language](https://github.com/programarivm/babylon/pull/19/files).
+This scenario is easier than the previous one since there isn't any data preparation involved.
 
 This is a two-step process:
 
@@ -116,4 +116,4 @@ This is a two-step process:
 
 PR example:
 
-- [Tamil language added #22](https://github.com/programarivm/babylon/pull/22)
+- [Kannada language added #31](https://github.com/programarivm/babylon/pull/31)

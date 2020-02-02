@@ -1,6 +1,8 @@
 ## Babylon
 
+[![Latest Stable Version](https://poser.pugx.org/programarivm/babylon/v/stable)](https://packagist.org/packages/programarivm/babylon)
 [![Build Status](https://travis-ci.org/programarivm/babylon.svg?branch=master)](https://travis-ci.org/programarivm/babylon)
+[![Total Downloads](https://poser.pugx.org/programarivm/babylon/downloads)](https://packagist.org/packages/programarivm/babylon)
 [![Documentation Status](https://readthedocs.org/projects/babylon/badge/?version=latest)](https://babylon.readthedocs.io/en/latest/?badge=latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
