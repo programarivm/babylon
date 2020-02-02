@@ -79,6 +79,7 @@ $family = (new FamilyDetector($text))->detect();
 | `kor`           | Korean                 |
 | `lit`           | Lithuanian             |
 | `lvs`           | Latvian                |
+| `mri`           | Maori                  |
 | `nld`           | Dutch; Flemish         |
 | `nob`           | Norwegian              |
 | `pan`           | Punjabi (Gurmukhi)     |
@@ -98,7 +99,7 @@ $family = (new FamilyDetector($text))->detect();
 | `vie`           | Vietnamese             |
 | `zho`           | Chinese                |
 
-### How it Works
+### Would You Want to Help Add More Languages?
 
 Babylon implements a machine learning technique and can be trained to learn languages easily. Please read the [Documentation](https://babylon.readthedocs.io/en/latest/) to find out how you can help add more languages.
 

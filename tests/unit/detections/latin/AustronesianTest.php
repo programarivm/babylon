@@ -42,6 +42,17 @@ class AustronesianTest extends TestCase
     }
 
     /**
+     * @dataProvider mriData
+     * @test
+     */
+    public function family_detect_mri($text)
+    {
+        $family = (new FamilyDetector($text))->detect();
+
+        $this->assertEquals('austronesian', $family);
+    }
+
+    /**
      * @dataProvider smoData
      * @test
      */
@@ -102,6 +113,15 @@ class AustronesianTest extends TestCase
     }
 
     /**
+     * @dataProvider mriData
+     * @test
+     */
+    public function language_detect_mri($text)
+    {
+        $this->assertEquals('mri', (new LanguageDetector($text))->detect());
+    }
+
+    /**
      * @dataProvider smoData
      * @test
      */
@@ -151,6 +171,15 @@ class AustronesianTest extends TestCase
         return [
             [
                 "Panjenengané banget kasep ing bali - dadi pungkasan, aku ngerti yen konser"
+            ],
+        ];
+    }
+
+    public function mriData()
+    {
+        return [
+            [
+                "Kaore koe e pātai atu ki a ia i tana haerenga mai? I pātai mai ahau"
             ],
         ];
     }
