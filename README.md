@@ -105,7 +105,11 @@ $family = (new FamilyDetector($text))->detect();
 
 ### Would You Want to Help Add More Languages?
 
-Babylon implements a machine learning technique and can be trained to learn languages easily. Please read the [Documentation](https://babylon.readthedocs.io/en/latest/) to find out how you can help add more languages.
+Babylon implements a machine learning technique and can be trained to learn languages easily.
+
+The `cli/prepare.php` command calculates some statistics: the fingerprint of the language families which is a disjointish set containing the most frequent words expected to be found in each family of languages.
+
+Please read the [Documentation](https://babylon.readthedocs.io/en/latest/) to find out how you can help add more languages.
 
 ### License
 
