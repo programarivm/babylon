@@ -78,6 +78,7 @@ $family = (new FamilyDetector($text))->detect();
 | `isl`           | Icelandic              |
 | `jav`           | Javanese               |
 | `jpn`           | Japanese               |
+| `khm`           | Khmer                  |
 | `kor`           | Korean                 |
 | `lit`           | Lithuanian             |
 | `lvs`           | Latvian                |

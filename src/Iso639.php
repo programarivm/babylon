@@ -17,6 +17,7 @@ use UnicodeRanges\Range\IpaExtensions;
 use UnicodeRanges\Range\Kanbun;
 use UnicodeRanges\Range\Katakana;
 use UnicodeRanges\Range\KatakanaPhoneticExtensions;
+use UnicodeRanges\Range\Khmer;
 use UnicodeRanges\Range\Tamil;
 use UnicodeRanges\Range\Telugu;
 use UnicodeRanges\Range\Thai;
@@ -27,6 +28,7 @@ class Iso639
 	const GREEK   		= 'ell';
 	const HEBREW   		= 'heb';
 	const JAPANESE   	= 'jpn';
+	const KHMER   	    = 'khm';
 	const KOREAN   	    = 'kor';
 	const PUNJABI   	= 'pan';
 	const TAMIL   	    = 'tam';
@@ -43,6 +45,7 @@ class Iso639
 		Katakana::RANGE_NAME => self::JAPANESE,
 		KatakanaPhoneticExtensions::RANGE_NAME => self::JAPANESE,
 		Kanbun::RANGE_NAME => self::JAPANESE,
+		Khmer::RANGE_NAME => self::KHMER,
 		HangulCompatibilityJamo::RANGE_NAME => self::KOREAN,
 		HangulJamo::RANGE_NAME => self::KOREAN,
 		HangulJamoExtendedA::RANGE_NAME => self::KOREAN,
