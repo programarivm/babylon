@@ -40,6 +40,8 @@ $family = (new FamilyDetector($text))->detect();
 
 ### Languages Detected
 
+### Languages Detected
+
 | ISO 639-3       | Language               |
 |-----------------|------------------------|
 | `afr`           | Afrikaans              |
@@ -88,6 +90,7 @@ $family = (new FamilyDetector($text))->detect();
 | `smo`           | Samoan                 |
 | `spa`           | Spanish                |
 | `swe`           | Swedish                |
+| `swh`           | Swahili                |
 | `tam`           | Tamil                  |
 | `tel`           | Telugu                 |
 | `tgl`           | Tagalog                |
