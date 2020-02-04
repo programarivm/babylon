@@ -24,6 +24,7 @@ echo (new LanguageDataPreparer(Family::AUSTRONESIAN))->prepare();
 echo (new LanguageDataPreparer(Family::BALTIC))->prepare();
 echo (new LanguageDataPreparer(Family::GAELIC))->prepare();
 echo (new LanguageDataPreparer(Family::GERMANIC))->prepare();
+echo (new LanguageDataPreparer(Family::NIGER_CONGO))->prepare();
 echo (new LanguageDataPreparer(Family::INDO_ARYAN, Alphabet::ARABIC))->prepare();
 echo (new LanguageDataPreparer(Family::INDO_ARYAN, Alphabet::DEVANAGARI))->prepare();
 echo (new LanguageDataPreparer(Family::IRANIAN, Alphabet::ARABIC))->prepare();

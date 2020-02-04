@@ -15,7 +15,7 @@ use Babylon\Exception\FileExtensionException;
  */
 class TxtStats extends AbstractFile
 {
-	const N_FREQ_WORDS = 75;
+	const N_FREQ_WORDS = 100;
 
 	/**
      * Words in the file (lowercased).

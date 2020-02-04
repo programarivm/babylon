@@ -10,6 +10,7 @@ class Family
 	const BALTIC         = 'baltic';
 	const GAELIC   		 = 'gaelic';
 	const GERMANIC       = 'germanic';
+	const NIGER_CONGO    = 'niger-congo';
 	const INDO_ARYAN     = 'indo-aryan';
 	const IRANIAN        = 'iranian';
 	const ROMANCE        = 'romance';
@@ -24,6 +25,7 @@ class Family
 		Family::BALTIC,
 		Family::GAELIC,
 		Family::GERMANIC,
+		Family::NIGER_CONGO,
 		Family::INDO_ARYAN,
 		Family::IRANIAN,
 		Family::ROMANCE,
