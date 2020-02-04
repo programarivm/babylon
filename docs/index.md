@@ -96,6 +96,7 @@ $family = (new FamilyDetector($text))->detect();
 | `urd`           | Urdu                   |
 | `vie`           | Vietnamese             |
 | `zho`           | Chinese                |
+| `zul`           | Zulu                   |
 
 ### Would You Want to Help Add More Languages?
 
