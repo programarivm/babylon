@@ -170,7 +170,7 @@ class RomanceFamilyTest extends TestCase
     {
         return [
             [
-                "É a cousa mais condanada que se pode decir nin pensar"
+                "Saber o que se deixa de comer, saber o que ten que traballar, esquecerse d'o que ten que pagar"
             ],
         ];
     }
@@ -188,7 +188,7 @@ class RomanceFamilyTest extends TestCase
     {
         return [
             [
-                "Mas tu és minha amiga, balbuciava a creatura querendo tomar-lhe as mãos n'uma"
+                "Nas férias, mal se sonhava o dia em que Ruy devia chegar, já ella não parava"
             ],
         ];
     }
