@@ -5,6 +5,7 @@ namespace Babylon;
 use UnicodeRanges\Range\Bengali;
 use UnicodeRanges\Range\CJKUnifiedIdeographs;
 use UnicodeRanges\Range\GreekAndCoptic;
+use UnicodeRanges\Range\Gujarati;
 use UnicodeRanges\Range\Gurmukhi;
 use UnicodeRanges\Range\HangulCompatibilityJamo;
 use UnicodeRanges\Range\HangulJamo;
@@ -27,6 +28,7 @@ class Iso639
 {
 	const BENGALI       = 'ben';
 	const GREEK   		= 'ell';
+	const GUJARATI   	= 'guj';
 	const HEBREW   		= 'heb';
 	const JAPANESE   	= 'jpn';
 	const KANNADA   	= 'kan';
@@ -41,6 +43,7 @@ class Iso639
 	protected static $codes = [
 		Bengali::RANGE_NAME => self::BENGALI,
 		GreekAndCoptic::RANGE_NAME => self::GREEK,
+		Gujarati::RANGE_NAME => self::GUJARATI,
 		Gurmukhi::RANGE_NAME => self::PUNJABI,
 		Hebrew::RANGE_NAME => self::HEBREW,
 		Hiragana::RANGE_NAME => self::JAPANESE,

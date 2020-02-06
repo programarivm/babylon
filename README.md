@@ -70,6 +70,7 @@ $family = (new FamilyDetector($text))->detect();
 | `gla`           | Scottish Gaelic        |
 | `gle`           | Irish                  |
 | `glg`           | Galician               |
+| `guj`           | Gujarati               |
 | `heb`           | Hebrew                 |
 | `hin`           | Hindi                  |
 | `hrv`           | Croatian               |
