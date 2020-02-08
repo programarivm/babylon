@@ -72,7 +72,7 @@ class GaelicTest extends TestCase
     {
         return [
             [
-                "Yr wyf yn eistedd mewn ystafell hirgul, gyda nenfwd isel, a ffenestri yn edrych"
+                "Hyd yn hyn yr oedd wedi bod yn bwrw gwlithlaw, ac yr oedd y wlad dan niwl llwydlas"
             ],
         ];
     }
