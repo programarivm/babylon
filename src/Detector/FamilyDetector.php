@@ -3,34 +3,36 @@
 namespace Babylon\Detector;
 
 use Babylon\Alphabet;
+use Babylon\Babylon;
 use UnicodeRanges\Analyzer;
 
 class FamilyDetector
 {
-	protected $text;
-
 	protected $alphabet;
+
+	protected $babylon;
+
+	protected $text;
 
 	public function __construct(string $text)
 	{
-		$this->text = $text;
 		$this->alphabet = Alphabet::reveal((new Analyzer($text))->mostFreq());
+		$this->babylon = unserialize(file_get_contents(Babylon::OUTPUT_FOLDER."/babylon.ser"));
+		$this->text = $text;
+	}
+
+	public function getBabylon() {
+		return $this->babylon;
 	}
 
 	public function detect(): string
 	{
 		$detection = [];
 		if ($this->alphabet) {
-			if ($file = fopen(__DIR__."/../../dataset/output/{$this->alphabet}-fingerprint.csv", 'r')) {
-				while (!feof($file)) {
-					$line = fgetcsv($file);
-					if (!empty($line[0]) && !empty($line[1])) {
-						$words = explode(' ', $line[1]);
-						$textWords = explode(' ', $this->text);
-						$detection[$line[0]] = count(array_intersect($words, $textWords));
-					}
-				}
-				fclose($file);
+			foreach ($this->babylon->fingerprint[$this->alphabet] as $key => $val) {
+				$pattern = explode(' ', $val);
+				$subject = explode(' ', $this->text);
+				$detection[$key] = count(array_intersect($pattern, $subject));
 			}
 			arsort($detection);
 			return key(array_slice($detection, 0, 1));

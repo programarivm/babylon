@@ -3,6 +3,7 @@
 namespace Babylon\Cli;
 
 use Babylon\Alphabet;
+use Babylon\Babylon;
 use Babylon\Family;
 use Babylon\DataPreparer\FamilyDataPreparer;
 use Babylon\DataPreparer\LanguageDataPreparer;
@@ -40,3 +41,5 @@ echo (new FamilyDataPreparer(Alphabet::ARABIC))->prepare();
 echo (new FamilyDataPreparer(Alphabet::CYRILLIC))->prepare();
 echo (new FamilyDataPreparer(Alphabet::DEVANAGARI))->prepare();
 echo (new FamilyDataPreparer(Alphabet::LATIN))->prepare();
+
+new Babylon();

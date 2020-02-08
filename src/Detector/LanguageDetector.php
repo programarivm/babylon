@@ -3,6 +3,7 @@
 namespace Babylon\Detector;
 
 use Babylon\Alphabet;
+use Babylon\Babylon;
 use Babylon\Filter;
 use Babylon\Iso639;
 use Babylon\Detector\FamilyDetector;
@@ -10,6 +11,8 @@ use UnicodeRanges\Analyzer;
 
 class LanguageDetector
 {
+    protected $babylon;
+
     protected $text;
 
     protected $unicode;
@@ -20,6 +23,7 @@ class LanguageDetector
 
     public function __construct(string $text)
     {
+        $this->babylon = unserialize(file_get_contents(Babylon::OUTPUT_FOLDER."/babylon.ser"));
         $this->text = Filter::text($text);
         $this->unicode = (new Analyzer($this->sample($this->text)))->mostFreq();
         $this->alphabet = Alphabet::reveal($this->unicode);
@@ -30,16 +34,10 @@ class LanguageDetector
     {
         $detection = [];
         if ($this->family) {
-            if ($file = fopen(__DIR__."/../../dataset/output/alphabet/{$this->alphabet}/{$this->family}.csv", 'r')) {
-                while (!feof($file)) {
-                    $line = fgetcsv($file);
-                    if (!empty($line[0]) && !empty($line[1])) {
-                        $words = explode(' ', $line[1]);
-                        $textWords = explode(' ', $this->text);
-                        $detection[$line[0]] = count(array_intersect($words, $textWords));
-                    }
-                }
-                fclose($file);
+            foreach ($this->babylon->alphabet[$this->alphabet][$this->family] as $key => $val) {
+                $pattern = explode(' ', $val);
+                $subject = explode(' ', $this->text);
+                $detection[$key] = count(array_intersect($pattern, $subject));
             }
             arsort($detection);
             $detection = key(array_slice($detection, 0, 1));
