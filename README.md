@@ -103,6 +103,7 @@ $family = (new FamilyDetector())->detect($text);
 | `ukr`           | Ukranian               |
 | `urd`           | Urdu                   |
 | `vie`           | Vietnamese             |
+| `yor`           | Yoruba                 |
 | `zho`           | Chinese                |
 | `zul`           | Zulu                   |
 
