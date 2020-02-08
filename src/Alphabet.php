@@ -64,11 +64,13 @@ class Alphabet
 		IpaExtensions::RANGE_NAME,
 	];
 
-	public static function validate(string $alphabet): void
+	public static function validate(string $alphabet): string
     {
 		if (!in_array($alphabet, self::$valid)) {
 			throw new AlphabetException('Whoops! The alphabet is not valid.');
 		}
+
+		return $alphabet;
     }
 
 	protected static function isArabic(string $rangename): bool

@@ -36,10 +36,12 @@ class Family
 		Family::VASCONIC,
 	];
 
-	public static function validate(string $family): void
+	public static function validate(string $family): string
 	{
 		if (!in_array($family, self::$valid)) {
 			throw new LanguageFamilyException('Whoops! The language family is not valid.');
 		}
+
+		return $family;
 	}
 }

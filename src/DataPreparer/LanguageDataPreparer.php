@@ -21,16 +21,9 @@ class LanguageDataPreparer implements DataPreparerInterface
 
     public function __construct(string $family , string $alphabet = null)
     {
-        Family::validate($family);
+        isset($alphabet) ? $this->alphabet = Alphabet::validate($alphabet) : $this->alphabet = Alphabet::LATIN;
 
-        if (isset($alphabet)) {
-            Alphabet::validate($alphabet);
-            $this->alphabet = $alphabet;
-        } else {
-            $this->alphabet = Alphabet::LATIN;
-        }
-
-        $this->family  = $family ;
+        $this->family = Family::validate($family);
         $this->inputFolder = __DIR__."/../../dataset/input/alphabet/{$this->alphabet}/$family";
         $this->outputFolder = __DIR__."/../../dataset/output/alphabet/{$this->alphabet}";
     }

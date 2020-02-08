@@ -17,9 +17,7 @@ class FamilyDataPreparer implements DataPreparerInterface
 
     public function __construct(string $alphabet)
     {
-        Alphabet::validate($alphabet);
-
-        $this->alphabet = $alphabet;
+        $this->alphabet = Alphabet::validate($alphabet);
         $this->inputFolder = __DIR__."/../../dataset/output/alphabet/$alphabet";
         $this->outputFile = __DIR__."/../../dataset/output/$alphabet-fingerprint.csv";
     }
