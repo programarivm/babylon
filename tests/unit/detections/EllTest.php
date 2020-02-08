@@ -13,7 +13,7 @@ class EllTest extends TestCase
      */
     public function language_detect_ell($text)
     {
-        $this->assertEquals('ell', (new LanguageDetector($text))->detect());
+        $this->assertEquals('ell', (new LanguageDetector())->detect($text));
     }
 
     public function ellData()

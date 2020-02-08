@@ -14,7 +14,7 @@ class AustronesianTest extends TestCase
      */
     public function family_detect_ceb($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('austronesian', $family);
     }
@@ -25,7 +25,7 @@ class AustronesianTest extends TestCase
      */
     public function family_detect_fij($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('austronesian', $family);
     }
@@ -36,7 +36,7 @@ class AustronesianTest extends TestCase
      */
     public function family_detect_jav($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('austronesian', $family);
     }
@@ -47,7 +47,7 @@ class AustronesianTest extends TestCase
      */
     public function family_detect_mri($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('austronesian', $family);
     }
@@ -58,7 +58,7 @@ class AustronesianTest extends TestCase
      */
     public function family_detect_smo($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('austronesian', $family);
     }
@@ -69,7 +69,7 @@ class AustronesianTest extends TestCase
      */
     public function family_detect_tgl($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('austronesian', $family);
     }
@@ -80,7 +80,7 @@ class AustronesianTest extends TestCase
      */
     public function family_detect_vie($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('austronesian', $family);
     }
@@ -91,7 +91,7 @@ class AustronesianTest extends TestCase
      */
     public function language_detect_ceb($text)
     {
-        $this->assertEquals('ceb', (new LanguageDetector($text))->detect());
+        $this->assertEquals('ceb', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -100,7 +100,7 @@ class AustronesianTest extends TestCase
      */
     public function language_detect_fij($text)
     {
-        $this->assertEquals('fij', (new LanguageDetector($text))->detect());
+        $this->assertEquals('fij', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -109,7 +109,7 @@ class AustronesianTest extends TestCase
      */
     public function language_detect_jav($text)
     {
-        $this->assertEquals('jav', (new LanguageDetector($text))->detect());
+        $this->assertEquals('jav', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -118,7 +118,7 @@ class AustronesianTest extends TestCase
      */
     public function language_detect_mri($text)
     {
-        $this->assertEquals('mri', (new LanguageDetector($text))->detect());
+        $this->assertEquals('mri', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -127,7 +127,7 @@ class AustronesianTest extends TestCase
      */
     public function language_detect_smo($text)
     {
-        $this->assertEquals('smo', (new LanguageDetector($text))->detect());
+        $this->assertEquals('smo', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -136,7 +136,7 @@ class AustronesianTest extends TestCase
      */
     public function language_detect_tgl($text)
     {
-        $this->assertEquals('tgl', (new LanguageDetector($text))->detect());
+        $this->assertEquals('tgl', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -145,7 +145,7 @@ class AustronesianTest extends TestCase
      */
     public function language_detect_vie($text)
     {
-        $this->assertEquals('vie', (new LanguageDetector($text))->detect());
+        $this->assertEquals('vie', (new LanguageDetector())->detect($text));
     }
 
     public function cebData()

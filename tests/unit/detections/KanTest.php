@@ -13,7 +13,7 @@ class KanTest extends TestCase
      */
     public function language_detect_kan($text)
     {
-        $this->assertEquals('kan', (new LanguageDetector($text))->detect());
+        $this->assertEquals('kan', (new LanguageDetector())->detect($text));
     }
 
     public function kanData()

@@ -13,7 +13,7 @@ class TamTest extends TestCase
      */
     public function language_detect_tam($text)
     {
-        $this->assertEquals('tam', (new LanguageDetector($text))->detect());
+        $this->assertEquals('tam', (new LanguageDetector())->detect($text));
     }
 
     public function tamData()

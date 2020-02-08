@@ -13,7 +13,7 @@ class TelTest extends TestCase
      */
     public function language_detect_tel($text)
     {
-        $this->assertEquals('tel', (new LanguageDetector($text))->detect());
+        $this->assertEquals('tel', (new LanguageDetector())->detect($text));
     }
 
     public function telData()

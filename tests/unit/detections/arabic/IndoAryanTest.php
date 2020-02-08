@@ -14,7 +14,7 @@ class IndoAryanTest extends TestCase
      */
     public function family_detect_urd($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('indo-aryan', $family);
     }
@@ -25,7 +25,7 @@ class IndoAryanTest extends TestCase
      */
     public function language_detect_urd($text)
     {
-        $this->assertEquals('urd', (new LanguageDetector($text))->detect());
+        $this->assertEquals('urd', (new LanguageDetector())->detect($text));
     }
 
     public function urdData()

@@ -14,7 +14,7 @@ class UralicTest extends TestCase
      */
     public function family_detect_est($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('uralic', $family);
     }
@@ -25,7 +25,7 @@ class UralicTest extends TestCase
      */
     public function family_detect_fin($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('uralic', $family);
     }
@@ -36,7 +36,7 @@ class UralicTest extends TestCase
      */
     public function family_detect_hun($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('uralic', $family);
     }
@@ -47,7 +47,7 @@ class UralicTest extends TestCase
      */
     public function language_detect_est($text)
     {
-        $this->assertEquals('est', (new LanguageDetector($text))->detect());
+        $this->assertEquals('est', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -56,7 +56,7 @@ class UralicTest extends TestCase
      */
     public function language_detect_fin($text)
     {
-        $this->assertEquals('fin', (new LanguageDetector($text))->detect());
+        $this->assertEquals('fin', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -65,7 +65,7 @@ class UralicTest extends TestCase
      */
     public function language_detect_hun($text)
     {
-        $this->assertEquals('hun', (new LanguageDetector($text))->detect());
+        $this->assertEquals('hun', (new LanguageDetector())->detect($text));
     }
 
     public function estData()

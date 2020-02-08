@@ -13,7 +13,7 @@ class ThaTest extends TestCase
      */
     public function language_detect_tha($text)
     {
-        $this->assertEquals('tha', (new LanguageDetector($text))->detect());
+        $this->assertEquals('tha', (new LanguageDetector())->detect($text));
     }
 
     public function thaData()

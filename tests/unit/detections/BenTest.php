@@ -13,7 +13,7 @@ class BenTest extends TestCase
      */
     public function language_detect_ben($text)
     {
-        $this->assertEquals('ben', (new LanguageDetector($text))->detect());
+        $this->assertEquals('ben', (new LanguageDetector())->detect($text));
     }
 
     public function benData()

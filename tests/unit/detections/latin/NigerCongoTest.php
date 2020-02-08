@@ -14,7 +14,7 @@ class NigerCongoTest extends TestCase
      */
     public function family_detect_zul($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('niger-congo', $family);
     }
@@ -25,7 +25,7 @@ class NigerCongoTest extends TestCase
      */
     public function language_detect_zul($text)
     {
-        $this->assertEquals('zul', (new LanguageDetector($text))->detect());
+        $this->assertEquals('zul', (new LanguageDetector())->detect($text));
     }
 
     public function zulData()

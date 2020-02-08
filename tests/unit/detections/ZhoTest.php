@@ -13,7 +13,7 @@ class ZhoTest extends TestCase
      */
     public function language_detect_zho($text)
     {
-        $this->assertEquals('zho', (new LanguageDetector($text))->detect());
+        $this->assertEquals('zho', (new LanguageDetector())->detect($text));
     }
 
     public function zhoData()

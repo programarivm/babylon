@@ -14,7 +14,7 @@ class SemiticTest extends TestCase
      */
     public function family_detect_arb($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('semitic', $family);
     }
@@ -25,7 +25,7 @@ class SemiticTest extends TestCase
      */
     public function language_detect_arb($text)
     {
-        $this->assertEquals('arb', (new LanguageDetector($text))->detect());
+        $this->assertEquals('arb', (new LanguageDetector())->detect($text));
     }
 
     public function arbData()

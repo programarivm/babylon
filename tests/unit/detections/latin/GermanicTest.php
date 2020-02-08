@@ -14,7 +14,7 @@ class GermanicTest extends TestCase
      */
     public function family_detect_afr($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('germanic', $family);
     }
@@ -25,7 +25,7 @@ class GermanicTest extends TestCase
      */
     public function family_detect_dan($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('germanic', $family);
     }
@@ -36,7 +36,7 @@ class GermanicTest extends TestCase
      */
     public function family_detect_deu($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('germanic', $family);
     }
@@ -47,7 +47,7 @@ class GermanicTest extends TestCase
      */
     public function family_detect_eng($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('germanic', $family);
     }
@@ -58,7 +58,7 @@ class GermanicTest extends TestCase
      */
     public function family_detect_isl($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('germanic', $family);
     }
@@ -69,7 +69,7 @@ class GermanicTest extends TestCase
      */
     public function family_detect_nld($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('germanic', $family);
     }
@@ -80,7 +80,7 @@ class GermanicTest extends TestCase
      */
     public function family_detect_nob($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('germanic', $family);
     }
@@ -91,7 +91,7 @@ class GermanicTest extends TestCase
      */
     public function family_detect_swe($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('germanic', $family);
     }
@@ -102,7 +102,7 @@ class GermanicTest extends TestCase
      */
     public function language_detect_afr($text)
     {
-        $this->assertEquals('afr', (new LanguageDetector($text))->detect());
+        $this->assertEquals('afr', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -111,7 +111,7 @@ class GermanicTest extends TestCase
      */
     public function language_detect_dan($text)
     {
-        $this->assertEquals('dan', (new LanguageDetector($text))->detect());
+        $this->assertEquals('dan', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -120,7 +120,7 @@ class GermanicTest extends TestCase
      */
     public function language_detect_deu($text)
     {
-        $this->assertEquals('deu', (new LanguageDetector($text))->detect());
+        $this->assertEquals('deu', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -129,7 +129,7 @@ class GermanicTest extends TestCase
      */
     public function language_detect_eng($text)
     {
-        $this->assertEquals('eng', (new LanguageDetector($text))->detect());
+        $this->assertEquals('eng', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -138,7 +138,7 @@ class GermanicTest extends TestCase
      */
     public function language_detect_isl($text)
     {
-        $this->assertEquals('isl', (new LanguageDetector($text))->detect());
+        $this->assertEquals('isl', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -147,7 +147,7 @@ class GermanicTest extends TestCase
      */
     public function language_detect_nld($text)
     {
-        $this->assertEquals('nld', (new LanguageDetector($text))->detect());
+        $this->assertEquals('nld', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -156,7 +156,7 @@ class GermanicTest extends TestCase
      */
     public function language_detect_nob($text)
     {
-        $this->assertEquals('nob', (new LanguageDetector($text))->detect());
+        $this->assertEquals('nob', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -165,7 +165,7 @@ class GermanicTest extends TestCase
      */
     public function language_detect_swe($text)
     {
-        $this->assertEquals('swe', (new LanguageDetector($text))->detect());
+        $this->assertEquals('swe', (new LanguageDetector())->detect($text));
     }
 
     public function afrData()

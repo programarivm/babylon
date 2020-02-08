@@ -6,6 +6,6 @@ use Babylon\Detector\LanguageDetector;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
-$isoCode = (new LanguageDetector($argv[1]))->detect();
+$isoCode = (new LanguageDetector())->detect($argv[1]);
 
 echo $isoCode . PHP_EOL;

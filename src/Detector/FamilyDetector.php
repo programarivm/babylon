@@ -8,30 +8,25 @@ use UnicodeRanges\Analyzer;
 
 class FamilyDetector
 {
-	protected $alphabet;
-
 	protected $babylon;
 
-	protected $text;
-
-	public function __construct(string $text)
+	public function __construct(Babylon $babylon = null)
 	{
-		$this->alphabet = Alphabet::reveal((new Analyzer($text))->mostFreq());
-		$this->babylon = unserialize(file_get_contents(Babylon::OUTPUT_FOLDER."/babylon.ser"));
-		$this->text = $text;
+		if (!isset($babylon)) {
+			$this->babylon = unserialize(file_get_contents(Babylon::OUTPUT_FOLDER."/babylon.ser"));
+		} else {
+			$this->babylon = $babylon;
+		}
 	}
 
-	public function getBabylon() {
-		return $this->babylon;
-	}
-
-	public function detect(): string
+	public function detect(string $text): string
 	{
+		$alphabet = Alphabet::reveal((new Analyzer($text))->mostFreq());
 		$detection = [];
-		if ($this->alphabet) {
-			foreach ($this->babylon->fingerprint[$this->alphabet] as $key => $val) {
+		if ($alphabet) {
+			foreach ($this->babylon->fingerprint[$alphabet] as $key => $val) {
 				$pattern = explode(' ', $val);
-				$subject = explode(' ', $this->text);
+				$subject = explode(' ', $text);
 				$detection[$key] = count(array_intersect($pattern, $subject));
 			}
 			arsort($detection);

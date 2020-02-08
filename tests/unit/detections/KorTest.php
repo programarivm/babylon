@@ -13,7 +13,7 @@ class KorTest extends TestCase
      */
     public function language_detect_kor($text)
     {
-        $this->assertEquals('kor', (new LanguageDetector($text))->detect());
+        $this->assertEquals('kor', (new LanguageDetector())->detect($text));
     }
 
     public function korData()

@@ -14,7 +14,7 @@ class TurkicTest extends TestCase
      */
     public function family_detect_tur($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('turkic', $family);
     }
@@ -25,7 +25,7 @@ class TurkicTest extends TestCase
      */
     public function language_detect_tur($text)
     {
-        $this->assertEquals('tur', (new LanguageDetector($text))->detect());
+        $this->assertEquals('tur', (new LanguageDetector())->detect($text));
     }
 
     public function turData()

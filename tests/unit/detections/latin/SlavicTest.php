@@ -14,7 +14,7 @@ class SlavicTest extends TestCase
      */
     public function family_detect_ces($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('slavic', $family);
     }
@@ -25,7 +25,7 @@ class SlavicTest extends TestCase
      */
     public function family_detect_pol($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('slavic', $family);
     }
@@ -36,7 +36,7 @@ class SlavicTest extends TestCase
      */
     public function language_detect_ces($text)
     {
-        $this->assertEquals('ces', (new LanguageDetector($text))->detect());
+        $this->assertEquals('ces', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -45,7 +45,7 @@ class SlavicTest extends TestCase
      */
     public function language_detect_pol($text)
     {
-        $this->assertEquals('pol', (new LanguageDetector($text))->detect());
+        $this->assertEquals('pol', (new LanguageDetector())->detect($text));
     }
 
     public function cesData()

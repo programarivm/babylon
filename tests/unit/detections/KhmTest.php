@@ -13,7 +13,7 @@ class KhmTest extends TestCase
      */
     public function language_detect_kor($text)
     {
-        $this->assertEquals('khm', (new LanguageDetector($text))->detect());
+        $this->assertEquals('khm', (new LanguageDetector())->detect($text));
     }
 
     public function khmData()

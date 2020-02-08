@@ -13,7 +13,7 @@ class PanTest extends TestCase
      */
     public function language_detect_pan($text)
     {
-        $this->assertEquals('pan', (new LanguageDetector($text))->detect());
+        $this->assertEquals('pan', (new LanguageDetector())->detect($text));
     }
 
     public function panData()

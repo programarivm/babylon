@@ -14,7 +14,7 @@ class GaelicTest extends TestCase
      */
     public function family_detect_cym($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('gaelic', $family);
     }
@@ -25,7 +25,7 @@ class GaelicTest extends TestCase
      */
     public function family_detect_gla($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('gaelic', $family);
     }
@@ -36,7 +36,7 @@ class GaelicTest extends TestCase
      */
     public function family_detect_gle($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('gaelic', $family);
     }
@@ -47,7 +47,7 @@ class GaelicTest extends TestCase
      */
     public function language_detect_cym($text)
     {
-        $this->assertEquals('cym', (new LanguageDetector($text))->detect());
+        $this->assertEquals('cym', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -56,7 +56,7 @@ class GaelicTest extends TestCase
      */
     public function language_detect_gla($text)
     {
-        $this->assertEquals('gla', (new LanguageDetector($text))->detect());
+        $this->assertEquals('gla', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -65,7 +65,7 @@ class GaelicTest extends TestCase
      */
     public function language_detect_gle($text)
     {
-        $this->assertEquals('gle', (new LanguageDetector($text))->detect());
+        $this->assertEquals('gle', (new LanguageDetector())->detect($text));
     }
 
     public function cymData()

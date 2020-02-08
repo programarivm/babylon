@@ -14,7 +14,7 @@ class BalticTest extends TestCase
      */
     public function family_detect_lit($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('baltic', $family);
     }
@@ -25,7 +25,7 @@ class BalticTest extends TestCase
      */
     public function family_detect_lvs($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('baltic', $family);
     }
@@ -36,7 +36,7 @@ class BalticTest extends TestCase
      */
     public function language_detect_lit($text)
     {
-        $this->assertEquals('lit', (new LanguageDetector($text))->detect());
+        $this->assertEquals('lit', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -45,7 +45,7 @@ class BalticTest extends TestCase
      */
     public function language_detect_lvs($text)
     {
-        $this->assertEquals('lvs', (new LanguageDetector($text))->detect());
+        $this->assertEquals('lvs', (new LanguageDetector())->detect($text));
     }
 
     public function litData()

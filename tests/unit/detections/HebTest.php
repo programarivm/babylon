@@ -13,7 +13,7 @@ class HebTest extends TestCase
      */
     public function language_detect_heb($text)
     {
-        $this->assertEquals('heb', (new LanguageDetector($text))->detect());
+        $this->assertEquals('heb', (new LanguageDetector())->detect($text));
     }
 
     public function hebData()

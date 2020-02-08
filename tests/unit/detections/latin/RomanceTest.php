@@ -14,7 +14,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function family_detect_cat($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('romance', $family);
     }
@@ -25,7 +25,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function family_detect_fra($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('romance', $family);
     }
@@ -36,7 +36,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function family_detect_glg($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('romance', $family);
     }
@@ -47,7 +47,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function family_detect_ita($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('romance', $family);
     }
@@ -58,7 +58,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function family_detect_por($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('romance', $family);
     }
@@ -69,7 +69,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function family_detect_ron($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('romance', $family);
     }
@@ -80,7 +80,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function family_detect_spa($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('romance', $family);
     }
@@ -91,7 +91,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function language_detect_cat($text)
     {
-        $this->assertEquals('cat', (new LanguageDetector($text))->detect());
+        $this->assertEquals('cat', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -100,7 +100,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function language_detect_fra($text)
     {
-        $this->assertEquals('fra', (new LanguageDetector($text))->detect());
+        $this->assertEquals('fra', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -109,7 +109,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function language_detect_glg($text)
     {
-        $this->assertEquals('glg', (new LanguageDetector($text))->detect());
+        $this->assertEquals('glg', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -118,7 +118,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function language_detect_ita($text)
     {
-        $this->assertEquals('ita', (new LanguageDetector($text))->detect());
+        $this->assertEquals('ita', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -127,7 +127,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function language_detect_por($text)
     {
-        $this->assertEquals('por', (new LanguageDetector($text))->detect());
+        $this->assertEquals('por', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -136,7 +136,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function language_detect_ron($text)
     {
-        $this->assertEquals('ron', (new LanguageDetector($text))->detect());
+        $this->assertEquals('ron', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -145,7 +145,7 @@ class RomanceFamilyTest extends TestCase
      */
     public function language_detect_spa($text)
     {
-        $this->assertEquals('spa', (new LanguageDetector($text))->detect());
+        $this->assertEquals('spa', (new LanguageDetector())->detect($text));
     }
 
     public function catData()

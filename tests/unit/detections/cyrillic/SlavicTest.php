@@ -14,7 +14,7 @@ class SlavicTest extends TestCase
      */
     public function family_detect_bel($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('slavic', $family);
     }
@@ -25,7 +25,7 @@ class SlavicTest extends TestCase
      */
     public function family_detect_bul($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('slavic', $family);
     }
@@ -36,7 +36,7 @@ class SlavicTest extends TestCase
      */
     public function family_detect_hrv($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('slavic', $family);
     }
@@ -47,7 +47,7 @@ class SlavicTest extends TestCase
      */
     public function family_detect_rus($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('slavic', $family);
     }
@@ -58,7 +58,7 @@ class SlavicTest extends TestCase
      */
     public function family_detect_ukr($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('slavic', $family);
     }
@@ -69,7 +69,7 @@ class SlavicTest extends TestCase
      */
     public function language_detect_bel($text)
     {
-        $this->assertEquals('bel', (new LanguageDetector($text))->detect());
+        $this->assertEquals('bel', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -78,7 +78,7 @@ class SlavicTest extends TestCase
      */
     public function language_detect_bul($text)
     {
-        $this->assertEquals('bul', (new LanguageDetector($text))->detect());
+        $this->assertEquals('bul', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -87,7 +87,7 @@ class SlavicTest extends TestCase
      */
     public function language_detect_hrv($text)
     {
-        $this->assertEquals('hrv', (new LanguageDetector($text))->detect());
+        $this->assertEquals('hrv', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -96,7 +96,7 @@ class SlavicTest extends TestCase
      */
     public function language_detect_rus($text)
     {
-        $this->assertEquals('rus', (new LanguageDetector($text))->detect());
+        $this->assertEquals('rus', (new LanguageDetector())->detect($text));
     }
 
     /**
@@ -105,7 +105,7 @@ class SlavicTest extends TestCase
      */
     public function language_detect_ukr($text)
     {
-        $this->assertEquals('ukr', (new LanguageDetector($text))->detect());
+        $this->assertEquals('ukr', (new LanguageDetector())->detect($text));
     }
 
     public function belData()

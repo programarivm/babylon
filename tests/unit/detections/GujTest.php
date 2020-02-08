@@ -13,7 +13,7 @@ class GujTest extends TestCase
      */
     public function language_detect_kan($text)
     {
-        $this->assertEquals('guj', (new LanguageDetector($text))->detect());
+        $this->assertEquals('guj', (new LanguageDetector())->detect($text));
     }
 
     public function gujData()

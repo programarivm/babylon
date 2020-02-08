@@ -13,7 +13,7 @@ class JpnTest extends TestCase
      */
     public function language_detect_jpn($text)
     {
-        $this->assertEquals('jpn', (new LanguageDetector($text))->detect());
+        $this->assertEquals('jpn', (new LanguageDetector())->detect($text));
     }
 
     public function jpnData()

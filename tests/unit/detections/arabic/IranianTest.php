@@ -14,7 +14,7 @@ class IranianTest extends TestCase
      */
     public function family_detect_fas($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('iranian', $family);
     }
@@ -25,7 +25,7 @@ class IranianTest extends TestCase
      */
     public function language_detect_fas($text)
     {
-        $this->assertEquals('fas', (new LanguageDetector($text))->detect());
+        $this->assertEquals('fas', (new LanguageDetector())->detect($text));
     }
 
     public function fasData()

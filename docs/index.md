@@ -23,7 +23,7 @@ $text = 'You will have your data soon, I remarked, pointing with my finger;
 		this is the Brixton Road, and that is the house, if I am not very much
 		mistaken.';
 
-$isoCode = (new LanguageDetector($text))->detect();
+$isoCode = (new LanguageDetector())->detect($text);
 ```
 
 To detect the language family of a text:
@@ -35,7 +35,7 @@ $text = 'You will have your data soon, I remarked, pointing with my finger;
 		this is the Brixton Road, and that is the house, if I am not very much
 		mistaken.';
 
-$family = (new FamilyDetector($text))->detect();
+$family = (new FamilyDetector())->detect($text);
 ```
 
 ### Languages Detected

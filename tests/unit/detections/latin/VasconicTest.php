@@ -14,7 +14,7 @@ class VasconicTest extends TestCase
      */
     public function family_detect_eus($text)
     {
-        $family = (new FamilyDetector($text))->detect();
+        $family = (new FamilyDetector())->detect($text);
 
         $this->assertEquals('vasconic', $family);
     }
@@ -25,7 +25,7 @@ class VasconicTest extends TestCase
      */
     public function language_detect_eus($text)
     {
-        $this->assertEquals('eus', (new LanguageDetector($text))->detect());
+        $this->assertEquals('eus', (new LanguageDetector())->detect($text));
     }
 
     public function eusData()
