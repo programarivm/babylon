@@ -7,12 +7,15 @@ class Babylon
     const OUTPUT_FOLDER     = __DIR__ . '/../dataset/output';
     const STORAGE_FOLDER    = __DIR__ . '/../storage';
 
-    public $fingerprint = [];
-
-    public $alphabet = [];
+    protected $babylon;
 
     public function __construct()
     {
+        $this->babylon = (object) [
+            'fingerprint' => [],
+            'alphabet' => [],
+        ];
+
         $this->fingerprint()
             ->alphabet()
             ->persist();
@@ -27,7 +30,7 @@ class Babylon
                 $alphabet = substr_replace($item ,'', -16);
                 $file = fopen(self::OUTPUT_FOLDER."/$item", 'r');
                 while (($line = fgetcsv($file)) !== false) {
-                    $this->fingerprint[$alphabet][$line[0]] = $line[1];
+                    $this->babylon->fingerprint[$alphabet][$line[0]] = $line[1];
                 }
                 fclose($file);
             }
@@ -46,7 +49,7 @@ class Babylon
                 $file = fopen(self::OUTPUT_FOLDER."/alphabet/$folder/$item", 'r');
                 while (($line = fgetcsv($file)) !== false) {
                     $family = pathinfo($item, PATHINFO_FILENAME);
-                    $this->alphabet[$folder][$family][$line[0]] = $line[1];
+                    $this->babylon->alphabet[$folder][$family][$line[0]] = $line[1];
                 }
                 fclose($file);
             }
@@ -57,6 +60,6 @@ class Babylon
 
     private function persist()
     {
-        file_put_contents(self::STORAGE_FOLDER."/babylon.ser", serialize($this));
+        file_put_contents(self::STORAGE_FOLDER."/babylon.ser", serialize($this->babylon));
     }
 }
