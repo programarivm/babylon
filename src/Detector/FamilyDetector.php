@@ -13,7 +13,7 @@ class FamilyDetector
 	public function __construct(Babylon $babylon = null)
 	{
 		if (!isset($babylon)) {
-			$this->babylon = unserialize(file_get_contents(Babylon::OUTPUT_FOLDER."/babylon.ser"));
+			$this->babylon = unserialize(file_get_contents(Babylon::STORAGE_FOLDER."/babylon.ser"));
 		} else {
 			$this->babylon = $babylon;
 		}

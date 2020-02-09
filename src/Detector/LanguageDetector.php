@@ -15,7 +15,7 @@ class LanguageDetector
 
     public function __construct()
     {
-        $this->babylon = unserialize(file_get_contents(Babylon::OUTPUT_FOLDER."/babylon.ser"));
+        $this->babylon = unserialize(file_get_contents(Babylon::STORAGE_FOLDER."/babylon.ser"));
     }
 
     public function detect(string $text): string

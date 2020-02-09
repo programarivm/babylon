@@ -4,7 +4,8 @@ namespace Babylon;
 
 class Babylon
 {
-    const OUTPUT_FOLDER = __DIR__ . '/../dataset/output';
+    const OUTPUT_FOLDER     = __DIR__ . '/../dataset/output';
+    const STORAGE_FOLDER    = __DIR__ . '/../storage';
 
     public $fingerprint = [];
 
@@ -56,6 +57,6 @@ class Babylon
 
     private function persist()
     {
-        file_put_contents(self::OUTPUT_FOLDER."/babylon.ser", serialize($this));
+        file_put_contents(self::STORAGE_FOLDER."/babylon.ser", serialize($this));
     }
 }
